@@ -1,0 +1,36 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "",
+            "password": "",
+            "firstName": "",
+            "lastName": "",
+            "collectorLevel": 1
+        }
+    ],
+    "cards": [
+        {
+            "id": 1,
+            "playerName": "",
+            "cardBrand": "",
+            "cardNumber": "",
+            "cardYear": "",
+            "cardTeam": "",
+            "sport": "",
+            "image": "",
+            "author": {
+                "userId": 0
+            }
+        }
+    ],
+    "userCards": [
+        {
+            "id": "",
+            "userId": "",
+            "cardID": "",
+            "favorited": null,
+            "newCard": null
+        }
+    ]
+}
