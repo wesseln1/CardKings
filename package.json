@@ -11,7 +11,8 @@
     "react-horizontal-scrolling-menu": "^0.7.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
-    "reactstrap": "^8.0.1"
+    "reactstrap": "^8.0.1",
+    "rebass": "^4.0.6"
   },
   "scripts": {
     "start": "react-scripts start",
