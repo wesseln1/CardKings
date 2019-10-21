@@ -1,48 +1,49 @@
 import React, { Component } from "react";
-import { Flex, Box, Link } from "rebass";
-import {
-  InputGroup,
-  InputGroupAddon,
+import { Flex, Box} from "rebass";
+import { Redirect } from "react-router-dom";
+import App from "../../App"
+import { Link } from "react-router-dom" 
+
+// import {
+//   InputGroup,
+//   InputGroupAddon,
 //   InputGroupButtonDropdown,
 //   Input,
-  Button,
+//   Button,
 //   DropdownToggle,
 //   DropdownMenu,
 //   DropdownItem
-} from "reactstrap";
+// } from "reactstrap";
 
 export default class NavBar extends Component {
-//   state = {};
-
-  handleLogout = () => {
-    this.props.clearUser();
-    this.props.history.push("/");
-  };
 
   render() {
-      console.log("hello")
+    console.log("hello");
     return (
       <>
-        <Flex px={2} color="white" bg="black" alignItems="center">
-          Card Kings
-          <InputGroup>
-            <InputGroupAddon addonType="prepend">
-              <Button color="danger">I'm a button</Button>
-            </InputGroupAddon>
-          </InputGroup>
-          <Box mx="auto" className="NavHover" />
-          <Link variant="nav" href="#!">
-            Profile
-          </Link>
-          <Box mx="auto" className="NavHover" />
-          <Link variant="nav" href="#!">
-            My Collection
-          </Link>
-          <Box mx="auto" className="NavHover" />
-          <Link variant="nav" href="#!">
-            My Collection
-          </Link>
-        </Flex>
+        {/* {this.props.user ? ( */}
+          <Flex px={2} color="white" bg="black" alignItems="center">
+            <Link  to="/">
+              Card Kings
+            </Link>
+            <Box mx="auto" className="NavHover" />
+            <Link to={`/${parseInt(this.props.currentUser)}`}>
+              My Profile
+            </Link>
+            <Box mx="auto" className="NavHover" />
+            <Link to={`/collection/${parseInt(this.props.currentUser)}`}>
+              My Collection
+            </Link>
+            <Box mx="auto" className="NavHover" />
+            <Link to="/splash" onClick={this.props.handleLogout}>
+              {/* <button type="button" > */}
+              Logout
+              {/* </button> */}
+            </Link>
+          </Flex>
+        {/* ) : (
+         <Redirect to="/splash" />
+        )} */}
       </>
     );
   }
