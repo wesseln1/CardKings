@@ -55,7 +55,7 @@ export default class ApplicationViews extends Component {
             }
           }}
         />
-        {/* <Route
+        <Route
           exact
           path="/collection/:userId(\d+)"
           render={props => {
@@ -74,7 +74,7 @@ export default class ApplicationViews extends Component {
               return <App/>;
             }
           }}
-        /> */}
+        />
       </>
     );
   }

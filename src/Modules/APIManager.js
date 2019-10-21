@@ -36,8 +36,8 @@ export default {
    return fetch(`${URL}/users/${user}`).then(response => response.json())
  },
  getCards(cards, userId){
-   return fetch(`${URL}/${cards}/${userId}`)
+   return fetch(`${URL}/${cards}?userId=${userId}`).then(response => response.json())
  }
 }
 
-// http://localhost:8088/users/1
+// http://localhost:8088/cards/1
