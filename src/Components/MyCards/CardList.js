@@ -1,37 +1,43 @@
-// import React, { Component } from "react";
-// import ViewCards from "./Card";
-// import { CardGroup} from "reactstrap"
-// import APIManager from "../../Modules/APIManager";
+import React, { Component } from "react";
+import ViewCards from "./Card";
+import { CardDeck } from "reactstrap";
+import APIManager from "../../Modules/APIManager";
 
-// export default class CardList extends Component {
-//     state={
-//         cards: [],
-//         // currentUser: ""
-//     }
+export default class CardList extends Component {
+  state = {
+    cards: []
+    // currentUser: ""
+  };
 
-//     getData(){
-//         APIManager.getCards("cards", this.props.currentUser)
-//         .then((cards)=> {
-//             this.setState({
-//                 cards: cards
-//             })
-//         })
-//     }
+  getData() {
+    APIManager.getCards("cards", this.props.currentUser).then(cards => {
+      console.log("hereeeee",cards);
+      this.setState({
+        cards: cards
+      });
+    });
+  }
 
-//     componentDidMount(){
-//         this.getData()
-//     }
+  componentDidMount() {
+    this.getData();
+  }
 
-//   render() {
-//     return (
-//       <div>
-//         <CardGroup>
-//             {this.state.cards.map(card => {
-//                 <ViewCards currentUser={this.props.currentUser} card={card} {...this.props}/>
-//             })
-//             }
-//         </CardGroup>
-//       </div>
-//     );
-//   }
-// }
+  render() {
+    return (
+      <div>
+        <CardDeck>
+          <>
+            {this.state.cards.map(card => 
+              <ViewCards
+                key={card.id}
+                currentUser={this.props.currentUser}
+                card={card}
+                {...this.props}
+              />
+            )}
+          </>
+        </CardDeck>
+      </div>
+    );
+  }
+}

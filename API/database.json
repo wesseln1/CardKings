@@ -40,7 +40,44 @@
       "cardYear": "1997",
       "cardTeam": "Houtson Astros",
       "sport": "Baseball",
-      "image": "",
+      "frontImage": "/images/nolan.jpg",
+      "backImage": "/images/nolan.jpg",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "playerName": "Justin Verlander",
+      "cardBrand": "Topps",
+      "cardNumber": "2345",
+      "cardYear": "2008",
+      "cardTeam": "Detroit Tigers",
+      "sport": "Baseball",
+      "frontImage": "/images/j_v_god.jpg",
+      "backImage": "/images/nolan.jpg",
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "playerName": "Nolan Ryan",
+      "cardBrand": "Topps",
+      "cardNumber": "23BC3",
+      "cardYear": "1997",
+      "cardTeam": "Houtson Astros",
+      "sport": "Baseball",
+      "frontImage": "/images/download(2).jpg",
+      "backImage": "/images/nolan.jpg",
+      "userId": 2
+    },
+    {
+      "id": 4,
+      "playerName": "Erk Kelloge",
+      "cardBrand": "Topps",
+      "cardNumber": "23BC3",
+      "cardYear": "1997",
+      "cardTeam": "Houtson Astros",
+      "sport": "Baseball",
+      "frontImage": "/images/j_v_god.jpg",
+      "backImage": "/images/nolan.jpg",
       "userId": 1
     }
   ],
