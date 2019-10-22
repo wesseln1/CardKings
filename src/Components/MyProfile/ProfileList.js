@@ -12,12 +12,22 @@ export default class ProfileList extends Component {
     console.log("at getUSer", this.props.currentUser);
     APIManager.getUserById(this.props.currentUser)
       .then(user => {
-        this.setState({
-          user: user,
-          currentUser: this.props.currentUser
-        });
+          console.log(user)
+          this.getCollectorLevel(user)
+        })
+  }
+
+  getCollectorLevel(user){
+      console.log("at get", user)
+    APIManager.get("collectorLevels", user.collectorLevelId)
+    .then(level=>
+    // console.log("hayy", level),
+    this.setState({
+        user: user,
+        collectorLevel: level.level,
+        currentUser: this.props.currentUser
       })
-      .then(() => console.log("fired at 21",this.state.currentUser, this.state.user));
+      )
   }
 
   componentDidMount() {
@@ -33,6 +43,7 @@ export default class ProfileList extends Component {
           <MyProfileCard
             key={this.state.currentUser}
             user={this.state.user}
+            collectorLevel={this.state.collectorLevel}
             currentUser={this.state.currentUser}
           />
         </div>

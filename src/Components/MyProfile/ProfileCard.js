@@ -27,7 +27,7 @@ export default class MyProfileCard extends Component {
           />
           <CardBody>
             <CardText>
-              Collector Level: {this.props.user.collectorLevel}
+              Collector Level: {this.props.collectorLevel}
             </CardText>
             <CardLink href="#">Card Link</CardLink>
             <CardLink href="#">Another Link</CardLink>

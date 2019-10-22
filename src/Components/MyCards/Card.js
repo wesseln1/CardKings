@@ -10,28 +10,31 @@ import {
   CardSubtitle,
   CardBody
 } from "reactstrap";
+import "./Card.css"
 
 export default class ViewCards extends Component {
   render() {
       console.log(this.props.card)
     return (
       <>
-        <Card>
+        <Card className="userCardFlex">
           <CardImg
             top
             width="100%"
-            src={this.props.card.frontImage}
+            src={this.props.card.card.frontImage}
             alt="Card image cap"
           />
           <CardBody>
-            <CardTitle>{this.props.card.playerName}</CardTitle>
-            <CardSubtitle>{this.props.card.cardTeam}</CardSubtitle>
-            <CardText>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
+            <CardTitle>{this.props.card.card.playerName}</CardTitle>
+            <CardSubtitle>{this.props.card.card.playerPosition}</CardSubtitle>
+            <CardSubtitle>{this.props.card.card.cardTeam}</CardSubtitle>
+            <CardText>Year: {this.props.card.card.cardYear}
             </CardText>
-            <Button>Button</Button>
+            <CardText>Brand: {this.props.card.card.cardBrand}
+            </CardText>
+            <CardText>Conditon: {this.props.card.condition}
+            </CardText>
+            <Button>Card Details</Button>
           </CardBody>
         </Card>
       </>

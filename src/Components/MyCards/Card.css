@@ -1,0 +1,7 @@
+.userCardParent{
+    overflow-y: scroll !important;
+}
+
+.userCardFlex{
+    flex-wrap: wrap !important; 
+}
