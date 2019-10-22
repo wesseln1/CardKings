@@ -16,7 +16,6 @@ export default {
 //    return fetch(`https://www.googleapis.com/customsearch/v1/`)
 //  } 
 
-
  post(resource, obj){
    console.log("here i am")
   return fetch(`${URL}/${resource}`, {
@@ -27,7 +26,10 @@ export default {
     body: JSON.stringify(obj) 
   }).then(response => response.json())
  },
-
+ get(obj, id){
+   console.log("at fetch", id)
+  return fetch(`${URL}/${obj}/${id}`).then(response => response.json())
+},
  getUser(user){
    return fetch(`${URL}/users?username=${user}`).then(response => response.json())
  },
@@ -37,7 +39,11 @@ export default {
  },
  getCards(cards, userId){
    return fetch(`${URL}/${cards}?userId=${userId}`).then(response => response.json())
+ },
+ getExpandedItems(obj, expandId, id, expandedObj){
+   return fetch(`${URL}/${obj}/?${expandId}Id=${id}&_expand=${expandedObj}`).then(response => response.json())
  }
 }
 
-// http://localhost:8088/cards/1
+// http://localhost:8088/users/?collectorLevelId=1&expand=collectorLevel
+// http://localhost:8088/friends/?initiatorId=${user}&_expand=user

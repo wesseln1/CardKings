@@ -7,6 +7,7 @@ import Home from "../Home/Home";
 import ProfileList from "../MyProfile/ProfileList";
 import App from "../../App";
 import CardList from "../MyCards/CardList";
+// import CardForm from "../MyCards/NewCardForm"
 
 export default class ApplicationViews extends Component {
 //   isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
