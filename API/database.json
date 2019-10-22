@@ -17,7 +17,7 @@
       "password": "1234",
       "DoB": "2019-10-24",
       "favTeam": "det",
-      "collectorLevel": 1,
+      "collectorLevelId": 1,
       "id": 2
     },
     {
@@ -35,60 +35,190 @@
     {
       "id": 1,
       "playerName": "Nolan Ryan",
+      "playerPosition": "SP",
       "cardBrand": "Topps",
       "cardNumber": "23BC3",
       "cardYear": "1997",
       "cardTeam": "Houtson Astros",
       "sport": "Baseball",
-      "frontImage": "/images/nolan.jpg",
-      "backImage": "/images/nolan.jpg",
+      "frontImage": "./images/nolan.jpg",
+      "backImage": "images/nolan.jpg",
       "userId": 1
     },
     {
       "id": 2,
       "playerName": "Justin Verlander",
+      "playerPosition": "SP",
       "cardBrand": "Topps",
       "cardNumber": "2345",
       "cardYear": "2008",
       "cardTeam": "Detroit Tigers",
       "sport": "Baseball",
-      "frontImage": "/images/j_v_god.jpg",
-      "backImage": "/images/nolan.jpg",
+      "frontImage": "./images/j_v_god.jpg",
+      "backImage": "images/nolan.jpg",
       "userId": 1
     },
     {
       "id": 3,
-      "playerName": "Nolan Ryan",
-      "cardBrand": "Topps",
-      "cardNumber": "23BC3",
-      "cardYear": "1997",
-      "cardTeam": "Houtson Astros",
+      "playerName": "Randy Johnson",
+      "playerPosition": "SP",
+      "cardBrand": "Fleer",
+      "cardNumber": "5",
+      "cardYear": "2004",
+      "cardTeam": "Arizona Diamondbacks",
       "sport": "Baseball",
-      "frontImage": "/images/download(2).jpg",
-      "backImage": "/images/nolan.jpg",
+      "frontImage": "./images/randyJohnsonFront2004.jpg",
+      "backImage": "images/randyJohnsonBack2004.jpg",
       "userId": 2
     },
     {
       "id": 4,
       "playerName": "Erk Kelloge",
+      "playerPosition": "SP",
       "cardBrand": "Topps",
       "cardNumber": "23BC3",
       "cardYear": "1997",
       "cardTeam": "Houtson Astros",
       "sport": "Baseball",
-      "frontImage": "/images/j_v_god.jpg",
-      "backImage": "/images/nolan.jpg",
+      "frontImage": "./images/j_v_god.jpg",
+      "backImage": "images/nolan.jpg",
       "userId": 1
+    },
+    {
+      "playerName": "Manny Ramirez",
+      "playerPosition": "OF",
+      "cardBrand": "Topps",
+      "cardNumber": "BOS3",
+      "cardYear": "2008",
+      "cardTeam": "Boston Red Sox",
+      "sport": "Baseball",
+      "frontImage": "images/MVIMG_20191022_141927.jpg",
+      "backImage": "images/mannyRamirez.jpg",
+      "userId": "1",
+      "id": 5
     }
   ],
   "userCards": [
     {
       "id": 1,
       "userId": 1,
-      "cardID": 1,
+      "cardId": 1,
+      "condition": 9.6,
+      "timestamp": "10/22/2019, 04:14:17 PM",
       "favorited": true,
       "newCard": true,
       "wanted": true
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "cardId": 3,
+      "condition": 3,
+      "timestamp": "10/22/2019, 04:14:17 PM",
+      "favorited": true,
+      "newCard": true,
+      "wanted": true
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "cardId": 2,
+      "condition": 7,
+      "timestamp": "10/22/2019, 04:14:17 PM",
+      "favorited": true,
+      "newCard": true,
+      "wanted": true
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "cardId": 2,
+      "condition": 7,
+      "timestamp": "10/22/2019, 04:14:17 PM",
+      "favorited": true,
+      "newCard": true,
+      "wanted": true
+    },
+    {
+      "userId": "1",
+      "cardId": 5,
+      "condition": null,
+      "favorited": false,
+      "timestamp": "10/22/2019, 04:56:40 PM",
+      "wanted": false,
+      "id": 5
+    }
+  ],
+  "collectorLevels": [
+    {
+      "id": 1,
+      "level": "Rookie",
+      "minCards": 0,
+      "maxCards": 25,
+      "color": "red"
+    },
+    {
+      "id": 2,
+      "level": "Hobbier",
+      "minCards": 21,
+      "maxCards": 50,
+      "color": "orange"
+    },
+    {
+      "id": 3,
+      "level": "Small Timer",
+      "minCards": 51,
+      "maxCards": 75,
+      "color": "yellow"
+    },
+    {
+      "id": 4,
+      "level": "Amature",
+      "minCards": 76,
+      "maxCards": 100,
+      "color": "lime green"
+    },
+    {
+      "id": 5,
+      "level": "Next Up",
+      "minCards": 101,
+      "maxCards": 150,
+      "color": "green"
+    },
+    {
+      "id": 6,
+      "level": "Young Star",
+      "minCards": 151,
+      "maxCards": 200,
+      "color": "teal"
+    },
+    {
+      "id": 7,
+      "level": "Superstar",
+      "minCards": 201,
+      "maxCards": 250,
+      "color": "light blue"
+    },
+    {
+      "id": 8,
+      "level": "Topps Legned",
+      "minCards": 251,
+      "maxCards": 500,
+      "color": "blue"
+    },
+    {
+      "id": 9,
+      "level": "Card God",
+      "minCards": 501,
+      "maxCards": 750,
+      "color": "dark blue"
+    },
+    {
+      "id": 10,
+      "level": "A Serious Problem",
+      "minCards": 751,
+      "maxCards": 100000000000000000,
+      "color": "hot pink"
     }
   ]
 }
