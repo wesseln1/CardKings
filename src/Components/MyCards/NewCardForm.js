@@ -22,7 +22,7 @@ export default class CardForm extends Component {
     cardNumber: "",
     cardYear: "",
     cardTeam: "",
-    conditon: "",
+    condition: "",
     sport: "",
     frontPic: "",
     backPic: "",
@@ -54,7 +54,7 @@ export default class CardForm extends Component {
       userId: this.props.currentUser
     };
     APIManager.post("cards", newCard).then(newCard => {
-      console.log(newCard);
+      // console.log(this.state.conditon);
       let timestamp = Date.now();
       let dateNow = new Intl.DateTimeFormat("en-US", {
         year: "numeric",
@@ -65,9 +65,9 @@ export default class CardForm extends Component {
         second: "2-digit"
       }).format(timestamp);
       let newUserCard = {
-        userId: this.props.currentUser,
+        userId: parseInt(this.props.currentUser),
         cardId: parseInt(newCard.id),
-        condition: parseInt(this.state.condition),
+        condition: this.state.condition,
         favorited: false,
         timestamp: dateNow,
         wanted: false
@@ -76,6 +76,7 @@ export default class CardForm extends Component {
       .then(() => this.setState({
           modal: false
       }))
+      // .then(this.props.history.push("/"))
     });
   };
 
@@ -142,11 +143,11 @@ export default class CardForm extends Component {
                   id="cardBrand"
                   placeholder="Card Brand"
                 ></Input>
-                <Label>Card Comditon:</Label>
+                <Label>Card Comdition:</Label>
                 <Input
                   onChange={this.handleFieldChange}
                   type="text"
-                  id="conditon"
+                  id="condition"
                   placeholder="Card Conditon"
                 ></Input>
                 <Label>Sport:</Label>

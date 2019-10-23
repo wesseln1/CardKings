@@ -9,7 +9,6 @@ import "./Card.css";
 export default class CardList extends Component {
   state = {
     cards: []
-    // currentUser: ""
   };
 
   getData() {
@@ -38,6 +37,7 @@ export default class CardList extends Component {
         <Card>
           <CardForm
             key={this.props.currentUser}
+            getData={this.getData}
             currentUser={this.props.currentUser}
             {...this.props}
           />

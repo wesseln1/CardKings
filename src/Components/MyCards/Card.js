@@ -6,7 +6,7 @@ import {
   CardImg,
   CardTitle,
   CardText,
-  CardGroup,
+  // CardGroup,
   CardSubtitle,
   CardBody
 } from "reactstrap";
@@ -17,7 +17,7 @@ export default class ViewCards extends Component {
       console.log(this.props.card)
     return (
       <>
-        <Card className="userCardFlex">
+        <Card>
           <CardImg
             top
             width="100%"
@@ -34,7 +34,7 @@ export default class ViewCards extends Component {
             </CardText>
             <CardText>Conditon: {this.props.card.condition}
             </CardText>
-            <Button>Card Details</Button>
+            <Button className="cardButton">Card Details</Button>
           </CardBody>
         </Card>
       </>

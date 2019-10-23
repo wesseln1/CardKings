@@ -1,7 +1,18 @@
-.userCardParent{
+.card-deck{
     overflow-y: scroll !important;
+    flex-flow: row !important;
+    /* flex-flow: row !important; */
 }
 
-.userCardFlex{
+/* .userCardFlex{
     flex-wrap: wrap !important; 
+}  */
+
+.card {
+    min-width: 200px !important;
+    /* max-height: auto !important; */
+}
+
+.cardButton {
+    justify-content: baseline !important;
 }
