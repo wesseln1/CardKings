@@ -29,6 +29,22 @@ export default class CardForm extends Component {
     modal: false
   };
 
+  // getData() {
+  //   APIManager.getExpandedItems(
+  //     "userCards",
+  //     "user",
+  //     this.props.currentUser,
+  //     "card"
+  //   )
+  //     .then(cards => {
+  //       console.log("hereeeee", cards);
+  //       this.setState({
+  //         cards: cards
+  //       });
+  //     })
+  //     .then(() => console.log("cards", this.state.cards));
+  // }
+
   handleFieldChange = evt => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
@@ -55,8 +71,8 @@ export default class CardForm extends Component {
       cardYear: this.state.cardYear,
       cardTeam: this.state.cardTeam,
       sport: this.state.sport,
-      frontImage: frontImgValue,
-      backImage: backImgValue,
+      frontImage: `/${frontImgValue}`,
+      backImage: `/${backImgValue}`,
       userId: this.props.currentUser
     };
     APIManager.post("cards", newCard).then(newCard => {
@@ -84,7 +100,7 @@ export default class CardForm extends Component {
             modal: false
           })
         )
-        .then(this.props.history.push("/"));
+        .then(() => this.props.history.push("/"));
     });
   };
 

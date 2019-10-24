@@ -41,8 +41,8 @@
       "cardYear": "1997",
       "cardTeam": "Houtson Astros",
       "sport": "Baseball",
-      "frontImage": "./images/nolan.jpg",
-      "backImage": "images/nolan.jpg",
+      "frontImage": "/images/nolan.jpg",
+      "backImage": "./images/nolan.jpg",
       "userId": 1,
       "favorited": false
     },
@@ -55,7 +55,7 @@
       "cardYear": "2008",
       "cardTeam": "Detroit Tigers",
       "sport": "Baseball",
-      "frontImage": "./images/j_v_god.jpg",
+      "frontImage": "/images/j_v_god.jpg",
       "backImage": "images/nolan.jpg",
       "userId": 1,
       "favorited": false
@@ -69,7 +69,7 @@
       "cardYear": "2004",
       "cardTeam": "Arizona Diamondbacks",
       "sport": "Baseball",
-      "frontImage": "./images/randyJohnsonFront2004.jpg",
+      "frontImage": "/images/randyJohnsonFront2004.jpg",
       "backImage": "images/randyJohnsonBack2004.jpg",
       "userId": 2
     },
@@ -82,8 +82,8 @@
       "cardYear": "1997",
       "cardTeam": "Houtson Astros",
       "sport": "Baseball",
-      "frontImage": "./images/j_v_god.jpg",
-      "backImage": "images/nolan.jpg",
+      "frontImage": "/images/j_v_god.jpg",
+      "backImage": "/images/nolan.jpg",
       "userId": 1
     },
     {
@@ -94,8 +94,8 @@
       "cardYear": "2008",
       "cardTeam": "Boston Red Sox",
       "sport": "Baseball",
-      "frontImage": "images/MVIMG_20191022_141927.jpg",
-      "backImage": "images/mannyRamirez.jpg",
+      "frontImage": "/images/MVIMG_20191022_141927.jpg",
+      "backImage": "/images/mannyRamirez.jpg",
       "userId": "1",
       "id": 5
     },
@@ -107,8 +107,8 @@
       "cardYear": "2008",
       "cardTeam": "Los Angeles Angels",
       "sport": "Baseball",
-      "frontImage": "images/IMG_20191023_143022.jpg",
-      "backImage": "images/IMG_20191023_143029.jpg",
+      "frontImage": "/images/IMG_20191023_143022.jpg",
+      "backImage": "/images/IMG_20191023_143029.jpg",
       "userId": "1",
       "id": 7
     },
@@ -120,8 +120,8 @@
       "cardYear": "2008",
       "cardTeam": "Atlanta Braves",
       "sport": "Baseball",
-      "frontImage": "images/chipperFront.jpg",
-      "backImage": "images/chipperBack.jpg",
+      "frontImage": "/images/chipperFront.jpg",
+      "backImage": "/images/chipperBack.jpg",
       "userId": "1",
       "id": 9,
       "favorited": false
@@ -134,8 +134,8 @@
       "cardYear": "2008",
       "cardTeam": "Seattle Mariners",
       "sport": "Baseball",
-      "frontImage": "images/felixFront.jpg",
-      "backImage": "images/felixBack.jpg",
+      "frontImage": "/images/felixFront.jpg",
+      "backImage": "/images/felixBack.jpg",
       "userId": "1",
       "id": 10
     },
@@ -147,8 +147,8 @@
       "cardYear": "2008",
       "cardTeam": "Florida Marlins",
       "sport": "Baseball",
-      "frontImage": "images/hanleyFront.jpg",
-      "backImage": "images/hanleyBack.jpg",
+      "frontImage": "/images/hanleyFront.jpg",
+      "backImage": "/images/hanleyBack.jpg",
       "userId": "1",
       "id": 11
     },
@@ -160,8 +160,8 @@
       "cardYear": "2008",
       "cardTeam": "Detroit Tigers",
       "sport": "Baseball",
-      "frontImage": "images/miggyFront.jpg",
-      "backImage": "images/cabyBack.jpg",
+      "frontImage": "/images/miggyFront.jpg",
+      "backImage": "/images/cabyBack.jpg",
       "userId": "1",
       "id": 12
     },
@@ -173,10 +173,62 @@
       "cardYear": "2008",
       "cardTeam": "Arizona Diamonbacks",
       "sport": "Baseball",
-      "frontImage": "images/randyFront.jpg",
-      "backImage": "images/IMG_20191023_151907.jpg",
+      "frontImage": "/images/randyFront.jpg",
+      "backImage": "/images/IMG_20191023_151907.jpg",
       "userId": "1",
       "id": 13
+    },
+    {
+      "playerName": "Darryl Strawberry",
+      "playerPosition": "RF",
+      "cardBrand": "The Topps Company",
+      "cardNumber": "19 of 22",
+      "cardYear": "1988",
+      "cardTeam": "New York Mets",
+      "sport": "Baseball",
+      "frontImage": "/images/strawberryFront.jpg",
+      "backImage": "/images/strawberryBack.jpg",
+      "userId": "1",
+      "id": 14
+    },
+    {
+      "playerName": "Darryl Strawberry",
+      "playerPosition": "RF",
+      "cardBrand": "Topps",
+      "cardNumber": "19 of 22",
+      "cardYear": "1988",
+      "cardTeam": "New York Mets",
+      "sport": "Baseball",
+      "frontImage": "/images/strawberryFront.jpg",
+      "backImage": "/images/strawberryBack.jpg",
+      "userId": "1",
+      "id": 15
+    },
+    {
+      "playerName": "Manny Ramirez",
+      "playerPosition": "OF",
+      "cardBrand": "Upper Deck",
+      "cardNumber": "BOS3",
+      "cardYear": "2008",
+      "cardTeam": "Boston Red Sox",
+      "sport": "Baseball",
+      "frontImage": "/images/MVIMG_20191022_141927.jpg",
+      "backImage": "/images/mannyRamirez.jpg",
+      "userId": "1",
+      "id": 16
+    },
+    {
+      "playerName": "Manny Ramirez",
+      "playerPosition": "OF",
+      "cardBrand": "",
+      "cardNumber": "",
+      "cardYear": "vs",
+      "cardTeam": "asf",
+      "sport": "",
+      "frontImage": "/images/chipperBack.jpg",
+      "backImage": "/",
+      "userId": "1",
+      "id": 17
     }
   ],
   "userCards": [
@@ -196,7 +248,7 @@
       "cardId": "3",
       "condition": "3",
       "timestamp": "10/22/2019, 04:14:17 PM",
-      "favorited": false,
+      "favorited": true,
       "newCard": true,
       "wanted": true
     },
@@ -278,10 +330,46 @@
       "userId": "1",
       "cardId": "13",
       "condition": "5.8",
-      "favorited": false,
+      "favorited": true,
       "timestamp": "10/24/2019, 09:43:05 AM",
       "wanted": false,
       "id": 13
+    },
+    {
+      "userId": "1",
+      "cardId": 14,
+      "condition": "7.3",
+      "favorited": false,
+      "timestamp": "10/24/2019, 03:10:57 PM",
+      "wanted": false,
+      "id": 14
+    },
+    {
+      "userId": "1",
+      "cardId": 15,
+      "condition": "7.1",
+      "favorited": false,
+      "timestamp": "10/24/2019, 03:14:32 PM",
+      "wanted": false,
+      "id": 15
+    },
+    {
+      "userId": "1",
+      "cardId": 16,
+      "condition": "4",
+      "favorited": false,
+      "timestamp": "10/24/2019, 03:17:29 PM",
+      "wanted": false,
+      "id": 16
+    },
+    {
+      "userId": "1",
+      "cardId": 17,
+      "condition": "",
+      "favorited": false,
+      "timestamp": "10/24/2019, 03:21:22 PM",
+      "wanted": false,
+      "id": 17
     }
   ],
   "collectorLevels": [

@@ -51,6 +51,7 @@ export default {
    return fetch(`${URL}/${cards}?userId=${userId}`).then(response => response.json())
  },
  getExpandedItems(obj, expandId, id, expandedObj){
+   console.log("obj",obj, "obj", expandId, "obj", id,"obj", expandedObj)
    return fetch(`${URL}/${obj}/?${expandId}Id=${id}&_expand=${expandedObj}`).then(response => response.json())
  }
 }

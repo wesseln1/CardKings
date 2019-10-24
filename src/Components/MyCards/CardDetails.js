@@ -15,6 +15,7 @@ import {
   CardImg
 } from "reactstrap";
 import APIManager from "../../Modules/APIManager";
+import "./CardDetails.css"
 
 export default class CardDetails extends Component {
   state = {
@@ -42,8 +43,9 @@ export default class CardDetails extends Component {
             {this.props.card.card.playerName}
           </ModalHeader>
           <ModalBody>
-            <Card className="flexHomeCard">
+            <Card className="flexHomeCardDetails">
               <CardImg
+              className="cardDetailImg"
                 top
                 width="100%"
                 src={this.props.card.card.frontImage}

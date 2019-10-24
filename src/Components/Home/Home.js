@@ -4,6 +4,7 @@ import APIManager from "../../Modules/APIManager";
 import App from "../../App";
 import "./Home.css";
 import "../MyCards/Card.css";
+import "../MyCards/Card.css";
 import CardList from "../MyCards/CardList";
 import CardForm from "../MyCards/NewCardForm"
 
@@ -11,31 +12,30 @@ export default class Home extends Component {
   state = {
     user: "",
     currentUser: "",
-    collectorLevel: {}
+    collectorLevel: {},
+    // cards: []
   };
 
   getUser() {
     // let currentUser = this.props.currentUser;
     APIManager.getUserById(this.props.currentUser).then(user => {
       this.getCollectorLevel(user);
-    });
+    })
   }
 
   getCollectorLevel(user) {
-    console.log("at get", user);
     APIManager.get("collectorLevels", user.collectorLevel).then(level =>
-      //   console.log("hayy", level),
       this.setState({
         user: user,
         collectorLevel: level,
-        currentUser: this.props.currentUser
+        currentUser: user.id
       })
-    );
+    ).then(() => this.props.getData())
   }
 
   componentDidMount() {
-    console.log(this.props.currentUser);
-    this.getUser();
+    console.log(this.state.currentUser);
+    this.getUser()
   }
 
   render() {
@@ -57,10 +57,10 @@ export default class Home extends Component {
               </Card>
               <Card className="addCardModalDiv">
                 <CardForm
-                  key={this.props.currentUser}
-                  addCard={this.addCard}
-                  getData={this.getData}
-                  currentUser={this.props.currentUser}
+                  key={this.state.currentUser}
+                  // cards={this.state.cards}
+                  getData={this.props.getData}
+                  currentUser={this.state.currentUser}
                   {...this.props}
                 />
               </Card>
@@ -68,9 +68,11 @@ export default class Home extends Component {
             <div>
               <CardDeck className="userCardHomeDeck">
                 <CardList
-                  key={this.props.currentUser}
+                  key={this.state.currentUser}
+                  cards={this.props.cards}
                   user={this.props.user}
-                  currentUser={this.props.currentUser}
+                  getData={this.props.getData}
+                  currentUser={this.state.currentUser}
                   setUser={this.props.setUser}
                 />
               </CardDeck>

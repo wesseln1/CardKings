@@ -4,32 +4,16 @@ import ViewCards from "./Card";
 import { CardDeck, Card, Button } from "reactstrap";
 import APIManager from "../../Modules/APIManager";
 import CardForm from "./NewCardForm";
-import "./Card.css";
+
 
 export default class CardList extends Component {
-  state = {
-    cards: []
-  };
+  // state = {
+  //   cards: []
+  // };
 
-  getData() {
-    APIManager.getExpandedItems(
-      "userCards",
-      "user",
-      this.props.currentUser,
-      "card"
-    )
-      .then(cards => {
-        console.log("hereeeee", cards);
-        this.setState({
-          cards: cards
-        });
-      })
-      .then(() => console.log("cards", this.state.cards));
-  }
-
-  componentDidMount() {
-    this.getData();
-  }
+  // componentDidMount() {
+  //   this.props.getData();
+  // }
 
   addCard = () => {
     let frontImgValue = this.state.frontPic.replace(
@@ -45,8 +29,8 @@ export default class CardList extends Component {
       cardYear: this.state.cardYear,
       cardTeam: this.state.cardTeam,
       sport: this.state.sport,
-      frontImage: frontImgValue,
-      backImage: backImgValue,
+      frontImage: `/${frontImgValue}`,
+      backImage: `/${backImgValue}`,
       userId: this.props.currentUser
     };
     APIManager.post("cards", newCard).then(newCard => {
@@ -78,12 +62,16 @@ export default class CardList extends Component {
     });
   };
 
+  // componentDidMount(){
+  //   this.props.getData()
+  // }
+
   render() {
     return (
       <div className="cardDiv">
         <CardDeck className="userCardFlex">
           <>
-            {this.state.cards.map(card => (
+            {this.props.cards.map(card => (
               <ViewCards
                 addCard={this.addCard}
                 key={card.id}
