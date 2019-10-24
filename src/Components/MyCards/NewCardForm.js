@@ -35,51 +35,6 @@ export default class CardForm extends Component {
     this.setState(stateToChange);
   };
 
-  addCard = () => {
-    let frontImgValue = this.state.frontPic.replace(
-      "C:\\fakepath\\",
-      "images/"
-    );
-    let backImgValue = this.state.backPic.replace("C:\\fakepath\\", "images/");
-    let newCard = {
-      playerName: this.state.playerName,
-      playerPosition: this.state.playerPosition,
-      cardBrand: this.state.cardBrand,
-      cardNumber: this.state.cardNumber,
-      cardYear: this.state.cardYear,
-      cardTeam: this.state.cardTeam,
-      sport: this.state.sport,
-      frontImage: frontImgValue,
-      backImage: backImgValue,
-      userId: this.props.currentUser
-    };
-    APIManager.post("cards", newCard).then(newCard => {
-      // console.log(this.state.conditon);
-      let timestamp = Date.now();
-      let dateNow = new Intl.DateTimeFormat("en-US", {
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit"
-      }).format(timestamp);
-      let newUserCard = {
-        userId: parseInt(this.props.currentUser),
-        cardId: parseInt(newCard.id),
-        condition: this.state.condition,
-        favorited: false,
-        timestamp: dateNow,
-        wanted: false
-      };
-      APIManager.post("userCards", newUserCard)
-      .then(() => this.setState({
-          modal: false
-      }))
-      // .then(this.props.history.push("/"))
-    });
-  };
-
   toggle = () => {
     this.setState(prevState => ({
       modal: !prevState.modal
@@ -89,7 +44,7 @@ export default class CardForm extends Component {
   render() {
     return (
       <div>
-        <Button color="danger" onClick={this.toggle}>
+        <Button color="primary" onClick={this.toggle}>
           Add New Card
         </Button>
         <Modal
@@ -173,7 +128,7 @@ export default class CardForm extends Component {
             </Form>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" type="submit" onClick={this.addCard}>
+            <Button color="primary" type="submit" onClick={() => this.props.addCard()}>
               Do Something
             </Button>
             <Button color="secondary" onClick={this.toggle}>
