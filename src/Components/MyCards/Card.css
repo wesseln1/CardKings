@@ -1,12 +1,40 @@
 .card-deck{
-    overflow-y: scroll !important;
     flex-flow: row !important;
     /* flex-flow: row !important; */
 }
 
+.addCardModalDiv{
+    align-items: center;
+    max-height:55px;
+    max-width: 20%;
+}
+
+.cardDetailButton{
+    margin-top: 50px;
+}
+
+.flexHomeCard{
+    display: flex;
+    align-self: baseline;
+}
+
+.cardDiv {
+    height: 50%;
+    display: contents;
+}
 /* .userCardFlex{
     flex-wrap: wrap !important; 
 }  */
+
+.userCardFlex {
+    overflow-y: scroll !important;
+}
+
+.cardButtons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
 
 .card {
     min-width: 200px !important;
@@ -15,4 +43,8 @@
 
 .cardButton {
     justify-content: baseline !important;
+}
+
+.myCardButtons {
+    font-size: 10px !important;
 }

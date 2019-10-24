@@ -98,19 +98,6 @@
       "id": 5
     },
     {
-      "playerName": "Miguel Cabrera",
-      "playerPosition": "1B",
-      "cardBrand": "Upper Deck",
-      "cardNumber": "F22EY",
-      "cardYear": "2008",
-      "cardTeam": "Detroit Tigers",
-      "sport": "Baseball",
-      "frontImage": "images/cabyBack.jpg",
-      "backImage": "images/MVIMG_20191023_140848.jpg",
-      "userId": "1",
-      "id": 6
-    },
-    {
       "playerName": "Vladimir Guerrero",
       "playerPosition": "OF",
       "cardBrand": "Upper Deck",
@@ -124,19 +111,6 @@
       "id": 7
     },
     {
-      "playerName": "Randy Johnson",
-      "playerPosition": "SP",
-      "cardBrand": "Upper Deck",
-      "cardNumber": "G6CW2",
-      "cardYear": "2008",
-      "cardTeam": "Arizona Diamondbacks",
-      "sport": "Baseball",
-      "frontImage": "images/MVIMG_20191023_143105.jpg",
-      "backImage": "images/IMG_20191023_151907.jpg",
-      "userId": "1",
-      "id": 8
-    },
-    {
       "playerName": "Chipper Jones",
       "playerPosition": "3B",
       "cardBrand": "Upper Deck",
@@ -144,8 +118,8 @@
       "cardYear": "2008",
       "cardTeam": "Atlanta Braves",
       "sport": "Baseball",
-      "frontImage": "images/IMG_20191023_152004.jpg",
-      "backImage": "images/IMG_20191023_152009.jpg",
+      "frontImage": "images/chipperFront.jpg",
+      "backImage": "images/chipperBack.jpg",
       "userId": "1",
       "id": 9
     },
@@ -157,8 +131,8 @@
       "cardYear": "2008",
       "cardTeam": "Seattle Mariners",
       "sport": "Baseball",
-      "frontImage": "images/IMG_20191023_151927.jpg",
-      "backImage": "images/IMG_20191023_151931.jpg",
+      "frontImage": "images/felixFront.jpg",
+      "backImage": "images/felixBack.jpg",
       "userId": "1",
       "id": 10
     },
@@ -170,23 +144,36 @@
       "cardYear": "2008",
       "cardTeam": "Florida Marlins",
       "sport": "Baseball",
-      "frontImage": "images/IMG_20191023_151936.jpg",
-      "backImage": "images/IMG_20191023_151939.jpg",
+      "frontImage": "images/hanleyFront.jpg",
+      "backImage": "images/hanleyBack.jpg",
       "userId": "1",
       "id": 11
     },
     {
-      "playerName": "Manny Ramirez",
-      "playerPosition": "",
-      "cardBrand": "",
-      "cardNumber": "",
-      "cardYear": "",
-      "cardTeam": "",
-      "sport": "",
-      "frontImage": "",
-      "backImage": "",
+      "playerName": "Miguel Carbrera",
+      "playerPosition": "1B",
+      "cardBrand": "Upper Deck",
+      "cardNumber": "F22EY",
+      "cardYear": "2008",
+      "cardTeam": "Detroit Tigers",
+      "sport": "Baseball",
+      "frontImage": "images/miggyFront.jpg",
+      "backImage": "images/cabyBack.jpg",
       "userId": "1",
       "id": 12
+    },
+    {
+      "playerName": "Randy Johnson",
+      "playerPosition": "SP",
+      "cardBrand": "Upper Deck",
+      "cardNumber": "G6CW2",
+      "cardYear": "2008",
+      "cardTeam": "Arizona Diamonbacks",
+      "sport": "Baseball",
+      "frontImage": "images/randyFront.jpg",
+      "backImage": "images/IMG_20191023_151907.jpg",
+      "userId": "1",
+      "id": 13
     }
   ],
   "userCards": [
@@ -231,7 +218,7 @@
       "wanted": true
     },
     {
-      "userId": "1",
+      "userId": 1,
       "cardId": 5,
       "condition": "3",
       "favorited": false,
@@ -240,31 +227,13 @@
       "id": 5
     },
     {
-      "userId": "1",
-      "cardId": 6,
-      "condition": "6",
-      "favorited": false,
-      "timestamp": "10/23/2019, 02:29:46 PM",
-      "wanted": false,
-      "id": 6
-    },
-    {
-      "userId": "1",
+      "userId": 1,
       "cardId": 7,
       "condition": "7.6",
       "favorited": false,
       "timestamp": "10/23/2019, 03:44:45 PM",
       "wanted": false,
       "id": 7
-    },
-    {
-      "userId": "1",
-      "cardId": 8,
-      "condition": "8",
-      "favorited": false,
-      "timestamp": "10/23/2019, 03:47:24 PM",
-      "wanted": false,
-      "id": 8
     },
     {
       "userId": 1,
@@ -296,11 +265,20 @@
     {
       "userId": 1,
       "cardId": 12,
-      "condition": "",
+      "condition": "7.8",
       "favorited": false,
-      "timestamp": "10/23/2019, 06:33:48 PM",
+      "timestamp": "10/24/2019, 09:39:36 AM",
       "wanted": false,
       "id": 12
+    },
+    {
+      "userId": 1,
+      "cardId": 13,
+      "condition": "5.8",
+      "favorited": false,
+      "timestamp": "10/24/2019, 09:43:05 AM",
+      "wanted": false,
+      "id": 13
     }
   ],
   "collectorLevels": [

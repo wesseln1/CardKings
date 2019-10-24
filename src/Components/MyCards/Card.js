@@ -6,36 +6,36 @@ import {
   CardImg,
   CardTitle,
   CardText,
+  CardFooter,
   // CardGroup,
   CardSubtitle,
   CardBody
 } from "reactstrap";
-import "./Card.css"
+import "./Card.css";
+import CardDetials from "./CardDetails";
 
 export default class ViewCards extends Component {
   render() {
-      console.log(this.props.card)
+    console.log(this.props.card);
     return (
       <>
-        <Card>
+        <Card className="flexHomeCard">
           <CardImg
             top
             width="100%"
             src={this.props.card.card.frontImage}
             alt="Card image cap"
           />
-          <CardBody>
-            <CardTitle>{this.props.card.card.playerName}</CardTitle>
-            <CardSubtitle>{this.props.card.card.playerPosition}</CardSubtitle>
-            <CardSubtitle>{this.props.card.card.cardTeam}</CardSubtitle>
-            <CardText>Year: {this.props.card.card.cardYear}
-            </CardText>
-            <CardText>Brand: {this.props.card.card.cardBrand}
-            </CardText>
-            <CardText>Conditon: {this.props.card.condition}
-            </CardText>
-            <Button className="cardButton">Card Details</Button>
-          </CardBody>
+          <CardFooter className="cardButtons">
+            <CardDetials
+              key={this.props.currentUser}
+              addCard={this.props.addCard}
+              getData={this.props.getData}
+              currentUser={this.props.currentUser}
+              {...this.props}
+            />
+            <Button className="myCardButtons">Favorite</Button>
+          </CardFooter>
         </Card>
       </>
     );

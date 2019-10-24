@@ -36,26 +36,7 @@ export default class ApplicationViews extends Component {
             }
           }}
         />
-        <Route
-          exact
-          path="/:userId(\d+)"
-          render={props => {
-              console.log("user",this.props.user)
-              if (this.props.user) {
-              return (
-                <ProfileList
-                  key={this.props.currentUser}
-                  user={this.props.user}
-                  currentUser={this.props.currentUser}
-                  setUser={this.props.setUser}
-                  {...props}
-                />
-              );
-            } else {
-              return <App/>;
-            }
-          }}
-        />
+ 
         <Route
           exact
           path="/collection/:userId(\d+)"

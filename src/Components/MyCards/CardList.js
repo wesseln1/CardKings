@@ -19,7 +19,7 @@ export default class CardList extends Component {
       "card"
     )
       .then(cards => {
-          console.log("hereeeee", cards);
+        console.log("hereeeee", cards);
         this.setState({
           cards: cards
         });
@@ -31,17 +31,56 @@ export default class CardList extends Component {
     this.getData();
   }
 
+  addCard = () => {
+    let frontImgValue = this.state.frontPic.replace(
+      "C:\\fakepath\\",
+      "images/"
+    );
+    let backImgValue = this.state.backPic.replace("C:\\fakepath\\", "images/");
+    let newCard = {
+      playerName: this.state.playerName,
+      playerPosition: this.state.playerPosition,
+      cardBrand: this.state.cardBrand,
+      cardNumber: this.state.cardNumber,
+      cardYear: this.state.cardYear,
+      cardTeam: this.state.cardTeam,
+      sport: this.state.sport,
+      frontImage: frontImgValue,
+      backImage: backImgValue,
+      userId: this.props.currentUser
+    };
+    APIManager.post("cards", newCard).then(newCard => {
+      // console.log(this.state.conditon);
+      let timestamp = Date.now();
+      let dateNow = new Intl.DateTimeFormat("en-US", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      }).format(timestamp);
+      let newUserCard = {
+        userId: parseInt(this.props.currentUser),
+        cardId: parseInt(newCard.id),
+        condition: this.state.condition,
+        favorited: false,
+        timestamp: dateNow,
+        wanted: false
+      };
+      APIManager.post("userCards", newUserCard)
+        .then(() =>
+          this.setState({
+            modal: false
+          })
+        )
+        .then(this.props.history.push("/"));
+    });
+  };
+
   render() {
     return (
-      <div>
-        <Card>
-          <CardForm
-            key={this.props.currentUser}
-            getData={this.getData}
-            currentUser={this.props.currentUser}
-            {...this.props}
-          />
-        </Card>
+      <div className="cardDiv">
         <CardDeck className="userCardFlex">
           <>
             {this.state.cards.map(card => (
