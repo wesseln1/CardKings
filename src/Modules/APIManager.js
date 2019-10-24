@@ -17,9 +17,19 @@ export default {
 //  } 
 
  post(resource, obj){
-   console.log("here i am")
+  //  console.log("here i am")
   return fetch(`${URL}/${resource}`, {
     method: "POST", 
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(obj) 
+  }).then(response => response.json())
+ },
+ patch(resource, id, obj){
+   console.log("here i am", obj)
+  return fetch(`${URL}/${resource}/${id}`, {
+    method: "PATCH", 
     headers: {
       "Content-Type": "application/json"
     },

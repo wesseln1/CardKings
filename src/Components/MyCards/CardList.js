@@ -62,7 +62,7 @@ export default class CardList extends Component {
       }).format(timestamp);
       let newUserCard = {
         userId: parseInt(this.props.currentUser),
-        cardId: parseInt(newCard.id),
+        cardId: newCard.id,
         condition: this.state.condition,
         favorited: false,
         timestamp: dateNow,
@@ -85,6 +85,7 @@ export default class CardList extends Component {
           <>
             {this.state.cards.map(card => (
               <ViewCards
+                addCard={this.addCard}
                 key={card.id}
                 currentUser={this.props.currentUser}
                 card={card}
