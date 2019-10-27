@@ -16,11 +16,12 @@ import CardDetials from "./CardDetails";
 import APIManager from "../../Modules/APIManager";
 
 export default class ViewCards extends Component {
+
+  
   addToFavorites() {
-    console.log("firing");
     APIManager.get("userCards", this.props.card.card.id).then(card => {
       // console.log("card", card);
-      let favorited = card.favorited
+      let favorited = card.favorited;
       let newCard = {
         favorited: favorited ? false : true
       };
@@ -31,7 +32,6 @@ export default class ViewCards extends Component {
   }
 
   render() {
-    console.log(this.props.card);
     return (
       <>
         <Card className="flexHomeCard">

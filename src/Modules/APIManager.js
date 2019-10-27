@@ -47,8 +47,12 @@ export default {
    console.log("in fetch",user)
    return fetch(`${URL}/users/${user}`).then(response => response.json())
  },
- getCards(cards, userId){
-   return fetch(`${URL}/${cards}?userId=${userId}`).then(response => response.json())
+ getCards(userId){
+   return fetch(`${URL}/userCards?userId=${userId}`).then(response => response.json())
+ },
+ getFavoritedCards(userId){
+   console.log("here", userId)
+   return fetch(`http://localhost:8088/userCards/?userId=${userId}&_expand=card&favorited=true`).then(response => response.json())
  },
  getExpandedItems(obj, expandId, id, expandedObj){
    console.log("obj",obj, "obj", expandId, "obj", id,"obj", expandedObj)
@@ -56,5 +60,6 @@ export default {
  }
 }
 
-// http://localhost:8088/users/?collectorLevelId=1&expand=collectorLevel
+// http://localhost:8088/userCards?userId=1&favorited=true
 // http://localhost:8088/friends/?initiatorId=${user}&_expand=user
+// http://localhost:8088/userCards/?cardId=3&_expand=card

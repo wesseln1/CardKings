@@ -10,17 +10,21 @@ import "mdbreact/dist/css/mdb.css";
 
 export default class App extends Component {
   state = {
-    user: null,
+    user: true,
     currentUser: ""
   };
 
   isAuthenticated = () => {
-    console.log(sessionStorage.getItem("credentials"))
     if(sessionStorage.getItem("credentials") !== null) {
+      console.log("heyyyooo its true")
+      this.setState({user: true})
       return true
     } else if (localStorage.getItem("credentials") !== null){
+      this.setState({user: true})
       return true
     } else {
+      console.log("fuuuu its false")
+      this.setState({user: false})
       return false
     }
   }
@@ -32,7 +36,6 @@ export default class App extends Component {
       user: true,
       currentUser: this.getUser()
     });
-    console.log(this.state.user);
   };
 
   getUser = () => {
@@ -57,15 +60,19 @@ export default class App extends Component {
   };
 
   // componentDidMount(){
-  //   this.setUser()
+    // if(this.isAuthenticated() === true){
+      // this.setState({
+        // user: true
+      // })
+    // } 
+    // this.isAuthenticated() ?  this.setState({user: true}) : this.setState({user: false})
   // }
 
   render() {
-    // if(sessionStorage.getItem("credentials") !== null){
-    //   this.clearUser()
       return (
         <>
-        {this.state.user ? (
+        {this.user ? (
+        console.log("true"),
           <>
             <NavBar
               handleLogout={this.handleLogout}
@@ -84,6 +91,7 @@ export default class App extends Component {
               />
           </>
         ) : (
+          console.log("false", this.state.user),
           <>
           <Redirect to="/splash" />
             <LoginViews

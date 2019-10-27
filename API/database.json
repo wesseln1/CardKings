@@ -238,7 +238,7 @@
       "cardId": "1",
       "condition": "9.6",
       "timestamp": "10/22/2019, 04:14:17 PM",
-      "favorited": false,
+      "favorited": true,
       "newCard": true,
       "wanted": true
     },
@@ -303,7 +303,7 @@
       "userId": "1",
       "cardId": "10",
       "condition": "6.9",
-      "favorited": false,
+      "favorited": true,
       "timestamp": "10/23/2019, 06:25:08 PM",
       "wanted": false,
       "id": 10
@@ -321,7 +321,7 @@
       "userId": "1",
       "cardId": "12",
       "condition": "7.8",
-      "favorited": false,
+      "favorited": true,
       "timestamp": "10/24/2019, 09:39:36 AM",
       "wanted": false,
       "id": 12
@@ -339,7 +339,7 @@
       "userId": "1",
       "cardId": 14,
       "condition": "7.3",
-      "favorited": false,
+      "favorited": true,
       "timestamp": "10/24/2019, 03:10:57 PM",
       "wanted": false,
       "id": 14

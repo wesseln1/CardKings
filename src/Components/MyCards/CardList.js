@@ -34,7 +34,6 @@ export default class CardList extends Component {
       userId: this.props.currentUser
     };
     APIManager.post("cards", newCard).then(newCard => {
-      // console.log(this.state.conditon);
       let timestamp = Date.now();
       let dateNow = new Intl.DateTimeFormat("en-US", {
         year: "numeric",
@@ -61,10 +60,6 @@ export default class CardList extends Component {
         .then(this.props.history.push("/"));
     });
   };
-
-  // componentDidMount(){
-  //   this.props.getData()
-  // }
 
   render() {
     return (

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom"
 import { Card, CardTitle, CardText, CardImg, CardDeck } from "reactstrap";
 import APIManager from "../../Modules/APIManager";
 import App from "../../App";
@@ -6,42 +7,49 @@ import "./Home.css";
 import "../MyCards/Card.css";
 import "../MyCards/Card.css";
 import CardList from "../MyCards/CardList";
-import CardForm from "../MyCards/NewCardForm"
+import CardForm from "../MyCards/NewCardForm";
+import FavoriteCardList from "../MyCards/myFavoritesList";
 
 export default class Home extends Component {
   state = {
     user: "",
     currentUser: "",
-    collectorLevel: {},
-    // cards: []
+    collectorLevel: {}
   };
 
   getUser() {
     // let currentUser = this.props.currentUser;
     APIManager.getUserById(this.props.currentUser).then(user => {
       this.getCollectorLevel(user);
-    })
+    });
   }
 
   getCollectorLevel(user) {
-    APIManager.get("collectorLevels", user.collectorLevel).then(level =>
-      this.setState({
-        user: user,
-        collectorLevel: level,
-        currentUser: user.id
-      })
-    ).then(() => this.props.getData())
+    APIManager.get("collectorLevels", user.collectorLevel)
+      .then(level =>
+        this.setState({
+          user: user,
+          collectorLevel: level,
+          currentUser: user.id
+        })
+      )
+      // .then(() => this.getFavorites(this.state.currentUser))
+      .then(() => this.props.getData());
   }
 
   componentDidMount() {
-    console.log(this.state.currentUser);
-    this.getUser()
+    if(this.props.isAuthenticated){
+      console.log("runnnn")
+      this.getUser()
+    } else {
+      console.log("fuuuuuuuu")
+      this.props.history.push("/splash")
+    }
   }
 
   render() {
     return (
       <>
-        {this.props.isAuthenticated ? (
           <>
             <div className="profileDiv">
               <Card className="profileCard">
@@ -66,6 +74,24 @@ export default class Home extends Component {
               </Card>
             </div>
             <div>
+              {/* <h3>Favorites</h3> */}
+              <CardDeck>
+                <Card>
+                  <>
+                    <FavoriteCardList
+                      key={this.state.currentUser}
+                      user={this.props.user}
+                      getData={this.props.getData}
+                      currentUser={this.state.currentUser}
+                      setUser={this.props.setUser}
+                      {...this.props}
+                    />
+                  </>
+                </Card>
+              </CardDeck>
+            </div>
+            <div>
+              <CardTitle>Collection</CardTitle>
               <CardDeck className="userCardHomeDeck">
                 <CardList
                   key={this.state.currentUser}
@@ -78,9 +104,6 @@ export default class Home extends Component {
               </CardDeck>
             </div>
           </>
-        ) : (
-          <App />
-        )}
       </>
     );
   }

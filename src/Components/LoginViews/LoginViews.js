@@ -3,9 +3,12 @@ import React, { Component } from "react";
 import Splash from "../Auth/Splash";
 import Login from "../Auth/Login";
 import Register from "../Auth/Register";
-import ApplicationViews from "../ApplicationViews/ApplicationViews";
 
 export default class LoginViews extends Component {
+  componentDidMount(){
+    this.props.handleLogout()
+  }
+
   render() {
     return (
       <>
