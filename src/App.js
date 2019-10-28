@@ -10,21 +10,16 @@ import "mdbreact/dist/css/mdb.css";
 
 export default class App extends Component {
   state = {
-    user: true,
+    user: null,
     currentUser: ""
   };
 
   isAuthenticated = () => {
     if(sessionStorage.getItem("credentials") !== null) {
-      console.log("heyyyooo its true")
-      this.setState({user: true})
       return true
     } else if (localStorage.getItem("credentials") !== null){
-      this.setState({user: true})
       return true
     } else {
-      console.log("fuuuu its false")
-      this.setState({user: false})
       return false
     }
   }
@@ -35,6 +30,15 @@ export default class App extends Component {
     this.setState({
       user: true,
       currentUser: this.getUser()
+    });
+  };
+
+  updateUser = () => {
+    console.log("running", this.state.currentUser)
+    sessionStorage.setItem("credentials", this.state.currentUser);
+    this.setState({
+      user: true,
+      currentUser: sessionStorage.getItem("credentials")
     });
   };
 
@@ -71,13 +75,14 @@ export default class App extends Component {
   render() {
       return (
         <>
-        {this.user ? (
+        {this.state.user ? (
         console.log("true"),
           <>
             <NavBar
               handleLogout={this.handleLogout}
               isAuthenticated={this.isAuthenticated}
               currentUser={this.state.currentUser}
+              updateUser={this.updateUser}
               user={this.state.user}
               />
             <ApplicationViews
@@ -85,6 +90,7 @@ export default class App extends Component {
               handleLogout={this.handleLogout}
               isAuthenticated={this.isAuthenticated}
               setUser={this.setUser}
+              updateUser={this.updateUser}
               getUser={this.getUser}
               handleLogin={this.handleLogin}
               user={this.state.user}

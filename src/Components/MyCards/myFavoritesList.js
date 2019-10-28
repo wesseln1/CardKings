@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ViewCards from "./Card";
-import { CardDeck, Card, Button } from "reactstrap";
+import { CardDeck, Card, Button, CardTitle } from "reactstrap";
 import APIManager from "../../Modules/APIManager";
 import CardForm from "./NewCardForm";
 
@@ -29,7 +29,7 @@ export default class FavoriteCardList extends Component {
       APIManager.patch("userCards", card.id, newCard).then(
         response => response
       );
-    });
+    }).then(this.props.updateUser)
   }
 
   componentDidMount(){
@@ -39,6 +39,7 @@ export default class FavoriteCardList extends Component {
   render() {
     return (
       <div className="cardDiv">
+        <CardTitle>Favorites</CardTitle>
         <CardDeck className="userCardFlex">
           <>
             {this.state.cards.map(card => (
@@ -46,6 +47,7 @@ export default class FavoriteCardList extends Component {
               <ViewCards
                 addToFavorites={this.addToFavorites}
                 key={card.id}
+                updateUser={this.props.updateUser}
                 currentUser={this.props.currentUser}
                 card={card}
                 {...this.props}

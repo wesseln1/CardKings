@@ -50,6 +50,9 @@ export default {
  getCards(userId){
    return fetch(`${URL}/userCards?userId=${userId}`).then(response => response.json())
  },
+ searchCards(){
+   return fetch(`${URL}/cards`).then(response => response.json())
+ },
  getFavoritedCards(userId){
    console.log("here", userId)
    return fetch(`http://localhost:8088/userCards/?userId=${userId}&_expand=card&favorited=true`).then(response => response.json())
@@ -60,6 +63,4 @@ export default {
  }
 }
 
-// http://localhost:8088/userCards?userId=1&favorited=true
-// http://localhost:8088/friends/?initiatorId=${user}&_expand=user
-// http://localhost:8088/userCards/?cardId=3&_expand=card
+// http://localhost:8088/cards?find=Nolan&playerName=Nolan

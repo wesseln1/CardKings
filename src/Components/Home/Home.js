@@ -8,7 +8,7 @@ import "../MyCards/Card.css";
 import "../MyCards/Card.css";
 import CardList from "../MyCards/CardList";
 import CardForm from "../MyCards/NewCardForm";
-import FavoriteCardList from "../MyCards/myFavoritesList";
+import FavoriteCardList from "../MyCards/MyFavoritesList";
 
 export default class Home extends Component {
   state = {
@@ -38,13 +38,7 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    if(this.props.isAuthenticated){
-      console.log("runnnn")
       this.getUser()
-    } else {
-      console.log("fuuuuuuuu")
-      this.props.history.push("/splash")
-    }
   }
 
   render() {
@@ -66,6 +60,8 @@ export default class Home extends Component {
               <Card className="addCardModalDiv">
                 <CardForm
                   key={this.state.currentUser}
+                  setUser={this.props.setUser}
+                  updateUser={this.props.updateUser}
                   // cards={this.state.cards}
                   getData={this.props.getData}
                   currentUser={this.state.currentUser}
@@ -82,6 +78,7 @@ export default class Home extends Component {
                       key={this.state.currentUser}
                       user={this.props.user}
                       getData={this.props.getData}
+                      updateUser={this.props.updateUser}
                       currentUser={this.state.currentUser}
                       setUser={this.props.setUser}
                       {...this.props}
@@ -98,6 +95,7 @@ export default class Home extends Component {
                   cards={this.props.cards}
                   user={this.props.user}
                   getData={this.props.getData}
+                  updateUser={this.props.updateUser}
                   currentUser={this.state.currentUser}
                   setUser={this.props.setUser}
                 />

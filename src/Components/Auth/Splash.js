@@ -7,6 +7,9 @@ import { Button, Card, CardTitle, CardText, CardImg } from "reactstrap";
 // import { Route, Redirect } from "react-router-dom";
 
 export default class Splash extends Component {
+  componentDidMount(){
+    this.props.handleLogout()
+  }
   render() {
     return (
       <>

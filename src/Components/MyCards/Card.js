@@ -28,7 +28,7 @@ export default class ViewCards extends Component {
       APIManager.patch("userCards", card.id, newCard).then(
         response => response
       );
-    });
+    }).then(this.props.updateUser)
   }
 
   render() {

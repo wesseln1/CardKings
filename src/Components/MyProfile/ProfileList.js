@@ -12,31 +12,31 @@ export default class ProfileList extends Component {
     console.log("at getUSer", this.props.currentUser);
     APIManager.getUserById(this.props.currentUser)
       .then(user => {
-          console.log(user)
-          this.getCollectorLevel(user)
-        })
+        this.setState({
+          currentUser: user.id,
+          user: user
+        });
+      })
+      .then(() => this.getCollectorLevel());
   }
 
-  getCollectorLevel(user){
-      console.log("at get", user)
-    APIManager.get("collectorLevels", user.collectorLevelId)
-    .then(level=>
-    // console.log("hayy", level),
-    this.setState({
-        user: user,
+  getCollectorLevel() {
+    console.log("at get", this.state.user);
+    APIManager.get("collectorLevels", this.state.user.collectorLevel).then(level =>
+      // console.log("hayy", level),
+      this.setState({
         collectorLevel: level.level,
-        currentUser: this.props.currentUser
       })
-      )
+    );
   }
 
   componentDidMount() {
-    console.log("mounting",this.props.currentUser);
+    console.log("mounting", this.props.currentUser);
     this.getUser();
   }
 
   render() {
-      console.log("running")
+    console.log("running");
     return (
       <>
         <div>

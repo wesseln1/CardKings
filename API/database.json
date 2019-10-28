@@ -190,45 +190,6 @@
       "backImage": "/images/strawberryBack.jpg",
       "userId": "1",
       "id": 14
-    },
-    {
-      "playerName": "Darryl Strawberry",
-      "playerPosition": "RF",
-      "cardBrand": "Topps",
-      "cardNumber": "19 of 22",
-      "cardYear": "1988",
-      "cardTeam": "New York Mets",
-      "sport": "Baseball",
-      "frontImage": "/images/strawberryFront.jpg",
-      "backImage": "/images/strawberryBack.jpg",
-      "userId": "1",
-      "id": 15
-    },
-    {
-      "playerName": "Manny Ramirez",
-      "playerPosition": "OF",
-      "cardBrand": "Upper Deck",
-      "cardNumber": "BOS3",
-      "cardYear": "2008",
-      "cardTeam": "Boston Red Sox",
-      "sport": "Baseball",
-      "frontImage": "/images/MVIMG_20191022_141927.jpg",
-      "backImage": "/images/mannyRamirez.jpg",
-      "userId": "1",
-      "id": 16
-    },
-    {
-      "playerName": "Manny Ramirez",
-      "playerPosition": "OF",
-      "cardBrand": "",
-      "cardNumber": "",
-      "cardYear": "vs",
-      "cardTeam": "asf",
-      "sport": "",
-      "frontImage": "/images/chipperBack.jpg",
-      "backImage": "/",
-      "userId": "1",
-      "id": 17
     }
   ],
   "userCards": [
@@ -238,7 +199,7 @@
       "cardId": "1",
       "condition": "9.6",
       "timestamp": "10/22/2019, 04:14:17 PM",
-      "favorited": true,
+      "favorited": false,
       "newCard": true,
       "wanted": true
     },
@@ -258,7 +219,7 @@
       "cardId": "2",
       "condition": "7",
       "timestamp": "10/22/2019, 04:14:17 PM",
-      "favorited": true,
+      "favorited": false,
       "newCard": true,
       "wanted": true
     },
@@ -276,7 +237,7 @@
       "userId": "1",
       "cardId": "5",
       "condition": "3",
-      "favorited": false,
+      "favorited": true,
       "timestamp": "10/22/2019, 04:56:40 PM",
       "wanted": false,
       "id": 5
@@ -285,7 +246,7 @@
       "userId": "1",
       "cardId": "7",
       "condition": "7.6",
-      "favorited": false,
+      "favorited": true,
       "timestamp": "10/23/2019, 03:44:45 PM",
       "wanted": false,
       "id": 7
@@ -294,7 +255,7 @@
       "userId": "1",
       "cardId": "9",
       "condition": "5.5",
-      "favorited": false,
+      "favorited": true,
       "timestamp": "10/23/2019, 06:20:07 PM",
       "wanted": false,
       "id": 9
@@ -309,7 +270,7 @@
       "id": 10
     },
     {
-      "userId": "1",
+      "userId": "2",
       "cardId": "11",
       "condition": "7.1",
       "favorited": false,
@@ -318,7 +279,7 @@
       "id": 11
     },
     {
-      "userId": "1",
+      "userId": "2",
       "cardId": "12",
       "condition": "7.8",
       "favorited": true,
@@ -327,7 +288,7 @@
       "id": 12
     },
     {
-      "userId": "1",
+      "userId": "2",
       "cardId": "13",
       "condition": "5.8",
       "favorited": true,
@@ -337,39 +298,12 @@
     },
     {
       "userId": "1",
-      "cardId": 14,
-      "condition": "7.3",
+      "cardId": "14",
+      "condition": "9",
       "favorited": true,
-      "timestamp": "10/24/2019, 03:10:57 PM",
+      "timestamp": "10/27/2019, 09:43:05 AM",
       "wanted": false,
       "id": 14
-    },
-    {
-      "userId": "1",
-      "cardId": 15,
-      "condition": "7.1",
-      "favorited": false,
-      "timestamp": "10/24/2019, 03:14:32 PM",
-      "wanted": false,
-      "id": 15
-    },
-    {
-      "userId": "1",
-      "cardId": 16,
-      "condition": "4",
-      "favorited": false,
-      "timestamp": "10/24/2019, 03:17:29 PM",
-      "wanted": false,
-      "id": 16
-    },
-    {
-      "userId": "1",
-      "cardId": 17,
-      "condition": "",
-      "favorited": false,
-      "timestamp": "10/24/2019, 03:21:22 PM",
-      "wanted": false,
-      "id": 17
     }
   ],
   "collectorLevels": [

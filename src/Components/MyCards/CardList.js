@@ -57,7 +57,7 @@ export default class CardList extends Component {
             modal: false
           })
         )
-        .then(this.props.history.push("/"));
+        .then(this.props.updateUser);
     });
   };
 
@@ -70,6 +70,8 @@ export default class CardList extends Component {
               <ViewCards
                 addCard={this.addCard}
                 key={card.id}
+                updateUser={this.props.updateUser}
+                setUser={this.props.setUser}
                 currentUser={this.props.currentUser}
                 card={card}
                 {...this.props}

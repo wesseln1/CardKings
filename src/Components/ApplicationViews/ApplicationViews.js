@@ -43,6 +43,7 @@ export default class ApplicationViews extends Component {
                   cards={this.state.cards}
                   currentUser={this.props.currentUser}
                   setUser={this.props.setUser}
+                  updateUser={this.props.updateUser}
                   isAuthenticated={this.props.isAuthenticated}
                   {...props}
                 />
@@ -94,6 +95,24 @@ export default class ApplicationViews extends Component {
             } else {
               return <App />;
             }
+          }}
+        />
+        <Route
+          exact
+          path="/profile/:userId(\d+)"
+          render={props => {
+              console.log("at profile", this.props.user);
+              return (
+                <ProfileList
+                  key={this.props.currentUser}
+                  getData={this.getData}
+                  user={this.props.user}
+                  cards={this.state.cards}
+                  currentUser={this.props.currentUser}
+                  setUser={this.props.setUser}
+                  {...props}
+                />
+              );
           }}
         />
       </>

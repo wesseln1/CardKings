@@ -88,7 +88,7 @@ export default class CardForm extends Component {
       }).format(timestamp);
       let newUserCard = {
         userId: this.props.currentUser,
-        cardId: newCard.id,
+        cardId: JSON.stringify(newCard.id),
         condition: this.state.condition,
         favorited: false,
         timestamp: dateNow,
@@ -100,8 +100,7 @@ export default class CardForm extends Component {
             modal: false
           })
         )
-        .then(() => this.props.history.push("/"));
-    });
+      }).then(this.props.updateUser);
   };
 
 
