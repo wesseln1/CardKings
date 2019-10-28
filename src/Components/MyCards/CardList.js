@@ -4,32 +4,16 @@ import ViewCards from "./Card";
 import { CardDeck, Card, Button } from "reactstrap";
 import APIManager from "../../Modules/APIManager";
 import CardForm from "./NewCardForm";
-import "./Card.css";
+
 
 export default class CardList extends Component {
-  state = {
-    cards: []
-  };
+  // state = {
+  //   cards: []
+  // };
 
-  getData() {
-    APIManager.getExpandedItems(
-      "userCards",
-      "user",
-      this.props.currentUser,
-      "card"
-    )
-      .then(cards => {
-        console.log("hereeeee", cards);
-        this.setState({
-          cards: cards
-        });
-      })
-      .then(() => console.log("cards", this.state.cards));
-  }
-
-  componentDidMount() {
-    this.getData();
-  }
+  // componentDidMount() {
+  //   this.props.getData();
+  // }
 
   addCard = () => {
     let frontImgValue = this.state.frontPic.replace(
@@ -45,12 +29,11 @@ export default class CardList extends Component {
       cardYear: this.state.cardYear,
       cardTeam: this.state.cardTeam,
       sport: this.state.sport,
-      frontImage: frontImgValue,
-      backImage: backImgValue,
+      frontImage: `/${frontImgValue}`,
+      backImage: `/${backImgValue}`,
       userId: this.props.currentUser
     };
     APIManager.post("cards", newCard).then(newCard => {
-      // console.log(this.state.conditon);
       let timestamp = Date.now();
       let dateNow = new Intl.DateTimeFormat("en-US", {
         year: "numeric",
@@ -62,7 +45,7 @@ export default class CardList extends Component {
       }).format(timestamp);
       let newUserCard = {
         userId: parseInt(this.props.currentUser),
-        cardId: parseInt(newCard.id),
+        cardId: newCard.id,
         condition: this.state.condition,
         favorited: false,
         timestamp: dateNow,
@@ -74,7 +57,7 @@ export default class CardList extends Component {
             modal: false
           })
         )
-        .then(this.props.history.push("/"));
+        .then(this.props.updateUser);
     });
   };
 
@@ -83,9 +66,12 @@ export default class CardList extends Component {
       <div className="cardDiv">
         <CardDeck className="userCardFlex">
           <>
-            {this.state.cards.map(card => (
+            {this.props.cards.map(card => (
               <ViewCards
+                addCard={this.addCard}
                 key={card.id}
+                updateUser={this.props.updateUser}
+                setUser={this.props.setUser}
                 currentUser={this.props.currentUser}
                 card={card}
                 {...this.props}

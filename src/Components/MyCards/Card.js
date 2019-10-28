@@ -13,10 +13,25 @@ import {
 } from "reactstrap";
 import "./Card.css";
 import CardDetials from "./CardDetails";
+import APIManager from "../../Modules/APIManager";
 
 export default class ViewCards extends Component {
+
+  
+  addToFavorites() {
+    APIManager.get("userCards", this.props.card.card.id).then(card => {
+      // console.log("card", card);
+      let favorited = card.favorited;
+      let newCard = {
+        favorited: favorited ? false : true
+      };
+      APIManager.patch("userCards", card.id, newCard).then(
+        response => response
+      );
+    }).then(this.props.updateUser)
+  }
+
   render() {
-    console.log(this.props.card);
     return (
       <>
         <Card className="flexHomeCard">
@@ -34,7 +49,12 @@ export default class ViewCards extends Component {
               currentUser={this.props.currentUser}
               {...this.props}
             />
-            <Button className="myCardButtons">Favorite</Button>
+            <Button
+              className="myCardButtons"
+              onClick={() => this.addToFavorites()}
+            >
+              Favorite
+            </Button>
           </CardFooter>
         </Card>
       </>

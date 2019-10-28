@@ -16,8 +16,55 @@
 .flexHomeCard{
     display: flex;
     align-self: baseline;
+    background: #000000 !important;
+    border: outset 10px #4285F4 !important;
+    /* padding: 10px; */
 }
 
+
+
+/* Scrollbar customization */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: purple;
+}
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: darkviolet;
+}
+
+/* width */
+::-webkit-scrollbar .userCardFlex {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track .userCardFlex{
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb .userCardFlex{
+    background: purple;
+}
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover .userCardFlex{
+    background: darkviolet;
+}
+
+/* card customization */
 .cardDiv {
     height: 50%;
     display: contents;
@@ -26,8 +73,17 @@
     flex-wrap: wrap !important; 
 }  */
 
+.card-img-top{
+    height: 250px;
+}
+
 .userCardFlex {
+    overflow-x: hidden !important;
     overflow-y: scroll !important;
+    overflow-x: scroll !important;
+    overflow-y: hidden !important;
+    margin: 80px !important;
+    border: inset 10px;
 }
 
 .cardButtons {

@@ -17,9 +17,19 @@ export default {
 //  } 
 
  post(resource, obj){
-   console.log("here i am")
+  //  console.log("here i am")
   return fetch(`${URL}/${resource}`, {
     method: "POST", 
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(obj) 
+  }).then(response => response.json())
+ },
+ patch(resource, id, obj){
+   console.log("here i am", obj)
+  return fetch(`${URL}/${resource}/${id}`, {
+    method: "PATCH", 
     headers: {
       "Content-Type": "application/json"
     },
@@ -37,13 +47,20 @@ export default {
    console.log("in fetch",user)
    return fetch(`${URL}/users/${user}`).then(response => response.json())
  },
- getCards(cards, userId){
-   return fetch(`${URL}/${cards}?userId=${userId}`).then(response => response.json())
+ getCards(userId){
+   return fetch(`${URL}/userCards?userId=${userId}`).then(response => response.json())
+ },
+ searchCards(){
+   return fetch(`${URL}/cards`).then(response => response.json())
+ },
+ getFavoritedCards(userId){
+   console.log("here", userId)
+   return fetch(`http://localhost:8088/userCards/?userId=${userId}&_expand=card&favorited=true`).then(response => response.json())
  },
  getExpandedItems(obj, expandId, id, expandedObj){
+   console.log("obj",obj, "obj", expandId, "obj", id,"obj", expandedObj)
    return fetch(`${URL}/${obj}/?${expandId}Id=${id}&_expand=${expandedObj}`).then(response => response.json())
  }
 }
 
-// http://localhost:8088/users/?collectorLevelId=1&expand=collectorLevel
-// http://localhost:8088/friends/?initiatorId=${user}&_expand=user
+// http://localhost:8088/cards?find=Nolan&playerName=Nolan

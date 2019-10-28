@@ -29,6 +29,22 @@ export default class CardForm extends Component {
     modal: false
   };
 
+  // getData() {
+  //   APIManager.getExpandedItems(
+  //     "userCards",
+  //     "user",
+  //     this.props.currentUser,
+  //     "card"
+  //   )
+  //     .then(cards => {
+  //       console.log("hereeeee", cards);
+  //       this.setState({
+  //         cards: cards
+  //       });
+  //     })
+  //     .then(() => console.log("cards", this.state.cards));
+  // }
+
   handleFieldChange = evt => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
@@ -40,6 +56,53 @@ export default class CardForm extends Component {
       modal: !prevState.modal
     }));
   };
+
+  addCard = () => {
+    let frontImgValue = this.state.frontPic.replace(
+      "C:\\fakepath\\",
+      "images/"
+    );
+    let backImgValue = this.state.backPic.replace("C:\\fakepath\\", "images/");
+    let newCard = {
+      playerName: this.state.playerName,
+      playerPosition: this.state.playerPosition,
+      cardBrand: this.state.cardBrand,
+      cardNumber: this.state.cardNumber,
+      cardYear: this.state.cardYear,
+      cardTeam: this.state.cardTeam,
+      sport: this.state.sport,
+      frontImage: `/${frontImgValue}`,
+      backImage: `/${backImgValue}`,
+      userId: this.props.currentUser
+    };
+    APIManager.post("cards", newCard).then(newCard => {
+      // console.log(this.state.conditon);
+      let timestamp = Date.now();
+      let dateNow = new Intl.DateTimeFormat("en-US", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      }).format(timestamp);
+      let newUserCard = {
+        userId: this.props.currentUser,
+        cardId: JSON.stringify(newCard.id),
+        condition: this.state.condition,
+        favorited: false,
+        timestamp: dateNow,
+        wanted: false
+      };
+      APIManager.post("userCards", newUserCard)
+        .then(() =>
+          this.setState({
+            modal: false
+          })
+        )
+      }).then(this.props.updateUser);
+  };
+
 
   render() {
     return (
@@ -128,7 +191,7 @@ export default class CardForm extends Component {
             </Form>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" type="submit" onClick={() => this.props.addCard()}>
+            <Button color="primary" type="submit" onClick={() => this.addCard()}>
               Do Something
             </Button>
             <Button color="secondary" onClick={this.toggle}>

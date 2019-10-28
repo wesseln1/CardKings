@@ -10,6 +10,9 @@ import {
 } from "reactstrap";
 
 export default class MyProfileCard extends Component {
+  componentDidMount(){
+    console.log(this.props.user)
+  }
   render() {
     return (
       <div>

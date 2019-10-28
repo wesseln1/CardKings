@@ -15,7 +15,6 @@ export default class App extends Component {
   };
 
   isAuthenticated = () => {
-    console.log(sessionStorage.getItem("credentials"))
     if(sessionStorage.getItem("credentials") !== null) {
       return true
     } else if (localStorage.getItem("credentials") !== null){
@@ -32,7 +31,15 @@ export default class App extends Component {
       user: true,
       currentUser: this.getUser()
     });
-    console.log(this.state.user);
+  };
+
+  updateUser = () => {
+    console.log("running", this.state.currentUser)
+    sessionStorage.setItem("credentials", this.state.currentUser);
+    this.setState({
+      user: true,
+      currentUser: sessionStorage.getItem("credentials")
+    });
   };
 
   getUser = () => {
@@ -57,20 +64,25 @@ export default class App extends Component {
   };
 
   // componentDidMount(){
-  //   this.setUser()
+    // if(this.isAuthenticated() === true){
+      // this.setState({
+        // user: true
+      // })
+    // } 
+    // this.isAuthenticated() ?  this.setState({user: true}) : this.setState({user: false})
   // }
 
   render() {
-    // if(sessionStorage.getItem("credentials") !== null){
-    //   this.clearUser()
       return (
         <>
         {this.state.user ? (
+        console.log("true"),
           <>
             <NavBar
               handleLogout={this.handleLogout}
               isAuthenticated={this.isAuthenticated}
               currentUser={this.state.currentUser}
+              updateUser={this.updateUser}
               user={this.state.user}
               />
             <ApplicationViews
@@ -78,12 +90,14 @@ export default class App extends Component {
               handleLogout={this.handleLogout}
               isAuthenticated={this.isAuthenticated}
               setUser={this.setUser}
+              updateUser={this.updateUser}
               getUser={this.getUser}
               handleLogin={this.handleLogin}
               user={this.state.user}
               />
           </>
         ) : (
+          console.log("false", this.state.user),
           <>
           <Redirect to="/splash" />
             <LoginViews

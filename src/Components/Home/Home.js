@@ -1,11 +1,14 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom"
 import { Card, CardTitle, CardText, CardImg, CardDeck } from "reactstrap";
 import APIManager from "../../Modules/APIManager";
 import App from "../../App";
 import "./Home.css";
 import "../MyCards/Card.css";
+import "../MyCards/Card.css";
 import CardList from "../MyCards/CardList";
-import CardForm from "../MyCards/NewCardForm"
+import CardForm from "../MyCards/NewCardForm";
+import FavoriteCardList from "../MyCards/MyFavoritesList";
 
 export default class Home extends Component {
   state = {
@@ -22,26 +25,25 @@ export default class Home extends Component {
   }
 
   getCollectorLevel(user) {
-    console.log("at get", user);
-    APIManager.get("collectorLevels", user.collectorLevel).then(level =>
-      //   console.log("hayy", level),
-      this.setState({
-        user: user,
-        collectorLevel: level,
-        currentUser: this.props.currentUser
-      })
-    );
+    APIManager.get("collectorLevels", user.collectorLevel)
+      .then(level =>
+        this.setState({
+          user: user,
+          collectorLevel: level,
+          currentUser: user.id
+        })
+      )
+      // .then(() => this.getFavorites(this.state.currentUser))
+      .then(() => this.props.getData());
   }
 
   componentDidMount() {
-    console.log(this.props.currentUser);
-    this.getUser();
+      this.getUser()
   }
 
   render() {
     return (
       <>
-        {this.props.isAuthenticated ? (
           <>
             <div className="profileDiv">
               <Card className="profileCard">
@@ -57,28 +59,49 @@ export default class Home extends Component {
               </Card>
               <Card className="addCardModalDiv">
                 <CardForm
-                  key={this.props.currentUser}
-                  addCard={this.addCard}
-                  getData={this.getData}
-                  currentUser={this.props.currentUser}
+                  key={this.state.currentUser}
+                  setUser={this.props.setUser}
+                  updateUser={this.props.updateUser}
+                  // cards={this.state.cards}
+                  getData={this.props.getData}
+                  currentUser={this.state.currentUser}
                   {...this.props}
                 />
               </Card>
             </div>
             <div>
+              {/* <h3>Favorites</h3> */}
+              <CardDeck>
+                <Card>
+                  <>
+                    <FavoriteCardList
+                      key={this.state.currentUser}
+                      user={this.props.user}
+                      getData={this.props.getData}
+                      updateUser={this.props.updateUser}
+                      currentUser={this.state.currentUser}
+                      setUser={this.props.setUser}
+                      {...this.props}
+                    />
+                  </>
+                </Card>
+              </CardDeck>
+            </div>
+            <div>
+              <CardTitle>Collection</CardTitle>
               <CardDeck className="userCardHomeDeck">
                 <CardList
-                  key={this.props.currentUser}
+                  key={this.state.currentUser}
+                  cards={this.props.cards}
                   user={this.props.user}
-                  currentUser={this.props.currentUser}
+                  getData={this.props.getData}
+                  updateUser={this.props.updateUser}
+                  currentUser={this.state.currentUser}
                   setUser={this.props.setUser}
                 />
               </CardDeck>
             </div>
           </>
-        ) : (
-          <App />
-        )}
       </>
     );
   }
