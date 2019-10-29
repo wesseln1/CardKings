@@ -40,10 +40,9 @@ export default class UserCardList extends Component {
         this.setState({
           modal: false
         });
+        this.props.getData();
+        this.props.getFavorites();
       })
-      .then(() => {
-        this.props.updateUser();
-      });
   };
 
   toggle = () => {
@@ -52,14 +51,13 @@ export default class UserCardList extends Component {
     }));
   };
 
-  getData() {
+  getData = () => {
     APIManager.searchCards()
       .then(cards => {
         this.setState({
           cards: cards
         });
       })
-      .then(() => console.log("here", this.state.cards));
   }
 
   componentDidMount() {

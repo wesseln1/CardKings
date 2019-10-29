@@ -11,6 +11,7 @@
 
 .cardDetailButton{
     margin-top: 50px;
+
 }
 
 .flexHomeCard{
@@ -90,6 +91,7 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
+    max-width: 30% !important;
 }
 
 .card {
@@ -97,10 +99,15 @@
     /* max-height: auto !important; */
 }
 
-.cardButton {
-    justify-content: baseline !important;
+.cardButtons {
+  display: flex;
+}
+
+.buttonGroup {
+    display: flex;
 }
 
 .myCardButtons {
     font-size: 10px !important;
+    width: 80px;
 }

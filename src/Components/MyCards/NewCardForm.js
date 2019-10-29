@@ -19,7 +19,6 @@ export default class CardForm extends Component {
     playerName: "",
     playerPosition: "",
     cardBrand: "",
-    cardNumber: "",
     cardYear: "",
     cardTeam: "",
     condition: "",
@@ -67,7 +66,6 @@ export default class CardForm extends Component {
       playerName: this.state.playerName,
       playerPosition: this.state.playerPosition,
       cardBrand: this.state.cardBrand,
-      cardNumber: this.state.cardNumber,
       cardYear: this.state.cardYear,
       cardTeam: this.state.cardTeam,
       sport: this.state.sport,
@@ -147,13 +145,6 @@ export default class CardForm extends Component {
                   type="text"
                   id="cardYear"
                   placeholder="Year"
-                ></Input>
-                <Label>Card Number:</Label>
-                <Input
-                  onChange={this.handleFieldChange}
-                  type="text"
-                  id="cardNumber"
-                  placeholder="Card Number"
                 ></Input>
                 <Label>Card Brand:</Label>
                 <Input

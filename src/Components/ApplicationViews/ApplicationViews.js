@@ -11,31 +11,8 @@ import APIManager from "../../Modules/APIManager";
 // import CardForm from "../MyCards/NewCardForm"
 
 export default class ApplicationViews extends Component {
-  state = {
-    cards: [],
-    favCards: []
-  };
-
-  getFavorites = () => {
-    console.log(sessionStorage.getItem("credentials"))
-    APIManager.getFavoritedCards(sessionStorage.getItem("credentials")).then(cards =>{
-      this.setState({
-        favCards: cards
-      })
-    });
-  }
   //   isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
-  getData = () => {
-    let userId = sessionStorage.getItem("credentials");
-    APIManager.getExpandedItems("userCards", "user", userId, "card").then(
-      cards => {
-        // console.log("hereeeee", cards);
-        this.setState({
-          cards: cards
-        });
-      }
-    );
-  };
+
 
   render() {
     return (
@@ -48,12 +25,13 @@ export default class ApplicationViews extends Component {
             if (this.props.user) {
               return (
                 <Home
-                  getFavorites={this.getFavorites}
-                  favCards={this.state.favCards}
+                  getFavorites={this.props.getFavorites}
+                  updateCardLists={this.props.updateCardLists}
+                  favCards={this.props.favCards}
                   key={this.props.currentUser}
                   reRender={this.props.reRender}
-                  getData={this.getData}
-                  cards={this.state.cards}
+                  getData={this.props.getData}
+                  cards={this.props.cards}
                   currentUser={this.props.currentUser}
                   setUser={this.props.setUser}
                   updateUser={this.props.updateUser}
@@ -96,12 +74,13 @@ export default class ApplicationViews extends Component {
             if (this.props.user) {
               return (
                 <CardList
+                updateCardLists={this.props.updateCardLists}
                   getFavorites={this.props.getFavorites}
                   favCards={this.props.favCards}
                   key={this.props.currentUser}
-                  getData={this.getData}
+                  getData={this.props.getData}
                   user={this.props.user}
-                  cards={this.state.cards}
+                  cards={this.props.cards}
                   currentUser={this.props.currentUser}
                   setUser={this.props.setUser}
                   {...props}
@@ -122,9 +101,9 @@ export default class ApplicationViews extends Component {
                 getFavorites={this.props.getFavorites}
                 favCards={this.props.favCards}
                 key={this.props.currentUser}
-                getData={this.getData}
+                getData={this.props.getData}
                 user={this.props.user}
-                cards={this.state.cards}
+                cards={this.props.cards}
                 currentUser={this.props.currentUser}
                 setUser={this.props.setUser}
                 {...props}

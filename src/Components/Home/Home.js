@@ -40,9 +40,11 @@ export default class Home extends Component {
 
   componentDidMount() {
       this.getUser()
+      // this.props.getFavorites()
   }
 
   render() {
+    console.log("here", this.props.favCards)
     return (
       <>
           <>
@@ -62,6 +64,7 @@ export default class Home extends Component {
                 <CardForm
                   key={this.state.currentUser}
                   reRender={this.props.reRender}
+                  updateCardLists={this.props.updateCardLists}
                   setUser={this.props.setUser}
                   updateUser={this.props.updateUser}
                   getFavorites={this.props.getFavorites}
@@ -82,6 +85,8 @@ export default class Home extends Component {
                       favCards={this.props.favCards}
                       reRender={this.props.reRender}
                       user={this.props.user}
+                      cards={this.props.cards}
+                      updateCardLists={this.props.updateCardLists}
                       getFavorites={this.props.getFavorites}
                       getData={this.props.getData}
                       updateUser={this.props.updateUser}
@@ -97,6 +102,7 @@ export default class Home extends Component {
               <CardTitle>Collection</CardTitle>
               <CardDeck className="userCardHomeDeck">
                 <CardList
+                updateCardLists={this.props.updateCardLists}
                   key={this.state.currentUser}
                   reRender={this.props.reRender}
                   cards={this.props.cards}

@@ -40,7 +40,13 @@ export default class NavBar extends Component {
             onChange={this.handleFieldChange}
             type="text"
           ></Input>
-          <UserCardList updateUser={this.props.updateUser} search={this.state.search} {...this.props}/>
+          <UserCardList
+            getFavorites={this.props.getFavorites}
+            favCards={this.props.favCards}
+            getData={this.props.getData}
+            search={this.state.search}
+            {...this.props}
+          />
           <Box mx="auto" className="NavHover" />
           <Link to="/">Card Kings</Link>
           <Box mx="auto" className="NavHover" />

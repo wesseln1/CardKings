@@ -1,11 +1,11 @@
 import React, { Component } from "react";
+import EditCard from "./CardEdit";
 // import { Card, CardTitle, CardText } from "reactstrap";
 import {
   Card,
   Button,
   CardImg,
-  CardTitle,
-  CardText,
+  ButtonGroup,
   CardFooter,
   // CardGroup,
   CardSubtitle,
@@ -17,9 +17,6 @@ import CardDetials from "./CardDetails";
 import APIManager from "../../Modules/APIManager";
 
 export default class ViewCards extends Component {
-  editCard = () => {
-    APIManager.get("userCards", this.props.card.id).then(card => {});
-  };
 
   addToFavorites() {
     console.log(this.props.card.id);
@@ -45,26 +42,40 @@ export default class ViewCards extends Component {
             src={this.props.card.card.frontImage}
             alt="Card image cap"
           />
-          <CardFooter className="cardButtons">
-            <CardDetials
-              key={this.props.currentUser}
-              addCard={this.props.addCard}
-              getData={this.props.getData}
-              currentUser={this.props.currentUser}
-              {...this.props}
-            />
-            <Button
-              className="myCardButtons"
-              onClick={() => this.props.deleteCard(this.props.card.id)}
-            >
-              Delete
-            </Button>
-            <Button
-              className="myCardButtons"
-              onClick={() => this.addToFavorites()}
-            >
-              Favorite
-            </Button>
+          <CardFooter className="cardButton">
+            <div className="buttonGroup">
+              <Button
+                className="myCardButtons"
+                onClick={() => this.addToFavorites()}
+              >
+                Favorite
+              </Button>
+              <Button
+                className="myCardButtons"
+                onClick={() => this.props.deleteCard(this.props.card.id)}
+              >
+                Delete
+              </Button>
+            </div>
+            <div className="buttonGroup">
+              <CardDetials
+                key={`${this.props.currentUser}-user`}
+                addCard={this.props.addCard}
+                deleteCard={this.props.deleteCard}
+                getData={this.props.getData}
+                currentUser={this.props.currentUser}
+                {...this.props}
+              />
+              <EditCard
+                card={this.props.card}
+                key={this.props.card.id}
+                addCard={this.props.addCard}
+                deleteCard={this.props.deleteCard}
+                getData={this.props.getData}
+                currentUser={this.props.currentUser}
+                {...this.props}
+              />
+            </div>
           </CardFooter>
         </Card>
       </>
