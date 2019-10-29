@@ -10,30 +10,23 @@ export default class FavoriteCardList extends Component {
     cards: []
   };
 
-  getFavorites(){
-      APIManager.getFavoritedCards(this.props.currentUser)
-      .then((cards) => 
-      this.setState({
-          cards: cards
-      })
-      )
-  }
-
   addToFavorites() {
-    APIManager.get("userCards", this.props.card.card.id).then(card => {
-      // console.log("card", card);
-      let favorited = card.favorited;
-      let newCard = {
-        favorited: favorited ? false : true
-      };
-      APIManager.patch("userCards", card.id, newCard).then(
-        response => response
-      );
-    }).then(this.props.updateUser)
+    APIManager.getFavoritedCards("userCards", this.props.card.card.id).then(
+      card => {
+        console.log("card", card);
+        let favorited = card.favorited;
+        let newCard = {
+          favorited: favorited ? false : true
+        };
+        APIManager.patch("userCards", card.id, newCard).then(() => {
+          this.props.getFavorites();
+        });
+      }
+    );
   }
 
-  componentDidMount(){
-      this.getFavorites()
+  componentDidMount() {
+    this.props.getFavorites();
   }
 
   render() {
@@ -41,9 +34,8 @@ export default class FavoriteCardList extends Component {
       <div className="cardDiv">
         <CardTitle>Favorites</CardTitle>
         <CardDeck className="userCardFlex">
-          <>
-            {this.state.cards.map(card => (
-                // console.log("card", card),
+          <div>
+            {this.props.favCards.map(card => (
               <ViewCards
                 addToFavorites={this.addToFavorites}
                 key={card.id}
@@ -53,7 +45,7 @@ export default class FavoriteCardList extends Component {
                 {...this.props}
               />
             ))}
-          </>
+          </div>
         </CardDeck>
       </div>
     );

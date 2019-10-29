@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 // import './App.css';
 import NavBar from "./Components/NavBar/NavBar";
+import APIManager from "./Modules/APIManager"
 import LoginViews from "./Components/LoginViews/LoginViews";
 import ApplicationViews from "./Components/ApplicationViews/ApplicationViews";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -11,7 +12,9 @@ import "mdbreact/dist/css/mdb.css";
 export default class App extends Component {
   state = {
     user: null,
-    currentUser: ""
+    currentUser: "",
+    render: 1,
+    // favCards: []
   };
 
   isAuthenticated = () => {
@@ -24,6 +27,19 @@ export default class App extends Component {
     }
   }
     
+
+
+  reRender = () => {
+    if(this.state.render === 2){
+      this.setState({
+        render: 1
+      }) 
+    } else {
+      this.setState({
+        render: 2
+      })
+    }
+  }
 
   setUser = authUser => {
     sessionStorage.setItem("credentials", JSON.stringify(authUser));
@@ -84,8 +100,10 @@ export default class App extends Component {
               currentUser={this.state.currentUser}
               updateUser={this.updateUser}
               user={this.state.user}
+              reRender={this.reRender}
               />
             <ApplicationViews
+              getFavorites={this.getFavorites}
               currentUser={this.state.currentUser}
               handleLogout={this.handleLogout}
               isAuthenticated={this.isAuthenticated}
@@ -94,6 +112,7 @@ export default class App extends Component {
               getUser={this.getUser}
               handleLogin={this.handleLogin}
               user={this.state.user}
+              reRender={this.reRender}
               />
           </>
         ) : (

@@ -95,12 +95,13 @@ export default class CardForm extends Component {
         wanted: false
       };
       APIManager.post("userCards", newUserCard)
-        .then(() =>
+        .then(() => {
           this.setState({
             modal: false
           })
-        )
-      }).then(this.props.updateUser);
+          this.props.getData()
+        })
+      })
   };
 
 

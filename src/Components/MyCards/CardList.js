@@ -5,15 +5,20 @@ import { CardDeck, Card, Button } from "reactstrap";
 import APIManager from "../../Modules/APIManager";
 import CardForm from "./NewCardForm";
 
-
 export default class CardList extends Component {
-  // state = {
-  //   cards: []
-  // };
+  state = {
+    cards: []
+  };
 
   // componentDidMount() {
   //   this.props.getData();
   // }
+
+  deleteCard = id => {
+    APIManager.delete("userCards", id).then(() => {
+      this.props.getData();
+    });
+  };
 
   addCard = () => {
     let frontImgValue = this.state.frontPic.replace(
@@ -52,12 +57,16 @@ export default class CardList extends Component {
         wanted: false
       };
       APIManager.post("userCards", newUserCard)
-        .then(() =>
+        .then(() => {
           this.setState({
             modal: false
-          })
-        )
-        .then(this.props.updateUser);
+          });
+        })
+        .then(() => {
+          // console.log("newcards update", this.props.getData)
+          // console.log("here")
+          this.props.getData();
+        });
     });
   };
 
@@ -68,6 +77,7 @@ export default class CardList extends Component {
           <>
             {this.props.cards.map(card => (
               <ViewCards
+                deleteCard={this.deleteCard}
                 addCard={this.addCard}
                 key={card.id}
                 updateUser={this.props.updateUser}

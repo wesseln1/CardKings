@@ -17,6 +17,7 @@ export default class Home extends Component {
     collectorLevel: {}
   };
 
+
   getUser() {
     // let currentUser = this.props.currentUser;
     APIManager.getUserById(this.props.currentUser).then(user => {
@@ -60,8 +61,10 @@ export default class Home extends Component {
               <Card className="addCardModalDiv">
                 <CardForm
                   key={this.state.currentUser}
+                  reRender={this.props.reRender}
                   setUser={this.props.setUser}
                   updateUser={this.props.updateUser}
+                  getFavorites={this.props.getFavorites}
                   // cards={this.state.cards}
                   getData={this.props.getData}
                   currentUser={this.state.currentUser}
@@ -76,7 +79,10 @@ export default class Home extends Component {
                   <>
                     <FavoriteCardList
                       key={this.state.currentUser}
+                      favCards={this.props.favCards}
+                      reRender={this.props.reRender}
                       user={this.props.user}
+                      getFavorites={this.props.getFavorites}
                       getData={this.props.getData}
                       updateUser={this.props.updateUser}
                       currentUser={this.state.currentUser}
@@ -92,12 +98,15 @@ export default class Home extends Component {
               <CardDeck className="userCardHomeDeck">
                 <CardList
                   key={this.state.currentUser}
+                  reRender={this.props.reRender}
                   cards={this.props.cards}
+                  getFavorites={this.props.getFavorites}
                   user={this.props.user}
                   getData={this.props.getData}
                   updateUser={this.props.updateUser}
                   currentUser={this.state.currentUser}
                   setUser={this.props.setUser}
+                  {...this.props}
                 />
               </CardDeck>
             </div>

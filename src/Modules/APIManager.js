@@ -26,6 +26,15 @@ export default {
     body: JSON.stringify(obj) 
   }).then(response => response.json())
  },
+ delete(resource, objId){
+  //  console.log("here i am")
+  return fetch(`${URL}/${resource}/${objId}`, {
+    method: "DELETE", 
+    headers: {
+      "Content-Type": "application/json"
+    }, 
+  }).then(response => response.json())
+ },
  patch(resource, id, obj){
    console.log("here i am", obj)
   return fetch(`${URL}/${resource}/${id}`, {
@@ -44,7 +53,6 @@ export default {
    return fetch(`${URL}/users?username=${user}`).then(response => response.json())
  },
  getUserById(user){
-   console.log("in fetch",user)
    return fetch(`${URL}/users/${user}`).then(response => response.json())
  },
  getCards(userId){
@@ -54,11 +62,9 @@ export default {
    return fetch(`${URL}/cards`).then(response => response.json())
  },
  getFavoritedCards(userId){
-   console.log("here", userId)
    return fetch(`http://localhost:8088/userCards/?userId=${userId}&_expand=card&favorited=true`).then(response => response.json())
  },
  getExpandedItems(obj, expandId, id, expandedObj){
-   console.log("obj",obj, "obj", expandId, "obj", id,"obj", expandedObj)
    return fetch(`${URL}/${obj}/?${expandId}Id=${id}&_expand=${expandedObj}`).then(response => response.json())
  }
 }

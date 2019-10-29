@@ -16,7 +16,7 @@ export default class UserCardList extends Component {
     modal: false
   };
 
-  addCard = (card) => {
+  addCard = card => {
     let timestamp = Date.now();
     let dateNow = new Intl.DateTimeFormat("en-US", {
       year: "numeric",
@@ -34,14 +34,16 @@ export default class UserCardList extends Component {
       timestamp: dateNow,
       wanted: false
     };
-    console.log("newusercard",newUserCard)
+    console.log("newusercard", newUserCard);
     APIManager.post("userCards", newUserCard)
-      .then(() =>
+      .then(() => {
         this.setState({
           modal: false
-        }),
-        this.props.updateUser()
-      )
+        });
+      })
+      .then(() => {
+        this.props.updateUser();
+      });
   };
 
   toggle = () => {
@@ -66,30 +68,32 @@ export default class UserCardList extends Component {
 
   render() {
     return (
-      <>
-        <div>
-          <Button onClick={this.toggle}>Search</Button>
-          <Modal
-            isOpen={this.state.modal}
-            toggle={this.toggle}
-            className="class!"
-          >
-            <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
-            <ModalBody>
-              {this.state.cards.map(card => (
-                <>
-                  <UserCard card={card} addCard={this.addCard} search={this.props.search} {...this.props}/>
-                </>
-              ))}
-            </ModalBody>
-            <ModalFooter>
-              <Button color="secondary" onClick={this.toggle}>
-                Cancel
-              </Button>
-            </ModalFooter>
-          </Modal>
-        </div>
-      </>
+      <div>
+        <Button onClick={this.toggle}>Search</Button>
+        <Modal
+          isOpen={this.state.modal}
+          toggle={this.toggle}
+          className="class!"
+        >
+          <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+          <ModalBody>
+            {this.state.cards.map(card => (
+                <UserCard
+                  key={card.id}
+                  card={card}
+                  addCard={this.addCard}
+                  search={this.props.search}
+                  {...this.props}
+                />
+            ))}
+          </ModalBody>
+          <ModalFooter>
+            <Button color="secondary" onClick={this.toggle}>
+              Cancel
+            </Button>
+          </ModalFooter>
+        </Modal>
+      </div>
     );
   }
 }

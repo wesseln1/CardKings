@@ -12,8 +12,18 @@ import APIManager from "../../Modules/APIManager";
 
 export default class ApplicationViews extends Component {
   state = {
-    cards: []
+    cards: [],
+    favCards: []
   };
+
+  getFavorites = () => {
+    console.log(sessionStorage.getItem("credentials"))
+    APIManager.getFavoritedCards(sessionStorage.getItem("credentials")).then(cards =>{
+      this.setState({
+        favCards: cards
+      })
+    });
+  }
   //   isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
   getData = () => {
     let userId = sessionStorage.getItem("credentials");
@@ -38,7 +48,10 @@ export default class ApplicationViews extends Component {
             if (this.props.user) {
               return (
                 <Home
+                  getFavorites={this.getFavorites}
+                  favCards={this.state.favCards}
                   key={this.props.currentUser}
+                  reRender={this.props.reRender}
                   getData={this.getData}
                   cards={this.state.cards}
                   currentUser={this.props.currentUser}
@@ -83,6 +96,8 @@ export default class ApplicationViews extends Component {
             if (this.props.user) {
               return (
                 <CardList
+                  getFavorites={this.props.getFavorites}
+                  favCards={this.props.favCards}
                   key={this.props.currentUser}
                   getData={this.getData}
                   user={this.props.user}
@@ -101,18 +116,20 @@ export default class ApplicationViews extends Component {
           exact
           path="/profile/:userId(\d+)"
           render={props => {
-              console.log("at profile", this.props.user);
-              return (
-                <ProfileList
-                  key={this.props.currentUser}
-                  getData={this.getData}
-                  user={this.props.user}
-                  cards={this.state.cards}
-                  currentUser={this.props.currentUser}
-                  setUser={this.props.setUser}
-                  {...props}
-                />
-              );
+            console.log("at profile", this.props.user);
+            return (
+              <ProfileList
+                getFavorites={this.props.getFavorites}
+                favCards={this.props.favCards}
+                key={this.props.currentUser}
+                getData={this.getData}
+                user={this.props.user}
+                cards={this.state.cards}
+                currentUser={this.props.currentUser}
+                setUser={this.props.setUser}
+                {...props}
+              />
+            );
           }}
         />
       </>

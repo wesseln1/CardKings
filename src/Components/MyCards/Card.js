@@ -11,24 +11,28 @@ import {
   CardSubtitle,
   CardBody
 } from "reactstrap";
+import ReactStars from "react-stars";
 import "./Card.css";
 import CardDetials from "./CardDetails";
 import APIManager from "../../Modules/APIManager";
 
 export default class ViewCards extends Component {
+  editCard = () => {
+    APIManager.get("userCards", this.props.card.id).then(card => {});
+  };
 
-  
   addToFavorites() {
-    APIManager.get("userCards", this.props.card.card.id).then(card => {
+    console.log(this.props.card.id);
+    APIManager.get("userCards", this.props.card.id).then(card => {
       // console.log("card", card);
       let favorited = card.favorited;
       let newCard = {
         favorited: favorited ? false : true
       };
-      APIManager.patch("userCards", card.id, newCard).then(
-        response => response
-      );
-    }).then(this.props.updateUser)
+      APIManager.patch("userCards", card.id, newCard).then(() => {
+        this.props.getFavorites();
+      });
+    });
   }
 
   render() {
@@ -49,6 +53,12 @@ export default class ViewCards extends Component {
               currentUser={this.props.currentUser}
               {...this.props}
             />
+            <Button
+              className="myCardButtons"
+              onClick={() => this.props.deleteCard(this.props.card.id)}
+            >
+              Delete
+            </Button>
             <Button
               className="myCardButtons"
               onClick={() => this.addToFavorites()}

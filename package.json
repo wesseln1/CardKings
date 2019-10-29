@@ -13,6 +13,7 @@
     "react-horizontal-scrolling-menu": "^0.7.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
+    "react-stars": "^2.2.5",
     "reactstrap": "^8.1.0",
     "rebass": "^4.0.6"
   },
