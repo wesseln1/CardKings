@@ -49,12 +49,22 @@
       "favTeam": "Detroit Redwings",
       "collectorLevel": 1,
       "id": 5
+    },
+    {
+      "username": "BasicWitch96",
+      "firstName": "fga",
+      "lastName": "sgd",
+      "password": "sgd",
+      "DoB": "2019-10-16",
+      "favTeam": "sgf",
+      "collectorLevel": 1,
+      "id": 6
     }
   ],
   "cards": [
     {
       "id": 2,
-      "playerName": "Justin Verlander",
+      "playerName": "Mr. No Hitter",
       "playerPosition": "SP",
       "cardBrand": "Topps",
       "cardNumber": "2345",
@@ -140,7 +150,7 @@
       "id": 13
     },
     {
-      "playerName": "Darryl Strawberry",
+      "playerName": "Darryl Razeberry",
       "playerPosition": "RF",
       "cardBrand": "The Topps Company",
       "cardYear": "1988",
@@ -162,31 +172,37 @@
       "backImage": "/images/mannyRamirez.jpg",
       "userId": "5",
       "id": 15
+    },
+    {
+      "playerName": "Nolan Ryan",
+      "playerPosition": "SP",
+      "cardBrand": "Topps",
+      "cardYear": "1968",
+      "cardTeam": "Houston Astros",
+      "sport": "Baseball",
+      "frontImage": "/images/nolan.jpg",
+      "backImage": "/",
+      "userId": "1",
+      "id": 16
+    },
+    {
+      "playerName": "Manny Ramirezzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+      "playerPosition": "OF",
+      "cardBrand": "asf",
+      "cardYear": "sd",
+      "cardTeam": "asf",
+      "sport": "af",
+      "frontImage": "/images/IMG_20191023_151946.jpg",
+      "backImage": "/",
+      "userId": "1",
+      "id": 17
     }
   ],
   "userCards": [
     {
-      "userId": 1,
-      "cardId": "2",
-      "condition": "0",
-      "favorited": true,
-      "timestamp": "10/29/2019, 02:05:32 PM",
-      "wanted": false,
-      "id": 1
-    },
-    {
-      "userId": "1",
-      "cardId": "13",
-      "condition": "0",
-      "favorited": false,
-      "timestamp": "10/29/2019, 02:13:23 PM",
-      "wanted": false,
-      "id": 2
-    },
-    {
       "userId": "1",
       "cardId": "12",
-      "condition": "0",
+      "condition": 5,
       "favorited": true,
       "timestamp": "10/29/2019, 02:17:52 PM",
       "wanted": false,
@@ -200,6 +216,49 @@
       "timestamp": "10/29/2019, 02:33:17 PM",
       "wanted": false,
       "id": 4
+    },
+    {
+      "userId": "1",
+      "cardId": "3",
+      "condition": "0",
+      "favorited": true,
+      "timestamp": "10/29/2019, 05:28:24 PM",
+      "wanted": false,
+      "id": 5
+    },
+    {
+      "userId": "1",
+      "cardId": "5",
+      "condition": "0",
+      "favorited": false,
+      "timestamp": "10/29/2019, 05:28:58 PM",
+      "wanted": false,
+      "id": 6
+    },
+    {
+      "userId": "1",
+      "cardId": "14",
+      "favorited": false,
+      "timestamp": "10/30/2019, 10:07:06 AM",
+      "wanted": false,
+      "id": 9
+    },
+    {
+      "userId": "1",
+      "cardId": "2",
+      "favorited": true,
+      "timestamp": "10/30/2019, 10:08:23 AM",
+      "wanted": false,
+      "id": 10,
+      "condition": 5
+    },
+    {
+      "userId": "1",
+      "cardId": "2",
+      "favorited": false,
+      "timestamp": "10/30/2019, 11:32:44 AM",
+      "wanted": false,
+      "id": 11
     }
   ],
   "collectorLevels": [
@@ -273,5 +332,8 @@
       "maxCards": 100000000000000000,
       "color": "hot pink"
     }
+  ],
+  "teams": [
+    {}
   ]
 }

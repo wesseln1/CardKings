@@ -153,13 +153,6 @@ export default class CardForm extends Component {
                   id="cardBrand"
                   placeholder="Card Brand"
                 ></Input>
-                <Label>Card Comdition:</Label>
-                <Input
-                  onChange={this.handleFieldChange}
-                  type="text"
-                  id="condition"
-                  placeholder="Card Conditon"
-                ></Input>
                 <Label>Sport:</Label>
                 <Input
                   onChange={this.handleFieldChange}

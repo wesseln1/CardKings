@@ -11,6 +11,7 @@ import {
   Label
 } from "reactstrap";
 import APIManager from "../../Modules/APIManager";
+import CardDetails from "./UserCardDetails";
 
 export default class UserCard extends Component {
   state = {
@@ -23,20 +24,20 @@ export default class UserCard extends Component {
     this.setState(stateToChange);
   };
 
-//   newCardCondition() {
-//       console.log("runnnnnnnnn")
-//     return (
-//       <>
-//         <Label>Card Condition</Label>
-//         <Input
-//           className="conditonInput"
-//           id="condition"
-//           onChange={this.handleFieldChange}
-//         ></Input>
-//         <Button onClick={() => this.props.addCard(card)}>Add</Button>
-//       </>
-//     );
-//   }
+  //   newCardCondition() {
+  //       console.log("runnnnnnnnn")
+  //     return (
+  //       <>
+  //         <Label>Card Condition</Label>
+  //         <Input
+  //           className="conditonInput"
+  //           id="condition"
+  //           onChange={this.handleFieldChange}
+  //         ></Input>
+  //         <Button onClick={() => this.props.addCard(card)}>Add</Button>
+  //       </>
+  //     );
+  //   }
 
   toggle = () => {
     this.setState(prevState => ({
@@ -51,27 +52,31 @@ export default class UserCard extends Component {
         <>
           <div>
             <Card>
-              <CardTitle>{this.props.card.name}</CardTitle>
+              <CardTitle>{this.props.card.playerName}</CardTitle>
               <CardImg
                 top
                 width="100%"
                 src={this.props.card.frontImage}
                 alt="Card image cap"
               />
+              <CardDetails
+                card={this.props.card}
+                key={this.props.card.id}
+                getFavorites={this.props.getFavorites}
+                favCards={this.props.favCards}
+                addCard={this.props.addCard}
+                deleteCard={this.props.deleteCard}
+                getData={this.props.getData}
+                currentUser={this.props.currentUser}
+                {...this.props}
+              />
               <Button
-                // type="submit"
+                className=""
+                toggle={this.state.toggle}
                 onClick={() => this.props.addCard(this.props.card)}
               >
                 Add
               </Button>
-              {/* <Label isOpen={this.toggle} toggle={this.state.toggle}>Card Condition</Label>
-              <Input
-                className="conditonInput hidden"
-                id="condition"
-                onChange={this.handleFieldChange}
-              ></Input>
-              <Button className="hidden" toggle={this.state.toggle} onClick={() => this.addCard()}>Add</Button> */}
-              <Button>Card Details</Button>
             </Card>
           </div>
         </>

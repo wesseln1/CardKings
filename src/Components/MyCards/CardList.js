@@ -53,7 +53,6 @@ export default class CardList extends Component {
       let newUserCard = {
         userId: parseInt(this.props.currentUser),
         cardId: newCard.id,
-        condition: this.state.condition,
         favorited: false,
         timestamp: dateNow,
         wanted: false

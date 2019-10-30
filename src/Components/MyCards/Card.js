@@ -5,6 +5,7 @@ import {
   Card,
   Button,
   CardImg,
+  CardTitle,
   ButtonGroup,
   CardFooter,
   // CardGroup,
@@ -14,9 +15,29 @@ import {
 import ReactStars from "react-stars";
 import "./Card.css";
 import CardDetials from "./CardDetails";
+import Rating from "react-rating"
 import APIManager from "../../Modules/APIManager";
+import "./Card.css"
 
 export default class ViewCards extends Component {
+
+
+
+  updateCondition = () => {
+    let newCondition = {
+      condition: this.state.condition
+    }
+    APIManager.patch("userCards", this.props.card.id, newCondition)
+  }
+
+
+  // handleFieldChange = evt => {
+    
+  //   console.log("changing", evt)
+  //   const stateToChange = {};
+  //   stateToChange[evt.target.id] = evt.target.value;
+  //   this.setState(stateToChange);
+  // };
 
   addToFavorites() {
     console.log(this.props.card.id);
@@ -32,10 +53,15 @@ export default class ViewCards extends Component {
     });
   }
 
+  componentDidMount(){
+    console.log(this.props.card.condition)
+  }
+
   render() {
     return (
       <>
         <Card className="flexHomeCard">
+          <h6 className="cardPlayerName">{this.props.card.card.playerName}</h6>
           <CardImg
             top
             width="100%"
@@ -43,6 +69,7 @@ export default class ViewCards extends Component {
             alt="Card image cap"
           />
           <CardFooter className="cardButton">
+            <Rating id="condition" initialRating={this.props.card.condition} onClick={(evt) => this.setCondition(evt)}/>
             <div className="buttonGroup">
               <Button
                 className="myCardButtons"
@@ -60,6 +87,7 @@ export default class ViewCards extends Component {
             <div className="buttonGroup">
               <CardDetials
                 key={`${this.props.currentUser}-user`}
+                addToFavorites={this.addToFavorites}
                 addCard={this.props.addCard}
                 deleteCard={this.props.deleteCard}
                 getData={this.props.getData}
@@ -67,8 +95,10 @@ export default class ViewCards extends Component {
                 {...this.props}
               />
               <EditCard
-                card={this.props.card}
+                mycard={this.props.card}
                 key={this.props.card.id}
+                getFavorites={this.props.getFavorites}
+                favCards={this.props.favCards}
                 addCard={this.props.addCard}
                 deleteCard={this.props.deleteCard}
                 getData={this.props.getData}

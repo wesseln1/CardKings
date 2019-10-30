@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom"
+import { Redirect } from "react-router-dom";
 import { Card, CardTitle, CardText, CardImg, CardDeck } from "reactstrap";
 import APIManager from "../../Modules/APIManager";
 import App from "../../App";
@@ -16,7 +16,6 @@ export default class Home extends Component {
     currentUser: "",
     collectorLevel: {}
   };
-
 
   getUser() {
     // let currentUser = this.props.currentUser;
@@ -39,14 +38,15 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-      this.getUser()
-      // this.props.getFavorites()
+    this.getUser();
+    // this.props.getFavorites()
   }
 
   render() {
-    console.log("here", this.props.favCards)
+    console.log("here", this.props.favCards);
     return (
       <>
+        <div className="backgroundDiv">
           <>
             <div className="profileDiv">
               <Card className="profileCard">
@@ -76,9 +76,8 @@ export default class Home extends Component {
               </Card>
             </div>
             <div>
-              {/* <h3>Favorites</h3> */}
-              <CardDeck>
-                <Card>
+              <CardDeck  className="userCardHomeDeck">
+                {/* <Card className="favoritesListCard"> */}
                   <>
                     <FavoriteCardList
                       key={this.state.currentUser}
@@ -95,14 +94,14 @@ export default class Home extends Component {
                       {...this.props}
                     />
                   </>
-                </Card>
+                {/* </Card> */}
               </CardDeck>
             </div>
             <div>
               <CardTitle>Collection</CardTitle>
               <CardDeck className="userCardHomeDeck">
                 <CardList
-                updateCardLists={this.props.updateCardLists}
+                  updateCardLists={this.props.updateCardLists}
                   key={this.state.currentUser}
                   reRender={this.props.reRender}
                   cards={this.props.cards}
@@ -117,6 +116,7 @@ export default class Home extends Component {
               </CardDeck>
             </div>
           </>
+        </div>
       </>
     );
   }

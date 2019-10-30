@@ -14,14 +14,14 @@ import {
 export default class EditCard extends Component {
   state = {
     card: "",
-    playerName: this.props.card.card.playerName,
-    playerPosition: this.props.card.card.playerPosition,
-    cardBrand: this.props.card.card.cardBrand,
-    cardYear: this.props.card.card.cardYear,
-    cardTeam: this.props.card.card.cardTeam,
-    sport: this.props.card.card.sport,
-    frontPic: this.props.card.card.frontImage,
-    backPic: this.props.card.card.backImage,
+    playerName: "",
+    playerPosition: "",
+    cardBrand: "",
+    cardYear: "",
+    cardTeam: "",
+    sport: "",
+    frontPic: "",
+    backPic: "",
     modal: false
   };
 
@@ -42,12 +42,14 @@ export default class EditCard extends Component {
       backImage: `${backImgValue}`,
       userId: this.props.currentUser
     };
-    console.log("new card", newCard);
     APIManager.patch("cards", this.state.card.id, newCard).then(() => {
       this.setState(
         {
           modal: false
-        },this.props.getData()
+        },
+        this.props.getData(),
+        this.props.getFavorites(),
+        this.getAuthors()
       );
     });
   };
@@ -71,7 +73,17 @@ export default class EditCard extends Component {
       this.props.card.userId
     ).then(card => {
       console.log("heyyoo", card);
-      this.setState({ card: card });
+      this.setState({
+        card: card,
+        playerName: card.playerName,
+        playerPosition: card.playerPosition,
+        cardBrand: card.cardBrand,
+        cardYear: card.cardYear,
+        cardTeam: card.cardTeam,
+        sport: card.sport,
+        frontPic: card.frontImage,
+        backPic: card.backImage
+      });
     });
   };
 
@@ -80,91 +92,92 @@ export default class EditCard extends Component {
   }
 
   render() {
-    return (
-      <>
-        <Button className="myCardButtons" color="primary" onClick={this.toggle}>
-          Edit
-        </Button>
-        <Modal
-          isOpen={this.state.modal}
-          toggle={this.toggle}
-          className="class!"
-        >
-          <ModalHeader toggle={this.toggle}>
-            {this.state.card.playerName}
-          </ModalHeader>
-          <ModalBody>
-            <Card className="flexHomeCardDetails">
-              {/* <CardImg
-                className="cardDetailImg"
-                top
-                width="100%"
-                src={this.state.card.frontImage}
-                alt="Card image cap"
-              /> */}
-              <CardBody>
-                <br></br>
-                <Input
-                  type="text"
-                  id="playerName"
-                  onChange={this.handleFieldChange}
-                  defaultValue={this.state.card.playerName}
-                />
-                <Input
-                  type="text"
-                  id="cardTeam"
-                  onChange={this.handleFieldChange}
-                  defaultValue={this.state.card.cardTeam}
-                />
-                <Input
-                  type="text"
-                  id="playerPosition"
-                  onChange={this.handleFieldChange}
-                  defaultValue={this.state.card.playerPosition}
-                />
-                <Input
-                  type="text"
-                  id="cardBrand"
-                  onChange={this.handleFieldChange}
-                  defaultValue={this.state.card.cardBrand}
-                />
-                <Input
-                  type="text"
-                  id="cardYear"
-                  onChange={this.handleFieldChange}
-                  defaultValue={this.state.card.cardYear}
-                />
-                <Input
-                  type="text"
-                  id="sport"
-                  onChange={this.handleFieldChange}
-                  defaultValue={this.state.card.sport}
-                />
-                <Input
-                  type="file"
-                  id="frontImage"
-                  onChange={this.handleFieldChange}
-                />
-                <Input
-                  type="file"
-                  id="backImage"
-                  onChange={this.handleFieldChange}
-                />
+    if (this.state.card.userId === this.props.currentUser) {
+      return (
+        <>
+          <Button
+            className="myCardButtons"
+            color="primary"
+            onClick={this.toggle}
+          >
+            Edit
+          </Button>
+          <Modal
+            isOpen={this.state.modal}
+            toggle={this.toggle}
+            className="class!"
+          >
+            <ModalHeader toggle={this.toggle}>
+              {this.state.card.playerName}
+            </ModalHeader>
+            <ModalBody>
+              <Card className="flexHomeCardDetails">
+                <CardBody>
+                  <br></br>
+                  <Input
+                    type="text"
+                    id="playerName"
+                    onChange={this.handleFieldChange}
+                    defaultValue={this.state.card.playerName}
+                  />
+                  <Input
+                    type="text"
+                    id="cardTeam"
+                    onChange={this.handleFieldChange}
+                    defaultValue={this.state.card.cardTeam}
+                  />
+                  <Input
+                    type="text"
+                    id="playerPosition"
+                    onChange={this.handleFieldChange}
+                    defaultValue={this.state.card.playerPosition}
+                  />
+                  <Input
+                    type="text"
+                    id="cardBrand"
+                    onChange={this.handleFieldChange}
+                    defaultValue={this.state.card.cardBrand}
+                  />
+                  <Input
+                    type="text"
+                    id="cardYear"
+                    onChange={this.handleFieldChange}
+                    defaultValue={this.state.card.cardYear}
+                  />
+                  <Input
+                    type="text"
+                    id="sport"
+                    onChange={this.handleFieldChange}
+                    defaultValue={this.state.card.sport}
+                  />
+                  <Input
+                    type="file"
+                    id="frontImage"
+                    onChange={this.handleFieldChange}
+                  />
+                  <Input
+                    type="file"
+                    id="backImage"
+                    onChange={this.handleFieldChange}
+                  />
 
-                {/* <CardText>Conditon: {this.props.card.condition}</CardText> */}
-              </CardBody>
-            </Card>
-          </ModalBody>
-          <ModalFooter>
-            <Button color="danger" onClick={this.updateCard}>
-              Update
-            </Button>
-            <Button color="danger" onClick={this.toggle}>
-              Cancel
-            </Button>
-          </ModalFooter>
-        </Modal>
-      </>
-    );
+                  {/* <CardText>Conditon: {this.props.card.condition}</CardText> */}
+                </CardBody>
+              </Card>
+            </ModalBody>
+            <ModalFooter>
+              <Button color="danger" onClick={this.updateCard}>
+                Update
+              </Button>
+              <Button color="danger" onClick={this.toggle}>
+                Cancel
+              </Button>
+            </ModalFooter>
+          </Modal>
+        </>
+      );
+    } else {
+        return null 
+    }
   }
 }
