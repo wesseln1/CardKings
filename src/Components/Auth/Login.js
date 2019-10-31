@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import APIManager from "../../Modules/APIManager";
 import { Link } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
+import "./Auth.css"
 
 export default class Login extends Component {
   state = {
@@ -43,9 +44,9 @@ export default class Login extends Component {
 
   render() {
     return (
-      <MDBContainer>
+      <MDBContainer className="loginMainDiv">
         <MDBRow>
-          <MDBCol md="6">
+          <MDBCol md="6" className="loginCol">
             <form>
               <p className="h4 text-center mb-4">Sign in</p>
               <label htmlFor="defaultFormLoginEmailEx" className="grey-text">
