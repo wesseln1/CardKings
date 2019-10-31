@@ -23,9 +23,10 @@ export default class ViewCards extends Component {
 
 
 
-  updateCondition = () => {
+  updateCondition = (evt) => {
+    console.log("event",evt)
     let newCondition = {
-      condition: this.state.condition
+      condition: evt
     }
     APIManager.patch("userCards", this.props.card.id, newCondition)
   }
@@ -69,7 +70,7 @@ export default class ViewCards extends Component {
             alt="Card image cap"
           />
           <CardFooter className="cardButton">
-            <Rating id="condition" initialRating={this.props.card.condition} onClick={(evt) => this.setCondition(evt)}/>
+            <Rating id="condition" initialRating={this.props.card.condition} onClick={(evt) => this.updateCondition(evt)}/>
             <div className="buttonGroup">
               <Button
                 className="myCardButtons"

@@ -10,6 +10,16 @@
     width: 25%;
 }
 
-.backgroundDiv{
-
+body {
+    background: linear-gradient(
+        to right,
+        #bf8b4b,
+        #f2e1c2,
+        #d9bd8b,
+        #d9b166
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background-size: 400% 400% !important;
+      -webkit-animation: Gradient 10s ease infinite;
+      -moz-animation: Gradient 10s ease infinite;
+      animation: Gradient 10s ease infinite;
 }

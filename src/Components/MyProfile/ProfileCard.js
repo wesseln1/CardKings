@@ -15,8 +15,8 @@ export default class MyProfileCard extends Component {
   }
   render() {
     return (
-      <div>
-        <Card>
+      <div className="profileDiv">
+        <Card className="profileCard">
           <CardBody>
             <CardTitle>
               {this.props.user.firstName} {this.props.user.lastName}
@@ -24,7 +24,6 @@ export default class MyProfileCard extends Component {
             <CardSubtitle>Username: {this.props.user.username}</CardSubtitle>
           </CardBody>
           <img
-            width="100%"
             src={require("../Home/profile.png")}
             alt="Card image cap"
           />

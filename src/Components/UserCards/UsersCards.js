@@ -54,8 +54,8 @@ export default class UserCard extends Component {
             <Card>
               <CardTitle>{this.props.card.playerName}</CardTitle>
               <CardImg
-                top
-                width="100%"
+                // top
+                // width="100%"
                 src={this.props.card.frontImage}
                 alt="Card image cap"
               />

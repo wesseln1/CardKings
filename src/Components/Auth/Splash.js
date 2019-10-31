@@ -12,20 +12,21 @@ export default class Splash extends Component {
       <div className="splashMainDiv">
         <>
             <div className="splashCardHeader">
-              <Card className="splashHeaderCard">
-                <CardTitle className="cardHeader">Card Kings</CardTitle>
-              </Card>
+              {/* <Card className="splashHeaderCard"> */}
+                <CardImg className="cardHeader" src={require("./carklogo.png")} />
+                {/* <CardTitle>Card Kings</CardTitle> */}
+              {/* </Card> */}
             </div>
           <div className="splashDiv">
-            <div className="splashCardDiv">
-              <Card className="splashTitleCard" body inverse>
+            {/* <div className="splashCardDiv infoDiv"> */}
+              <Card className="splashTitleCard infoDiv" body inverse>
                 <CardTitle>Card Kings</CardTitle>
                 <CardText>
                   Welcome to Card Kings! A trading card organizer!
                 </CardText>
               </Card>
-            </div>
-            <div className="splashCardDiv">
+            {/* </div> */}
+            {/* <div className="splashCardDiv"> */}
               <Card className="splashTitleCard" body inverse>
                 <div>
                   <Link to="/login">
@@ -43,7 +44,7 @@ export default class Splash extends Component {
                 </div>
               </Card>
             </div>
-          </div>
+          {/* </div> */}
         </>
       </div>
     );

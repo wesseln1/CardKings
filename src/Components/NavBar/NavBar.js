@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Flex, Box } from "rebass";
+import { CardImg } from "reactstrap"
 import { Redirect } from "react-router-dom";
 import App from "../../App";
 import "./NavBar.css";
@@ -33,7 +34,7 @@ export default class NavBar extends Component {
     return (
       <>
         {/* {this.props.user ? ( */}
-        <Flex px={2} color="white" bg="black" alignItems="center">
+        <Flex px={2} color="white" className="navBarBackground" alignItems="center">
           <Input
             className="searchInput"
             id="search"
@@ -48,17 +49,17 @@ export default class NavBar extends Component {
             {...this.props}
           />
           <Box mx="auto" className="NavHover" />
-          <Link to="/">Card Kings</Link>
+          <Link className="logoLink" to="/"><CardImg className="navLogo" src={require("../Auth/carklogo.png")}/></Link>
           <Box mx="auto" className="NavHover" />
-          <Link to={`/profile/${parseInt(this.props.currentUser)}`}>
+          <Link className="navLinks" to={`/profile/${parseInt(this.props.currentUser)}`}>
             My Profile
           </Link>
           <Box mx="auto" className="NavHover" />
-          <Link to={`/collection/${parseInt(this.props.currentUser)}`}>
+          <Link className="navLinks" to={`/collection/${parseInt(this.props.currentUser)}`}>
             My Collection
           </Link>
           <Box mx="auto" className="NavHover" />
-          <Link to="/splash" onClick={this.props.handleLogout}>
+          <Link className="navLinks" to="/splash" onClick={this.props.handleLogout}>
             {/* <button type="button" > */}
             Logout
             {/* </button> */}

@@ -48,7 +48,6 @@ export default class FavoriteCardList extends Component {
   render() {
     return (
       <div className="cardDiv">
-        <CardTitle>Favorites</CardTitle>
         <CardDeck className="userCardFlex">
           <>
             {this.props.favCards.map(card => (
