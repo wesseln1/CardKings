@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ViewCards from "./Card";
+import "./Card.css";
 import { CardDeck, Card, Button } from "reactstrap";
 import APIManager from "../../Modules/APIManager";
 import CardForm from "./NewCardForm";
@@ -17,6 +18,7 @@ export default class CardList extends Component {
   deleteCard = id => {
     APIManager.delete("userCards", id).then(() => {
       this.props.getData();
+      this.props.getFavorites();
     });
   };
 
@@ -51,7 +53,6 @@ export default class CardList extends Component {
       let newUserCard = {
         userId: parseInt(this.props.currentUser),
         cardId: newCard.id,
-        condition: this.state.condition,
         favorited: false,
         timestamp: dateNow,
         wanted: false
@@ -66,6 +67,7 @@ export default class CardList extends Component {
           // console.log("newcards update", this.props.getData)
           // console.log("here")
           this.props.getData();
+          this.props.getFavorites();
         });
     });
   };
@@ -77,6 +79,8 @@ export default class CardList extends Component {
           <>
             {this.props.cards.map(card => (
               <ViewCards
+                getFavorites={this.props.getFavorites}
+                favCards={this.props.favCards}
                 deleteCard={this.deleteCard}
                 addCard={this.addCard}
                 key={card.id}

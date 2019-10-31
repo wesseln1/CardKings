@@ -1,6 +1,7 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 import React, { useState, Component } from "react";
 import { Redirect } from "react-router-dom";
+import EditCard from "./Card"
 import {
   Button,
   Modal,
@@ -27,6 +28,12 @@ export default class CardDetails extends Component {
       modal: !prevState.modal
     }));
   };
+
+  // editCard = (card) => {
+  //   unEditedCard = {
+      
+  //   }
+  // }
 
   render() {
     return (
@@ -67,13 +74,7 @@ export default class CardDetails extends Component {
             </Card>
           </ModalBody>
           <ModalFooter>
-            <Button
-              type="submit"
-              onClick={() => this.addCard()}
-            >
-              Do Something
-            </Button>
-            <Button color="warning" className="cardDetailButton">Delete</Button>
+            <Button color="warning" className="cardDetailButton" onClick={() => this.props.deleteCard(this.props.card.id)}>Delete</Button>
             <Button color="danger" onClick={this.toggle}>
               Cancel
             </Button>

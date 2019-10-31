@@ -1,106 +1,115 @@
-.card-deck{
-    flex-flow: row !important;
-    /* flex-flow: row !important; */
+.card-deck {
+  flex-flow: row !important;
+  /* flex-flow: row !important; */
 }
 
-.addCardModalDiv{
-    align-items: center;
-    max-height:55px;
-    max-width: 20%;
+.addCardModalDiv {
+  align-items: center;
+  max-height: 55px;
+  max-width: 20%;
 }
 
-.cardDetailButton{
-    margin-top: 50px;
+.cardDetailButton {
+  margin-top: 50px;
 }
 
-.flexHomeCard{
-    display: flex;
-    align-self: baseline;
-    background: #000000 !important;
-    border: outset 10px #4285F4 !important;
-    /* padding: 10px; */
+.flexHomeCard {
+  display: flex;
+  align-self: baseline;
+  background: #000000 !important;
+  border: outset 10px #4285f4 !important;
+  /* padding: 10px; */
 }
-
-
 
 /* Scrollbar customization */
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: purple;
+  width: 10px;
 }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: darkviolet;
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: purple;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darkviolet;
 }
 
 /* width */
 ::-webkit-scrollbar .userCardFlex {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track .userCardFlex{
-    background: #f1f1f1;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb .userCardFlex{
-    background: purple;
+  width: 10px;
 }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover .userCardFlex{
-    background: darkviolet;
+
+/* Track */
+::-webkit-scrollbar-track .userCardFlex {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb .userCardFlex {
+  background: purple;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover .userCardFlex {
+  background: darkviolet;
 }
 
 /* card customization */
 .cardDiv {
-    height: 50%;
-    display: contents;
+  height: 50%;
+  max-width: 250px !important;
+  display: contents;
 }
 /* .userCardFlex{
     flex-wrap: wrap !important; 
 }  */
 
-.card-img-top{
-    height: 250px;
+.card-img-top {
+  height: 250px;
 }
 
 .userCardFlex {
-    overflow-x: hidden !important;
-    overflow-y: scroll !important;
-    overflow-x: scroll !important;
-    overflow-y: hidden !important;
-    margin: 80px !important;
-    border: inset 10px;
+  overflow-x: hidden !important;
+  overflow-y: scroll !important;
+  overflow-x: scroll !important;
+  overflow-y: hidden !important;
+  margin: 80px !important;
+  border: inset 10px;
 }
 
 .cardButtons {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  max-width: 30% !important;
 }
 
 .card {
-    min-width: 200px !important;
-    /* max-height: auto !important; */
+  min-width: 250px !important;
+  /* max-height: auto !important; */
 }
 
-.cardButton {
-    justify-content: baseline !important;
+.cardButtons {
+  display: flex;
+}
+
+.buttonGroup {
+  display: flex;
 }
 
 .myCardButtons {
-    font-size: 10px !important;
+  font-size: 10px !important;
+  width: 80px;
+}
+
+.cardPlayerName {
+  font-style: white !important;
 }

@@ -7,7 +7,7 @@
       "password": "1234",
       "DoB": "1997-04-29",
       "favTeam": "Detroit Redwings",
-      "collectorLevel": 1,
+      "collectorLevel": "1",
       "id": 1
     },
     {
@@ -17,7 +17,7 @@
       "password": "1234",
       "DoB": "2019-10-24",
       "favTeam": "det",
-      "collectorLevelId": 1,
+      "collectorLevelId": "1",
       "id": 2
     },
     {
@@ -27,28 +27,44 @@
       "password": "1234",
       "DoB": "1994-10-12",
       "favTeam": "New Orleans Saints",
-      "collectorLevel": 1,
+      "collectorLevel": "1",
       "id": 3
+    },
+    {
+      "username": "BobbyBob",
+      "firstName": "Bobby",
+      "lastName": "Bob",
+      "password": "1234",
+      "DoB": "2019-06-04",
+      "favTeam": "Nashville Predators",
+      "collectorLevel": "1",
+      "id": 4
+    },
+    {
+      "username": "witchy",
+      "firstName": "Brett",
+      "lastName": "Brown",
+      "password": "1234",
+      "DoB": "2019-10-17",
+      "favTeam": "Detroit Redwings",
+      "collectorLevel": 1,
+      "id": 5
+    },
+    {
+      "username": "BasicWitch96",
+      "firstName": "fga",
+      "lastName": "sgd",
+      "password": "sgd",
+      "DoB": "2019-10-16",
+      "favTeam": "sgf",
+      "collectorLevel": 1,
+      "id": 6
     }
   ],
   "cards": [
     {
-      "id": 1,
-      "playerName": "Nolan Ryan",
-      "playerPosition": "SP",
-      "cardBrand": "Topps",
-      "cardNumber": "23BC3",
-      "cardYear": "1997",
-      "cardTeam": "Houtson Astros",
-      "sport": "Baseball",
-      "frontImage": "/images/nolan.jpg",
-      "backImage": "./images/nolan.jpg",
-      "userId": 1,
-      "favorited": false
-    },
-    {
       "id": 2,
-      "playerName": "Justin Verlander",
+      "playerName": "Mr. No Hitter",
       "playerPosition": "SP",
       "cardBrand": "Topps",
       "cardNumber": "2345",
@@ -57,7 +73,7 @@
       "sport": "Baseball",
       "frontImage": "/images/j_v_god.jpg",
       "backImage": "images/nolan.jpg",
-      "userId": 1,
+      "userId": "1",
       "favorited": false
     },
     {
@@ -65,32 +81,17 @@
       "playerName": "Randy Johnson",
       "playerPosition": "SP",
       "cardBrand": "Fleer",
-      "cardNumber": "5",
       "cardYear": "2004",
       "cardTeam": "Arizona Diamondbacks",
       "sport": "Baseball",
       "frontImage": "/images/randyJohnsonFront2004.jpg",
-      "backImage": "images/randyJohnsonBack2004.jpg",
-      "userId": 2
-    },
-    {
-      "id": 4,
-      "playerName": "Erk Kelloge",
-      "playerPosition": "SP",
-      "cardBrand": "Topps",
-      "cardNumber": "23BC3",
-      "cardYear": "1997",
-      "cardTeam": "Houtson Astros",
-      "sport": "Baseball",
-      "frontImage": "/images/j_v_god.jpg",
-      "backImage": "/images/nolan.jpg",
-      "userId": 1
+      "backImage": "/images/randyJohnsonBack2004.jpg",
+      "userId": "2"
     },
     {
       "playerName": "Manny Ramirez",
       "playerPosition": "OF",
       "cardBrand": "Topps",
-      "cardNumber": "BOS3",
       "cardYear": "2008",
       "cardTeam": "Boston Red Sox",
       "sport": "Baseball",
@@ -100,23 +101,9 @@
       "id": 5
     },
     {
-      "playerName": "Vladimir Guerrero",
-      "playerPosition": "OF",
-      "cardBrand": "Upper Deck",
-      "cardNumber": "MKY6F",
-      "cardYear": "2008",
-      "cardTeam": "Los Angeles Angels",
-      "sport": "Baseball",
-      "frontImage": "/images/IMG_20191023_143022.jpg",
-      "backImage": "/images/IMG_20191023_143029.jpg",
-      "userId": "1",
-      "id": 7
-    },
-    {
       "playerName": "Chipper Jones",
       "playerPosition": "3B",
       "cardBrand": "Upper Deck",
-      "cardNumber": "V3LFY",
       "cardYear": "2008",
       "cardTeam": "Atlanta Braves",
       "sport": "Baseball",
@@ -127,23 +114,9 @@
       "favorited": false
     },
     {
-      "playerName": "Felix Hernadez",
-      "playerPosition": "SP",
-      "cardBrand": "Upper Deck",
-      "cardNumber": "83PQR",
-      "cardYear": "2008",
-      "cardTeam": "Seattle Mariners",
-      "sport": "Baseball",
-      "frontImage": "/images/felixFront.jpg",
-      "backImage": "/images/felixBack.jpg",
-      "userId": "1",
-      "id": 10
-    },
-    {
       "playerName": "Hanley Ramirez",
       "playerPosition": "SS",
       "cardBrand": "Upper Deck",
-      "cardNumber": "MR7T6",
       "cardYear": "2008",
       "cardTeam": "Florida Marlins",
       "sport": "Baseball",
@@ -153,10 +126,9 @@
       "id": 11
     },
     {
-      "playerName": "Miguel Carbrera",
+      "playerName": "Cabby",
       "playerPosition": "1B",
       "cardBrand": "Upper Deck",
-      "cardNumber": "F22EY",
       "cardYear": "2008",
       "cardTeam": "Detroit Tigers",
       "sport": "Baseball",
@@ -169,7 +141,6 @@
       "playerName": "Randy Johnson",
       "playerPosition": "SP",
       "cardBrand": "Upper Deck",
-      "cardNumber": "G6CW2",
       "cardYear": "2008",
       "cardTeam": "Arizona Diamonbacks",
       "sport": "Baseball",
@@ -179,10 +150,9 @@
       "id": 13
     },
     {
-      "playerName": "Darryl Strawberry",
+      "playerName": "Darryl Razeberry",
       "playerPosition": "RF",
       "cardBrand": "The Topps Company",
-      "cardNumber": "19 of 22",
       "cardYear": "1988",
       "cardTeam": "New York Mets",
       "sport": "Baseball",
@@ -192,294 +162,103 @@
       "id": 14
     },
     {
-      "playerName": "Manny Ramirez",
+      "playerName": "Manny Ramirezzzzz",
       "playerPosition": "OF",
       "cardBrand": "Topps",
-      "cardNumber": "BOS3",
       "cardYear": "2008",
       "cardTeam": "Boston Red Sox",
       "sport": "Baseball",
       "frontImage": "/images/MVIMG_20191022_141927.jpg",
       "backImage": "/images/mannyRamirez.jpg",
-      "userId": "1",
+      "userId": "5",
       "id": 15
     },
     {
-      "playerName": "Manny Ramirez",
-      "playerPosition": "OF",
+      "playerName": "Nolan Ryan",
+      "playerPosition": "SP",
       "cardBrand": "Topps",
-      "cardNumber": "BOS3",
-      "cardYear": "2008",
-      "cardTeam": "Boston Red Sox",
+      "cardYear": "1968",
+      "cardTeam": "Houston Astros",
       "sport": "Baseball",
-      "frontImage": "/images/MVIMG_20191022_141927.jpg",
-      "backImage": "/images/mannyRamirez.jpg",
+      "frontImage": "/images/nolan.jpg",
+      "backImage": "/",
       "userId": "1",
       "id": 16
     },
     {
-      "playerName": "Manny Ramirez",
+      "playerName": "Manny Ramirezzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
       "playerPosition": "OF",
-      "cardBrand": "Topps",
-      "cardNumber": "BOS3",
-      "cardYear": "2008",
-      "cardTeam": "Boston Red Sox",
-      "sport": "Baseball",
-      "frontImage": "/images/MVIMG_20191022_141927.jpg",
-      "backImage": "/images/mannyRamirez.jpg",
+      "cardBrand": "asf",
+      "cardYear": "sd",
+      "cardTeam": "asf",
+      "sport": "af",
+      "frontImage": "/images/IMG_20191023_151946.jpg",
+      "backImage": "/",
       "userId": "1",
       "id": 17
-    },
-    {
-      "playerName": "Manny Ramirez",
-      "playerPosition": "OF",
-      "cardBrand": "",
-      "cardNumber": "",
-      "cardYear": "",
-      "cardTeam": "asf",
-      "sport": "",
-      "frontImage": "/images/felixFront.jpg",
-      "backImage": "/",
-      "userId": "1",
-      "id": 18
-    },
-    {
-      "playerName": "Manny Ramirez",
-      "playerPosition": "",
-      "cardBrand": "",
-      "cardNumber": "",
-      "cardYear": "",
-      "cardTeam": "",
-      "sport": "",
-      "frontImage": "/images/front.jpg",
-      "backImage": "/",
-      "userId": "1",
-      "id": 19
-    },
-    {
-      "playerName": "Manny Ramirez",
-      "playerPosition": "OF",
-      "cardBrand": "",
-      "cardNumber": "",
-      "cardYear": "",
-      "cardTeam": "",
-      "sport": "",
-      "frontImage": "/images/felixFront.jpg",
-      "backImage": "/",
-      "userId": "1",
-      "id": 20
-    },
-    {
-      "playerName": "Manny Ramirez",
-      "playerPosition": "",
-      "cardBrand": "",
-      "cardNumber": "",
-      "cardYear": "",
-      "cardTeam": "",
-      "sport": "",
-      "frontImage": "/images/front.jpg",
-      "backImage": "/",
-      "userId": "1",
-      "id": 21
-    },
-    {
-      "playerName": "Manny Ramirez",
-      "playerPosition": "",
-      "cardBrand": "",
-      "cardNumber": "",
-      "cardYear": "",
-      "cardTeam": "",
-      "sport": "",
-      "frontImage": "/images/felixFront.jpg",
-      "backImage": "/",
-      "userId": "1",
-      "id": 22
-    },
-    {
-      "playerName": "Manny Ramirez",
-      "playerPosition": "",
-      "cardBrand": "",
-      "cardNumber": "",
-      "cardYear": "",
-      "cardTeam": "",
-      "sport": "",
-      "frontImage": "/images/felixFront.jpg",
-      "backImage": "/",
-      "userId": "1",
-      "id": 23
-    },
-    {
-      "playerName": "Manny Ramirez",
-      "playerPosition": "",
-      "cardBrand": "",
-      "cardNumber": "",
-      "cardYear": "",
-      "cardTeam": "",
-      "sport": "",
-      "frontImage": "/images/IMG_20191023_143022.jpg",
-      "backImage": "/",
-      "userId": "1",
-      "id": 24
-    },
-    {
-      "playerName": "Manny Ramirez",
-      "playerPosition": "",
-      "cardBrand": "",
-      "cardNumber": "",
-      "cardYear": "",
-      "cardTeam": "",
-      "sport": "",
-      "frontImage": "/images/felixFront.jpg",
-      "backImage": "/",
-      "userId": "1",
-      "id": 25
-    },
-    {
-      "playerName": "Manny Ramirez",
-      "playerPosition": "",
-      "cardBrand": "",
-      "cardNumber": "",
-      "cardYear": "",
-      "cardTeam": "",
-      "sport": "",
-      "frontImage": "/images/IMG_20191023_152004.jpg",
-      "backImage": "/",
-      "userId": "1",
-      "id": 26
-    },
-    {
-      "playerName": "Manny Ramirez",
-      "playerPosition": "",
-      "cardBrand": "",
-      "cardNumber": "",
-      "cardYear": "",
-      "cardTeam": "",
-      "sport": "",
-      "frontImage": "/images/felixFront.jpg",
-      "backImage": "/",
-      "userId": "1",
-      "id": 27
-    },
-    {
-      "playerName": "Manny Ramirez",
-      "playerPosition": "",
-      "cardBrand": "",
-      "cardNumber": "",
-      "cardYear": "",
-      "cardTeam": "",
-      "sport": "",
-      "frontImage": "/images/felixFront.jpg",
-      "backImage": "/",
-      "userId": "1",
-      "id": 28
-    },
-    {
-      "playerName": "Manny Ramirez",
-      "playerPosition": "",
-      "cardBrand": "",
-      "cardNumber": "",
-      "cardYear": "",
-      "cardTeam": "",
-      "sport": "",
-      "frontImage": "/images/IMG_20191023_143022.jpg",
-      "backImage": "/",
-      "userId": "1",
-      "id": 29
     }
   ],
   "userCards": [
     {
-      "id": 1,
       "userId": "1",
-      "cardId": "1",
-      "condition": "9.6",
-      "timestamp": "10/22/2019, 04:14:17 PM",
+      "cardId": "12",
+      "condition": 5,
       "favorited": true,
-      "newCard": true,
-      "wanted": true
-    },
-    {
-      "id": 3,
-      "userId": "2",
-      "cardId": "2",
-      "condition": "7",
-      "timestamp": "10/22/2019, 04:14:17 PM",
-      "favorited": false,
-      "newCard": true,
-      "wanted": true
-    },
-    {
-      "id": 4,
-      "userId": "1",
-      "cardId": "2",
-      "condition": "7",
-      "timestamp": "10/22/2019, 04:14:17 PM",
-      "favorited": true,
-      "newCard": true,
-      "wanted": true
-    },
-    {
-      "userId": "1",
-      "cardId": "7",
-      "condition": "7.6",
-      "favorited": false,
-      "timestamp": "10/23/2019, 03:44:45 PM",
+      "timestamp": "10/29/2019, 02:17:52 PM",
       "wanted": false,
-      "id": 7
+      "id": 3
+    },
+    {
+      "userId": "5",
+      "cardId": "15",
+      "condition": "4.4",
+      "favorited": true,
+      "timestamp": "10/29/2019, 02:33:17 PM",
+      "wanted": false,
+      "id": 4
     },
     {
       "userId": "1",
-      "cardId": "10",
-      "condition": "6.9",
+      "cardId": "3",
+      "condition": "0",
       "favorited": true,
-      "timestamp": "10/23/2019, 06:25:08 PM",
+      "timestamp": "10/29/2019, 05:28:24 PM",
       "wanted": false,
-      "id": 10
+      "id": 5
     },
     {
-      "userId": "2",
-      "cardId": "11",
-      "condition": "7.1",
+      "userId": "1",
+      "cardId": "5",
+      "condition": "0",
       "favorited": false,
-      "timestamp": "10/23/2019, 06:31:27 PM",
+      "timestamp": "10/29/2019, 05:28:58 PM",
+      "wanted": false,
+      "id": 6
+    },
+    {
+      "userId": "1",
+      "cardId": "14",
+      "favorited": false,
+      "timestamp": "10/30/2019, 10:07:06 AM",
+      "wanted": false,
+      "id": 9
+    },
+    {
+      "userId": "1",
+      "cardId": "2",
+      "favorited": true,
+      "timestamp": "10/30/2019, 10:08:23 AM",
+      "wanted": false,
+      "id": 10,
+      "condition": 5
+    },
+    {
+      "userId": "1",
+      "cardId": "2",
+      "favorited": false,
+      "timestamp": "10/30/2019, 11:32:44 AM",
       "wanted": false,
       "id": 11
-    },
-    {
-      "userId": "2",
-      "cardId": "12",
-      "condition": "7.8",
-      "favorited": true,
-      "timestamp": "10/24/2019, 09:39:36 AM",
-      "wanted": false,
-      "id": 12
-    },
-    {
-      "userId": "2",
-      "cardId": "13",
-      "condition": "5.8",
-      "favorited": true,
-      "timestamp": "10/24/2019, 09:43:05 AM",
-      "wanted": false,
-      "id": 13
-    },
-    {
-      "userId": "1",
-      "cardId": "17",
-      "condition": "4.6",
-      "favorited": false,
-      "timestamp": "10/28/2019, 11:27:06 AM",
-      "wanted": false,
-      "id": 14
-    },
-    {
-      "userId": "1",
-      "cardId": "21",
-      "condition": "",
-      "favorited": false,
-      "timestamp": "10/28/2019, 11:32:13 AM",
-      "wanted": false,
-      "id": 16
     }
   ],
   "collectorLevels": [
@@ -553,5 +332,8 @@
       "maxCards": 100000000000000000,
       "color": "hot pink"
     }
+  ],
+  "teams": [
+    {}
   ]
 }

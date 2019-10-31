@@ -29,21 +29,26 @@ export default class UserCardList extends Component {
     let newUserCard = {
       userId: sessionStorage.getItem("credentials"),
       cardId: JSON.stringify(card.id),
-      condition: "0",
       favorited: false,
       timestamp: dateNow,
       wanted: false
     };
     console.log("newusercard", newUserCard);
-    APIManager.post("userCards", newUserCard)
-      .then(() => {
-        this.setState({
-          modal: false
-        });
-      })
-      .then(() => {
-        this.props.updateUser();
-      });
+    APIManager.post("userCards", newUserCard).then(() => {
+      this.setState({
+        modal: false
+      },
+      this.props.getData(),
+      this.props.getFavorites()
+      );
+    });
+  };
+
+  deleteCard = id => {
+    APIManager.delete("userCards", id).then(() => {
+      this.props.getData();
+      this.props.getFavorites();
+    });
   };
 
   toggle = () => {
@@ -52,15 +57,13 @@ export default class UserCardList extends Component {
     }));
   };
 
-  getData() {
-    APIManager.searchCards()
-      .then(cards => {
-        this.setState({
-          cards: cards
-        });
-      })
-      .then(() => console.log("here", this.state.cards));
-  }
+  getData = () => {
+    APIManager.searchCards().then(cards => {
+      this.setState({
+        cards: cards
+      });
+    });
+  };
 
   componentDidMount() {
     this.getData();
@@ -78,13 +81,16 @@ export default class UserCardList extends Component {
           <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
           <ModalBody>
             {this.state.cards.map(card => (
-                <UserCard
-                  key={card.id}
-                  card={card}
-                  addCard={this.addCard}
-                  search={this.props.search}
-                  {...this.props}
-                />
+              <UserCard
+                addCard={this.addCard}
+                deleteCard={this.deleteCard}
+                getData={this.props.getData}
+                currentUser={this.props.currentUser}
+                key={card.id}
+                card={card}
+                search={this.props.search}
+                {...this.props}
+              />
             ))}
           </ModalBody>
           <ModalFooter>

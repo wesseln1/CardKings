@@ -46,8 +46,10 @@ export default {
   }).then(response => response.json())
  },
  get(obj, id){
-   console.log("at fetch", id)
   return fetch(`${URL}/${obj}/${id}`).then(response => response.json())
+},
+ getCardsByAuthor(obj, id, authId){
+  return fetch(`${URL}/${obj}/${id}?userId=${authId}`).then(response => response.json())
 },
  getUser(user){
    return fetch(`${URL}/users?username=${user}`).then(response => response.json())
