@@ -76,25 +76,22 @@ export default class Home extends Component {
               </Card>
             </div>
             <div>
-              <CardDeck  className="userCardHomeDeck">
-                {/* <Card className="favoritesListCard"> */}
-                  <>
-                    <FavoriteCardList
-                      key={this.state.currentUser}
-                      favCards={this.props.favCards}
-                      reRender={this.props.reRender}
-                      user={this.props.user}
-                      cards={this.props.cards}
-                      updateCardLists={this.props.updateCardLists}
-                      getFavorites={this.props.getFavorites}
-                      getData={this.props.getData}
-                      updateUser={this.props.updateUser}
-                      currentUser={this.state.currentUser}
-                      setUser={this.props.setUser}
-                      {...this.props}
-                    />
-                  </>
-                {/* </Card> */}
+              <CardTitle>Favorites</CardTitle>
+              <CardDeck className="userCardHomeDeck">
+                <FavoriteCardList
+                  key={this.state.currentUser}
+                  favCards={this.props.favCards}
+                  reRender={this.props.reRender}
+                  user={this.props.user}
+                  cards={this.props.cards}
+                  updateCardLists={this.props.updateCardLists}
+                  getFavorites={this.props.getFavorites}
+                  getData={this.props.getData}
+                  updateUser={this.props.updateUser}
+                  currentUser={this.state.currentUser}
+                  setUser={this.props.setUser}
+                  {...this.props}
+                />
               </CardDeck>
             </div>
             <div>

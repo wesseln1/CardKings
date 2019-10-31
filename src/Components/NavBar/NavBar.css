@@ -1,3 +1,21 @@
 .searchInput {
     width: 30% !important;
 }
+
+.navBarBackground {
+    background-color: #402E1E !important;
+    border: outset 3px #BF8B4B;
+    border-radius: 1em;
+}
+
+.navLogo {
+    width: 50% !important;
+}
+
+.logoLink {
+    width: 20% !important;
+}
+
+.navLinks{
+    color: #F2E1C2 !important;
+}

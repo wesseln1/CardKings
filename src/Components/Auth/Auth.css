@@ -1,53 +1,88 @@
-.splashMainDiv{
-    display: flex !important;
-    background-image: url("./MLB-Logos-baseball-40775627-1024-768.jpg");
-    font-size: xx-large;
-    font-family: cursive;
-    height: -webkit-fill-available;
-    flex-direction: column;
+.splashMainDiv {
+  display: flex !important;
+  font-size: xx-large;
+  height: -webkit-fill-available;
+  flex-direction: column;
 }
 
-.splashDiv{
-    display: flex !important;
-    font-size: xx-large;
-    font-family: cursive;
-    flex: auto;
+.splashDiv {
+  display: flex !important;
+  font-size: xx-large;
+  flex: auto;
 }
 
-.splashHeaderCard{
-    background-color: black !important;
-    
+.splashHeaderCard {
+  align-items: center !important;
+  border: unset #f20505 5px;
 }
 
 .cardHeader {
-    color: #F28705;
+  width: 20% !important;
+  height: 20% !important;
+  /* color: black; */
+  font-family: "Cinzel", serif;
+  color: #f28705;
+}
+
+.infoDiv {
+  border: 0px !important;
 }
 
 .splashCardHeader {
-    text-align: center;
-    align-self: center;
+  text-align: center;
+  width: 100%;
+  align-self: center;
 }
 
-.splashTitleCard {
-    display: flex !important;
-    background-color: #F28705 !important;
-    border: black outset 5px;
-    font-size: xx-large;
-    font-family: cursive;
+/* .card-title { */
+/* color: #f28705 !important; */
+/* } */
 
+/* .card-text { */
+/* color: #f28705 !important; */
+/* } */
+
+.splashTitleCard {
+  display: flex !important;
+  background-color: transparent !important;
+  /* border: black outset 5px; */
+  font-size: xx-large;
+  color: #f28705;
+  font-family: "Cinzel", serif;
 }
 
 .splashCardDiv {
-    /* font-size: ; */
-    align-self: center;
-    border: black solid 5px;
-    border-radius: 0.4em;
+  align-self: center;
 }
 
-.loginMainDiv{
+.loginMainDiv {
+  height: 680px;
+  display: flex !important;
+  /* align-content: center; */
+}
 
+body {
+    background: linear-gradient(
+        to right,
+        #bf8b4b,
+        #f2e1c2,
+        #d9bd8b,
+        #d9b166
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background-size: 400% 400% !important;
+      -webkit-animation: Gradient 10s ease infinite;
+      -moz-animation: Gradient 10s ease infinite;
+      animation: Gradient 10s ease infinite;
+}
+
+.loginContainer{
+    align-items: center !important;
+    text-align: -webkit-center;
+}
+
+.loginButton{
+    background-color: #402E1E !important;
 }
 
 .loginCol {
-    
 }

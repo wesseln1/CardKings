@@ -64,7 +64,7 @@
   "cards": [
     {
       "id": 2,
-      "playerName": "Mr. No Hitter",
+      "playerName": "Justin Verlander",
       "playerPosition": "SP",
       "cardBrand": "Topps",
       "cardNumber": "2345",
@@ -220,7 +220,7 @@
     {
       "userId": "1",
       "cardId": "3",
-      "condition": "0",
+      "condition": 3,
       "favorited": true,
       "timestamp": "10/29/2019, 05:28:24 PM",
       "wanted": false,
@@ -229,7 +229,7 @@
     {
       "userId": "1",
       "cardId": "5",
-      "condition": "0",
+      "condition": 3,
       "favorited": false,
       "timestamp": "10/29/2019, 05:28:58 PM",
       "wanted": false,
@@ -238,10 +238,11 @@
     {
       "userId": "1",
       "cardId": "14",
-      "favorited": false,
+      "favorited": true,
       "timestamp": "10/30/2019, 10:07:06 AM",
       "wanted": false,
-      "id": 9
+      "id": 9,
+      "condition": 4
     },
     {
       "userId": "1",
@@ -254,11 +255,12 @@
     },
     {
       "userId": "1",
-      "cardId": "2",
-      "favorited": false,
-      "timestamp": "10/30/2019, 11:32:44 AM",
+      "cardId": "9",
+      "favorited": true,
+      "timestamp": "10/31/2019, 01:59:29 PM",
       "wanted": false,
-      "id": 11
+      "id": 11,
+      "condition": 2
     }
   ],
   "collectorLevels": [

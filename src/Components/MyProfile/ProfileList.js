@@ -39,7 +39,7 @@ export default class ProfileList extends Component {
     console.log("running");
     return (
       <>
-        <div>
+        <div className="mainProflileDiv">
           <MyProfileCard
             key={this.state.currentUser}
             user={this.state.user}

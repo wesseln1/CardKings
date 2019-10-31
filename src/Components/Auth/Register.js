@@ -57,12 +57,13 @@ handleFieldChange = evt => {
 
 render = () => {
   return (
-    <MDBContainer>
-      <MDBRow>
+    <div  className="loginMainDiv">
+    <MDBContainer className="loginContainer">
+      {/* <MDBRow> */}
         <MDBCol md="6">
           <form>
             <p className="h4 text-center mb-4">Make an account!</p>
-            <label htmlFor="defaultFormLoginEmailEx" className="grey-text">
+            <label htmlFor="defaultFormLoginEmailEx" >
               Username
             </label>
             <input
@@ -74,7 +75,7 @@ render = () => {
               onChange={this.handleFieldChange}
             />
             <br />
-            <label htmlFor="defaultFormLoginEmailEx" className="grey-text">
+            <label htmlFor="defaultFormLoginEmailEx" >
               First Name
             </label>
             <input
@@ -85,7 +86,7 @@ render = () => {
               onChange={this.handleFieldChange}
             />
             <br />
-            <label htmlFor="defaultFormLoginEmailEx" className="grey-text">
+            <label htmlFor="defaultFormLoginEmailEx" >
               Last Name
             </label>
             <input
@@ -96,7 +97,7 @@ render = () => {
               onChange={this.handleFieldChange}
             />
             <br />
-            <label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
+            <label htmlFor="defaultFormLoginPasswordEx" >
               Password
             </label>
             <input
@@ -108,7 +109,7 @@ render = () => {
               onChange={this.handleFieldChange}
             />
             <br />
-            <label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
+            <label htmlFor="defaultFormLoginPasswordEx" >
               Date of Birth
             </label>
             <input
@@ -118,7 +119,7 @@ render = () => {
               onChange={this.handleFieldChange}
             />
             <br />
-            <label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
+            <label htmlFor="defaultFormLoginPasswordEx" >
               Favorite Sports Team
             </label>
             <input
@@ -136,8 +137,9 @@ render = () => {
             </div>
           </form>
         </MDBCol>
-      </MDBRow>
+      {/* </MDBRow> */}
     </MDBContainer>
+    </div>
   );
 };
 }
