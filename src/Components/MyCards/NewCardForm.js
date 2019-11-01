@@ -24,7 +24,7 @@ export default class CardForm extends Component {
     sport: "",
     frontPic: "",
     backPic: "",
-    loadingStatus: false,
+    loadingStatus: null,
     modal: false
   };
 
@@ -41,14 +41,13 @@ export default class CardForm extends Component {
   };
 
   addCard = () => {
-    this.setState({loadingStatus: true})
     let frontImgValue = this.state.frontPic.replace(
       "C:\\fakepath\\",
       "images/"
-    );
-    let backImgValue = this.state.backPic.replace("C:\\fakepath\\", "images/");
-    let newCard = {
-      playerName: this.state.playerName,
+      );
+      let backImgValue = this.state.backPic.replace("C:\\fakepath\\", "images/");
+      let newCard = {
+        playerName: this.state.playerName,
       playerPosition: this.state.playerPosition,
       cardBrand: this.state.cardBrand,
       cardYear: this.state.cardYear,
@@ -59,6 +58,7 @@ export default class CardForm extends Component {
       userId: this.props.currentUser
     };
     APIManager.post("cards", newCard).then(newCard => {
+      this.setState({loadingStatus: true})
       // console.log(this.state.conditon);
       let timestamp = Date.now();
       let dateNow = new Intl.DateTimeFormat("en-US", {
@@ -162,7 +162,7 @@ export default class CardForm extends Component {
             </Form>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" type="submit" disabled={!this.state.loadingStatus} onClick={() => this.addCard()}>
+            <Button color="primary" type="submit" onClick={() => this.addCard()}>
               Do Something
             </Button>
             <Button color="secondary" onClick={this.toggle}>

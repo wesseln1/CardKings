@@ -23,6 +23,7 @@
 
 .cardLabel{
   color: #F2E1C2;
+  font-family: "Cinzel", serif;
 }
 
 /* Scrollbar customization */
@@ -115,5 +116,6 @@
 }
 
 .cardPlayerName {
-  font-style: white !important;
+  color: #F2E1C2 !important;
+  font-family: "Cinzel", serif;
 }

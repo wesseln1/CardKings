@@ -196,13 +196,25 @@
       "backImage": "/",
       "userId": "1",
       "id": 17
+    },
+    {
+      "playerName": "Manny Ramirez",
+      "playerPosition": "",
+      "cardBrand": "",
+      "cardYear": "",
+      "cardTeam": "",
+      "sport": "",
+      "frontImage": "/images/felixFront.jpg",
+      "backImage": "/",
+      "userId": "1",
+      "id": 18
     }
   ],
   "userCards": [
     {
       "userId": "1",
       "cardId": "12",
-      "condition": 5,
+      "condition": 4,
       "favorited": true,
       "timestamp": "10/29/2019, 02:17:52 PM",
       "wanted": false,
@@ -220,7 +232,7 @@
     {
       "userId": "1",
       "cardId": "3",
-      "condition": 3,
+      "condition": 5,
       "favorited": true,
       "timestamp": "10/29/2019, 05:28:24 PM",
       "wanted": false,
@@ -270,6 +282,15 @@
       "wanted": false,
       "id": 12,
       "condition": 5
+    },
+    {
+      "userId": "1",
+      "cardId": "13",
+      "favorited": true,
+      "timestamp": "10/31/2019, 07:34:04 PM",
+      "wanted": false,
+      "id": 13,
+      "condition": 4
     }
   ],
   "collectorLevels": [
