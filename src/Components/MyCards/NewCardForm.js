@@ -1,6 +1,5 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
-import React, { useState, Component } from "react";
-import { Redirect } from "react-router-dom"
+import React, { Component } from "react";
 import {
   Button,
   Modal,
@@ -25,24 +24,9 @@ export default class CardForm extends Component {
     sport: "",
     frontPic: "",
     backPic: "",
+    loadingStatus: false,
     modal: false
   };
-
-  // getData() {
-  //   APIManager.getExpandedItems(
-  //     "userCards",
-  //     "user",
-  //     this.props.currentUser,
-  //     "card"
-  //   )
-  //     .then(cards => {
-  //       console.log("hereeeee", cards);
-  //       this.setState({
-  //         cards: cards
-  //       });
-  //     })
-  //     .then(() => console.log("cards", this.state.cards));
-  // }
 
   handleFieldChange = evt => {
     const stateToChange = {};
@@ -57,6 +41,7 @@ export default class CardForm extends Component {
   };
 
   addCard = () => {
+    this.setState({loadingStatus: true})
     let frontImgValue = this.state.frontPic.replace(
       "C:\\fakepath\\",
       "images/"
@@ -95,7 +80,8 @@ export default class CardForm extends Component {
       APIManager.post("userCards", newUserCard)
         .then(() => {
           this.setState({
-            modal: false
+            modal: false,
+            loadingStatus: false
           })
           this.props.getData()
         })
@@ -176,7 +162,7 @@ export default class CardForm extends Component {
             </Form>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" type="submit" onClick={() => this.addCard()}>
+            <Button color="primary" type="submit" disabled={!this.state.loadingStatus} onClick={() => this.addCard()}>
               Do Something
             </Button>
             <Button color="secondary" onClick={this.toggle}>

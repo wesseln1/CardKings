@@ -8,7 +8,10 @@ import {
   ModalFooter,
   Card,
   CardBody,
-  Input
+  Input,
+  CardImg, 
+  CardTitle,
+  CardText
 } from "reactstrap";
 
 export default class EditCard extends Component {
@@ -22,6 +25,10 @@ export default class EditCard extends Component {
     sport: "",
     frontPic: "",
     backPic: "",
+    authorUsername: "",
+    authorCollectorLevelId: "",
+    authorFavTeam: "",
+    collectorLevel: "",
     modal: false
   };
 
@@ -66,24 +73,46 @@ export default class EditCard extends Component {
     this.setState(stateToChange);
   };
 
+  getCollectorLevel = (userId) => {
+    APIManager.get("collectorLevels", userId).then(levels =>{
+        this.setState({
+          collectorLevel: levels
+        }, console.log("level", levels)
+        )
+      });
+  }
+
+  viewAuthors = (card) => {
+    APIManager.get("users", card).then(user => {
+      this.setState({
+        authorUsername: user.username,
+        authorCollectorLevelId: user.collectorLevelId,
+        authorFavTeam: user.favTeam
+      },
+      this.getCollectorLevel(user.collectorLevel)
+      )
+    });
+  };
+
   getAuthors = () => {
     APIManager.getCardsByAuthor(
       "cards",
       this.props.card.card.id,
       this.props.card.userId
     ).then(card => {
-      console.log("heyyoo", card);
-      this.setState({
-        card: card,
-        playerName: card.playerName,
-        playerPosition: card.playerPosition,
-        cardBrand: card.cardBrand,
-        cardYear: card.cardYear,
-        cardTeam: card.cardTeam,
-        sport: card.sport,
-        frontPic: card.frontImage,
-        backPic: card.backImage
-      });
+      this.setState(
+        {
+          card: card,
+          playerName: card.playerName,
+          playerPosition: card.playerPosition,
+          cardBrand: card.cardBrand,
+          cardYear: card.cardYear,
+          cardTeam: card.cardTeam,
+          sport: card.sport,
+          frontPic: card.frontImage,
+          backPic: card.backImage,
+        },
+        this.viewAuthors(card.userId))
     });
   };
 
@@ -177,7 +206,42 @@ export default class EditCard extends Component {
         </>
       );
     } else {
-        return null 
+      return (
+        <>
+          <Button
+            className="myCardButtons"
+            color="primary"
+            onClick={this.toggle}
+          >
+            Author
+          </Button>
+          <Modal
+            isOpen={this.state.modal}
+            toggle={this.toggle}
+            className="class!"
+          >
+            <ModalHeader toggle={this.toggle}></ModalHeader>
+            <ModalBody>
+              <Card className="flexHomeCardDetails">
+                <CardBody>
+                  <CardImg src={require("../Home/profile.png")} />
+                  <CardTitle>Author: {this.state.authorUsername}</CardTitle>
+                  <CardText>Favorite Team: {this.state.authorFavTeam}</CardText>
+                  <CardText>Collector Level: {this.state.collectorLevel.level}</CardText>
+                </CardBody>
+              </Card>
+            </ModalBody>
+            <ModalFooter>
+              <Button color="danger">
+                View Collection
+              </Button>
+              <Button color="danger" onClick={this.toggle}>
+                Cancel
+              </Button>
+            </ModalFooter>
+          </Modal>
+        </>
+      );
     }
   }
 }

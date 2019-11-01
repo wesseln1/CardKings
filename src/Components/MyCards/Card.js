@@ -1,18 +1,12 @@
 import React, { Component } from "react";
 import EditCard from "./CardEdit";
-// import { Card, CardTitle, CardText } from "reactstrap";
 import {
   Card,
   Button,
   CardImg,
-  CardTitle,
-  ButtonGroup,
+  Label,
   CardFooter,
-  // CardGroup,
-  CardSubtitle,
-  CardBody
 } from "reactstrap";
-import ReactStars from "react-stars";
 import "./Card.css";
 import CardDetials from "./CardDetails";
 import Rating from "react-rating"
@@ -24,7 +18,6 @@ export default class ViewCards extends Component {
 
 
   updateCondition = (evt) => {
-    console.log("event",evt)
     let newCondition = {
       condition: evt
     }
@@ -41,7 +34,6 @@ export default class ViewCards extends Component {
   // };
 
   addToFavorites() {
-    console.log(this.props.card.id);
     APIManager.get("userCards", this.props.card.id).then(card => {
       // console.log("card", card);
       let favorited = card.favorited;
@@ -52,10 +44,6 @@ export default class ViewCards extends Component {
         this.props.getFavorites();
       });
     });
-  }
-
-  componentDidMount(){
-    console.log(this.props.card.condition)
   }
 
   render() {
@@ -70,6 +58,7 @@ export default class ViewCards extends Component {
             alt="Card image cap"
           />
           <CardFooter className="cardButton">
+            <Label>Card Condition</Label>
             <Rating id="condition" initialRating={this.props.card.condition} onClick={(evt) => this.updateCondition(evt)}/>
             <div className="buttonGroup">
               <Button

@@ -1,14 +1,12 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import { Card, CardTitle, CardText, CardImg, CardDeck } from "reactstrap";
 import APIManager from "../../Modules/APIManager";
-import App from "../../App";
 import "./Home.css";
 import "../MyCards/Card.css";
 import "../MyCards/Card.css";
 import CardList from "../MyCards/CardList";
 import CardForm from "../MyCards/NewCardForm";
-import FavoriteCardList from "../MyCards/MyFavoritesList";
+import FavoriteCardList from "../MyCards/myFavoritesList";
 
 export default class Home extends Component {
   state = {
@@ -17,13 +15,14 @@ export default class Home extends Component {
     collectorLevel: {}
   };
 
+  // Getting user from database, then calling getCollectorLevel
   getUser() {
-    // let currentUser = this.props.currentUser;
     APIManager.getUserById(this.props.currentUser).then(user => {
       this.getCollectorLevel(user);
     });
   }
 
+  // Fetching collector level and setting state for the user, collectorlevel, and current users ID
   getCollectorLevel(user) {
     APIManager.get("collectorLevels", user.collectorLevel)
       .then(level =>
@@ -33,17 +32,16 @@ export default class Home extends Component {
           currentUser: user.id
         })
       )
-      // .then(() => this.getFavorites(this.state.currentUser))
       .then(() => this.props.getData());
   }
 
+  // Setting default state
   componentDidMount() {
     this.getUser();
-    // this.props.getFavorites()
   }
 
+// Rendering Home page and calling CardForm, MyFavoritesList, and CardList
   render() {
-    console.log("here", this.props.favCards);
     return (
       <>
         <div className="backgroundDiv">
