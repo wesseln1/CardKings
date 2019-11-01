@@ -130,7 +130,7 @@ render = () => {
             />
             <div className="text-center mt-4">
               <Link to="/">
-                <MDBBtn color="indigo" type="button" onClick={this.newUser}>
+                <MDBBtn type="button" onClick={this.newUser}>
                   Login
                 </MDBBtn>
               </Link>

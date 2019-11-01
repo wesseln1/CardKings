@@ -42,6 +42,7 @@ export default class ViewCards extends Component {
         <Card className="flexHomeCard">
           <h6 className="cardPlayerName">{this.props.card.card.playerName}</h6>
           <CardImg
+          className="cardImgDiv"
             top
             width="100%"
             src={this.props.card.card.frontImage}
@@ -58,6 +59,7 @@ export default class ViewCards extends Component {
                 Favorite
               </Button>
               <Button
+              color="danger"
                 className="myCardButtons"
                 onClick={() => this.props.deleteCard(this.props.card.id)}
               >

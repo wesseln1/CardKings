@@ -38,7 +38,7 @@ export default class CardDetails extends Component {
   render() {
     return (
       <>
-        <Button className="myCardButtons" color="primary" onClick={this.toggle}>
+        <Button className="myCardButtons" onClick={this.toggle}>
           Details
         </Button>
         <Modal

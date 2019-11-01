@@ -125,8 +125,8 @@ export default class EditCard extends Component {
       return (
         <>
           <Button
+          color="warning"
             className="myCardButtons"
-            color="primary"
             onClick={this.toggle}
           >
             Edit
@@ -210,7 +210,6 @@ export default class EditCard extends Component {
         <>
           <Button
             className="myCardButtons"
-            color="primary"
             onClick={this.toggle}
           >
             Author
