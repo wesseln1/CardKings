@@ -21,7 +21,6 @@ export default class ApplicationViews extends Component {
           exact
           path="/"
           render={props => {
-            console.log("home", this.props.user);
             if (this.props.user) {
               return (
                 <Home
@@ -70,7 +69,6 @@ export default class ApplicationViews extends Component {
           exact
           path="/collection/:userId(\d+)"
           render={props => {
-            console.log("user", this.props.user);
             if (this.props.user) {
               return (
                 <CardList
@@ -95,7 +93,6 @@ export default class ApplicationViews extends Component {
           exact
           path="/profile/:userId(\d+)"
           render={props => {
-            console.log("at profile", this.props.user);
             return (
               <ProfileList
                 getFavorites={this.props.getFavorites}

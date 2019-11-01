@@ -9,7 +9,6 @@ export default class ProfileList extends Component {
   };
 
   getUser() {
-    console.log("at getUSer", this.props.currentUser);
     APIManager.getUserById(this.props.currentUser)
       .then(user => {
         this.setState({
@@ -21,9 +20,7 @@ export default class ProfileList extends Component {
   }
 
   getCollectorLevel() {
-    console.log("at get", this.state.user);
     APIManager.get("collectorLevels", this.state.user.collectorLevel).then(level =>
-      // console.log("hayy", level),
       this.setState({
         collectorLevel: level.level,
       })
@@ -31,12 +28,10 @@ export default class ProfileList extends Component {
   }
 
   componentDidMount() {
-    console.log("mounting", this.props.currentUser);
     this.getUser();
   }
 
   render() {
-    console.log("running");
     return (
       <>
         <div className="mainProflileDiv">

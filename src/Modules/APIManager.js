@@ -2,22 +2,9 @@ let URL = "http://localhost:8088"
 
 // API Key for custom search API key="AIzaSyAUL5QJH881qJHitxl0rUOlkiDAKl7SUkM"
 
-export default {
-
-  // getEvents = value => {
-  //   fetch(`https://api.mysportsfeeds.com/v2.1/pull/nhl/players.team=${value}`, {
-  //     headers: {
-  //       "Authorization": "Basic " + btoa({ea2d0048ce5a4a16ae0083d4d7} + ":" + MYSPORTSFEEDS)
-  //     }
-  //   });
-  // },
-  
-//  getSearch(search){
-//    return fetch(`https://www.googleapis.com/customsearch/v1/`)
-//  } 
+export default { 
 
  post(resource, obj){
-  //  console.log("here i am")
   return fetch(`${URL}/${resource}`, {
     method: "POST", 
     headers: {
@@ -27,7 +14,6 @@ export default {
   }).then(response => response.json())
  },
  delete(resource, objId){
-  //  console.log("here i am")
   return fetch(`${URL}/${resource}/${objId}`, {
     method: "DELETE", 
     headers: {
@@ -36,7 +22,6 @@ export default {
   }).then(response => response.json())
  },
  patch(resource, id, obj){
-   console.log("here i am", obj)
   return fetch(`${URL}/${resource}/${id}`, {
     method: "PATCH", 
     headers: {

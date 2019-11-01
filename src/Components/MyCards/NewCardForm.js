@@ -1,6 +1,5 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
-import React, { useState, Component } from "react";
-import { Redirect } from "react-router-dom"
+import React, { Component } from "react";
 import {
   Button,
   Modal,
@@ -25,24 +24,9 @@ export default class CardForm extends Component {
     sport: "",
     frontPic: "",
     backPic: "",
+    loadingStatus: null,
     modal: false
   };
-
-  // getData() {
-  //   APIManager.getExpandedItems(
-  //     "userCards",
-  //     "user",
-  //     this.props.currentUser,
-  //     "card"
-  //   )
-  //     .then(cards => {
-  //       console.log("hereeeee", cards);
-  //       this.setState({
-  //         cards: cards
-  //       });
-  //     })
-  //     .then(() => console.log("cards", this.state.cards));
-  // }
 
   handleFieldChange = evt => {
     const stateToChange = {};
@@ -60,10 +44,10 @@ export default class CardForm extends Component {
     let frontImgValue = this.state.frontPic.replace(
       "C:\\fakepath\\",
       "images/"
-    );
-    let backImgValue = this.state.backPic.replace("C:\\fakepath\\", "images/");
-    let newCard = {
-      playerName: this.state.playerName,
+      );
+      let backImgValue = this.state.backPic.replace("C:\\fakepath\\", "images/");
+      let newCard = {
+        playerName: this.state.playerName,
       playerPosition: this.state.playerPosition,
       cardBrand: this.state.cardBrand,
       cardYear: this.state.cardYear,
@@ -74,6 +58,7 @@ export default class CardForm extends Component {
       userId: this.props.currentUser
     };
     APIManager.post("cards", newCard).then(newCard => {
+      this.setState({loadingStatus: true})
       // console.log(this.state.conditon);
       let timestamp = Date.now();
       let dateNow = new Intl.DateTimeFormat("en-US", {
@@ -95,7 +80,8 @@ export default class CardForm extends Component {
       APIManager.post("userCards", newUserCard)
         .then(() => {
           this.setState({
-            modal: false
+            modal: false,
+            loadingStatus: false
           })
           this.props.getData()
         })

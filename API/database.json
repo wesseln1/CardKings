@@ -7,7 +7,7 @@
       "password": "1234",
       "DoB": "1997-04-29",
       "favTeam": "Detroit Redwings",
-      "collectorLevel": "1",
+      "collectorLevel": "5",
       "id": 1
     },
     {
@@ -17,7 +17,7 @@
       "password": "1234",
       "DoB": "2019-10-24",
       "favTeam": "det",
-      "collectorLevelId": "1",
+      "collectorLevel": "3",
       "id": 2
     },
     {
@@ -47,7 +47,7 @@
       "password": "1234",
       "DoB": "2019-10-17",
       "favTeam": "Detroit Redwings",
-      "collectorLevel": 1,
+      "collectorLevel": "1",
       "id": 5
     },
     {
@@ -57,7 +57,7 @@
       "password": "sgd",
       "DoB": "2019-10-16",
       "favTeam": "sgf",
-      "collectorLevel": 1,
+      "collectorLevel": "1",
       "id": 6
     }
   ],
@@ -73,7 +73,7 @@
       "sport": "Baseball",
       "frontImage": "/images/j_v_god.jpg",
       "backImage": "images/nolan.jpg",
-      "userId": "1",
+      "userId": "4",
       "favorited": false
     },
     {
@@ -196,13 +196,25 @@
       "backImage": "/",
       "userId": "1",
       "id": 17
+    },
+    {
+      "playerName": "Manny Ramirez",
+      "playerPosition": "",
+      "cardBrand": "",
+      "cardYear": "",
+      "cardTeam": "",
+      "sport": "",
+      "frontImage": "/images/felixFront.jpg",
+      "backImage": "/",
+      "userId": "1",
+      "id": 18
     }
   ],
   "userCards": [
     {
       "userId": "1",
       "cardId": "12",
-      "condition": 5,
+      "condition": 4,
       "favorited": true,
       "timestamp": "10/29/2019, 02:17:52 PM",
       "wanted": false,
@@ -220,7 +232,7 @@
     {
       "userId": "1",
       "cardId": "3",
-      "condition": 3,
+      "condition": 5,
       "favorited": true,
       "timestamp": "10/29/2019, 05:28:24 PM",
       "wanted": false,
@@ -261,6 +273,24 @@
       "wanted": false,
       "id": 11,
       "condition": 2
+    },
+    {
+      "userId": "1",
+      "cardId": "11",
+      "favorited": false,
+      "timestamp": "10/31/2019, 05:43:06 PM",
+      "wanted": false,
+      "id": 12,
+      "condition": 5
+    },
+    {
+      "userId": "1",
+      "cardId": "13",
+      "favorited": true,
+      "timestamp": "10/31/2019, 07:34:04 PM",
+      "wanted": false,
+      "id": 13,
+      "condition": 4
     }
   ],
   "collectorLevels": [

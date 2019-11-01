@@ -8,18 +8,8 @@ import "./Card.css";
 
 export default class FavoriteCardList extends Component {
   state = {
-    cards: [],
-    // favCards: []
+    cards: []
   };
-
-  // getFavorites = () => {
-  //   console.log(sessionStorage.getItem("credentials"))
-  //   APIManager.getFavoritedCards(sessionStorage.getItem("credentials")).then(cards =>{
-  //     this.setState({
-  //       favCards: cards
-  //     })
-  //   });
-  // } 
 
   deleteCard = id => {
     APIManager.delete("userCards", id).then(() => {
@@ -39,11 +29,6 @@ export default class FavoriteCardList extends Component {
       }
     );
   }
-
-  // componentDidMount() {
-  //   console.log("fave cards", this.props.favCards)
-  //   // this.props.getFavorites();
-  // }
 
   render() {
     return (

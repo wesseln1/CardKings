@@ -19,13 +19,11 @@ export default class App extends Component {
   };
 
   getFavorites = () => {
-    console.log("run")
     APIManager.getFavoritedCards(sessionStorage.getItem("credentials")).then(
       cards => {
         this.setState({
           favCards: cards
         });
-        console.log("here", this.state.favCards)
       }
     );
   };
@@ -41,7 +39,6 @@ export default class App extends Component {
   };
 
   updateCardLists(){
-    console.log("run")
     this.getData()
     this.getFavorites()
   }
@@ -67,7 +64,6 @@ export default class App extends Component {
   };
 
   updateUser = () => {
-    console.log("running", this.state.currentUser);
     sessionStorage.setItem("credentials", this.state.currentUser);
     this.setState({
       user: true,
@@ -93,14 +89,12 @@ export default class App extends Component {
     this.setState({
       user: false
     });
-    // return <Redirect to="/splash" />
   };
 
   getData = () => {
     let userId = sessionStorage.getItem("credentials");
     APIManager.getExpandedItems("userCards", "user", userId, "card").then(
       cards => {
-        // console.log("hereeeee", cards);
         this.setState({
           cards: cards
         });
@@ -112,7 +106,7 @@ export default class App extends Component {
     return (
       <>
         {this.state.user
-          ? (console.log("true"),
+          ?
             (
               <>
                 <NavBar
@@ -144,8 +138,8 @@ export default class App extends Component {
                   reRender={this.reRender}
                 />
               </>
-            ))
-          : (console.log("false", this.state.user),
+            )
+          : 
             (
               <>
                 <Redirect to="/splash" />
@@ -161,7 +155,7 @@ export default class App extends Component {
                   user={this.state.user}
                 />
               </>
-            ))}
+            )}
       </>
     );
   }
