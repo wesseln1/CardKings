@@ -1,28 +1,22 @@
 import React, { Component } from "react";
 import EditCard from "./CardEdit";
-import {
-  Card,
-  Button,
-  CardImg,
-  Label,
-  CardFooter,
-} from "reactstrap";
+import { Card, Button, CardImg, Label, CardFooter } from "reactstrap";
 import "./Card.css";
 import CardDetials from "./CardDetails";
-import Rating from "react-rating"
+import Rating from "react-rating";
 import APIManager from "../../Modules/APIManager";
-import "./Card.css"
+import "./Card.css";
 
 export default class ViewCards extends Component {
-
-
-
-  updateCondition = (evt) => {
+  updateCondition = evt => {
     let newCondition = {
       condition: evt
-    }
-    APIManager.patch("userCards", this.props.card.id, newCondition)
-  }
+    };
+    APIManager.patch("userCards", this.props.card.id, newCondition).then(() => {
+      this.props.getData()
+      this.props.getFavorites()
+    });
+  };
 
   addToFavorites() {
     APIManager.get("userCards", this.props.card.id).then(card => {
@@ -42,7 +36,7 @@ export default class ViewCards extends Component {
         <Card className="flexHomeCard">
           <h6 className="cardPlayerName">{this.props.card.card.playerName}</h6>
           <CardImg
-          className="cardImgDiv"
+            className="cardImgDiv"
             top
             width="100%"
             src={this.props.card.card.frontImage}
@@ -50,16 +44,20 @@ export default class ViewCards extends Component {
           />
           <CardFooter className="cardButton">
             <Label className="cardLabel">Card Condition:</Label>
-            <Rating id="condition" initialRating={this.props.card.condition} onClick={(evt) => this.updateCondition(evt)}/>
+            <Rating
+              id="condition"
+              initialRating={this.props.card.condition}
+              onClick={evt => this.updateCondition(evt)}
+            />
             <div className="buttonGroup">
               <Button
-                className="myCardButtons"
+                className="myCardButtons colorBtn"
                 onClick={() => this.addToFavorites()}
               >
                 Favorite
               </Button>
               <Button
-              color="danger"
+                color="danger"
                 className="myCardButtons"
                 onClick={() => this.props.deleteCard(this.props.card.id)}
               >

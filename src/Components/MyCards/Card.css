@@ -3,6 +3,10 @@
   /* flex-flow: row !important; */
 }
 
+.colorBtn{
+  background-color: #BF8B4B !important;
+}
+
 .addCardModalDiv {
   align-items: center;
   max-height: 55px;
@@ -44,12 +48,12 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #BF8B4B;
+  background: #737373;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #402E1E;
+  background: #404040;
 }
 
 /* width */
@@ -78,9 +82,6 @@
   max-width: 250px !important;
   display: contents;
 }
-/* .userCardFlex{
-    flex-wrap: wrap !important; 
-}  */
 
 .card-img-top {
   height: 250px;
@@ -125,4 +126,12 @@
 .cardPlayerName {
   color: #402E1E !important;
   font-family: "Cinzel", serif;
+}
+
+.btn-secondary {
+  background-color: #BF8B4B !important;
+}
+
+.btn-secondary .btnColor .btn{
+  background-color: #BF8B4B !important;
 }

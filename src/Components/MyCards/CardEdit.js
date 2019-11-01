@@ -195,7 +195,7 @@ export default class EditCard extends Component {
               </Card>
             </ModalBody>
             <ModalFooter>
-              <Button color="danger" onClick={this.updateCard}>
+              <Button style={{backgroundColor: '#BF8B4B'}} className="colorBtn" onClick={this.updateCard}>
                 Update
               </Button>
               <Button color="danger" onClick={this.toggle}>

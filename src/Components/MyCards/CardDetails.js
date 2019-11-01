@@ -38,7 +38,7 @@ export default class CardDetails extends Component {
   render() {
     return (
       <>
-        <Button className="myCardButtons" onClick={this.toggle}>
+        <Button className="myCardButtons colorBtn" onClick={this.toggle}>
           Details
         </Button>
         <Modal
@@ -54,7 +54,6 @@ export default class CardDetails extends Component {
               <CardImg
               className="cardDetailImg"
                 top
-                width="100%"
                 src={this.props.card.card.frontImage}
                 alt="Card image cap"
               />
