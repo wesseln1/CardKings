@@ -29,3 +29,7 @@ body {
       -moz-animation: Gradient 10s ease infinite;
       animation: Gradient 10s ease infinite;
 }
+
+.btn-secondary .btnColor {
+    background-color: #BF8B4B !important;
+}

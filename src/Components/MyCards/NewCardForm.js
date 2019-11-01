@@ -92,7 +92,7 @@ export default class CardForm extends Component {
   render() {
     return (
       <div>
-        <Button onClick={this.toggle}>
+        <Button className="colorBtn" onClick={this.toggle}>
           Add New Card
         </Button>
         <Modal
@@ -162,7 +162,7 @@ export default class CardForm extends Component {
             </Form>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" type="submit" onClick={() => this.addCard()}>
+            <Button className="colorBtn" type="submit" onClick={() => this.addCard()}>
               Do Something
             </Button>
             <Button color="secondary" onClick={this.toggle}>

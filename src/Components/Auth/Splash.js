@@ -37,7 +37,7 @@ export default class Splash extends Component {
                 </div>
                 <div>
                   <Link to="/register">
-                    <Button type="button">
+                    <Button  type="button">
                       Register
                     </Button>
                   </Link>

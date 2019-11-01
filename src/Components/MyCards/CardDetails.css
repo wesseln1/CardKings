@@ -1,3 +1,7 @@
 .cardDetailImg {
-    height: 600px;
+    height: 600px !important;
+}
+
+.btn-secondary {
+    background-color: #BF8B4B !important;
 }
