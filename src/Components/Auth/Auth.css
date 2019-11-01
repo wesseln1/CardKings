@@ -9,6 +9,8 @@
   display: flex !important;
   font-size: xx-large;
   flex: auto;
+  max-width: 50%;
+  align-self: center;
 }
 
 .splashHeaderCard {
@@ -35,11 +37,11 @@
 }
 
 /* .card-title { */
-/* color: #f28705 !important; */
+  /* color: #f28705 !important; */
 /* } */
 
 /* .card-text { */
-/* color: #f28705 !important; */
+  /* color: #f28705 !important; */
 /* } */
 
 .splashTitleCard {
@@ -49,6 +51,10 @@
   font-size: xx-large;
   color: #f28705;
   font-family: "Cinzel", serif;
+  align-self: flex-start;
+  align-items: center;
+  border: solid #402E1E 15px !important;
+  border-radius: 10% !important;
 }
 
 .splashCardDiv {

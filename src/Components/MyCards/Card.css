@@ -13,16 +13,21 @@
   margin-top: 50px;
 }
 
+.cardImgDiv{
+  /* border: solid #F2E1C2 3px !important; */
+  /* border-radius: 15px; */
+}
+
 .flexHomeCard {
   display: flex;
   align-self: baseline;
-  background: #000000 !important;
-  border: outset 10px #4285f4 !important;
+  background: #F2E1C2 !important;
+  border: outset 10px #402E1E !important;
   /* padding: 10px; */
 }
 
 .cardLabel{
-  color: #F2E1C2;
+  color: #402E1E;
   font-family: "Cinzel", serif;
 }
 
@@ -87,7 +92,8 @@
   overflow-x: scroll !important;
   overflow-y: hidden !important;
   margin: 80px !important;
-  border: inset 10px #402E1E;
+  border: outset 10px #F2E1C2;
+  border-radius: 25px;
 }
 
 .cardButtons {
@@ -113,9 +119,10 @@
 .myCardButtons {
   font-size: 10px !important;
   width: 80px;
+  background: #F2E1C2 !important;
 }
 
 .cardPlayerName {
-  color: #F2E1C2 !important;
+  color: #402E1E !important;
   font-family: "Cinzel", serif;
 }

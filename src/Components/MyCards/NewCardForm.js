@@ -92,7 +92,7 @@ export default class CardForm extends Component {
   render() {
     return (
       <div>
-        <Button color="primary" onClick={this.toggle}>
+        <Button onClick={this.toggle}>
           Add New Card
         </Button>
         <Modal

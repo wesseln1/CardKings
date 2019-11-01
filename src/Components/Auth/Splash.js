@@ -24,20 +24,20 @@ export default class Splash extends Component {
                 <CardText>
                   Welcome to Card Kings! A trading card organizer!
                 </CardText>
-              </Card>
+              {/* </Card> */}
             {/* </div> */}
             {/* <div className="splashCardDiv"> */}
-              <Card className="splashTitleCard" body inverse>
+              {/* <Card className="splashTitleCard" body inverse> */}
                 <div>
                   <Link to="/login">
-                    <Button color="primary" type="submit">
+                    <Button type="submit">
                       Login
                     </Button>
                   </Link>
                 </div>
                 <div>
                   <Link to="/register">
-                    <Button color="primary" type="button">
+                    <Button type="button">
                       Register
                     </Button>
                   </Link>
