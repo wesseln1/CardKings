@@ -72,7 +72,7 @@
       "cardTeam": "Detroit Tigers",
       "sport": "Baseball",
       "frontImage": "/images/j_v_god.jpg",
-      "backImage": "images/nolan.jpg",
+      "backImage": "/images/nolan.jpg",
       "userId": "4",
       "favorited": false
     },
@@ -241,7 +241,7 @@
     {
       "userId": "1",
       "cardId": "5",
-      "condition": 3,
+      "condition": 4,
       "favorited": false,
       "timestamp": "10/29/2019, 05:28:58 PM",
       "wanted": false,
@@ -254,7 +254,7 @@
       "timestamp": "10/30/2019, 10:07:06 AM",
       "wanted": false,
       "id": 9,
-      "condition": 4
+      "condition": 5
     },
     {
       "userId": "1",
@@ -272,7 +272,7 @@
       "timestamp": "10/31/2019, 01:59:29 PM",
       "wanted": false,
       "id": 11,
-      "condition": 2
+      "condition": 4
     },
     {
       "userId": "1",
