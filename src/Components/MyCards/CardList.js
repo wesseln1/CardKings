@@ -11,10 +11,6 @@ export default class CardList extends Component {
     cards: []
   };
 
-  // componentDidMount() {
-  //   this.props.getData();
-  // }
-
   deleteCard = id => {
     APIManager.delete("userCards", id).then(() => {
       this.props.getData();
@@ -64,8 +60,6 @@ export default class CardList extends Component {
           });
         })
         .then(() => {
-          // console.log("newcards update", this.props.getData)
-          // console.log("here")
           this.props.getData();
           this.props.getFavorites();
         });

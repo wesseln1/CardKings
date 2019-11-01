@@ -30,11 +30,6 @@ export default class FavoriteCardList extends Component {
     );
   }
 
-  // componentDidMount() {
-  //   console.log("fave cards", this.props.favCards)
-  //   // this.props.getFavorites();
-  // }
-
   render() {
     return (
       <div className="cardDiv">

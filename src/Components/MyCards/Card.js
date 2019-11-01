@@ -24,18 +24,8 @@ export default class ViewCards extends Component {
     APIManager.patch("userCards", this.props.card.id, newCondition)
   }
 
-
-  // handleFieldChange = evt => {
-    
-  //   console.log("changing", evt)
-  //   const stateToChange = {};
-  //   stateToChange[evt.target.id] = evt.target.value;
-  //   this.setState(stateToChange);
-  // };
-
   addToFavorites() {
     APIManager.get("userCards", this.props.card.id).then(card => {
-      // console.log("card", card);
       let favorited = card.favorited;
       let newCard = {
         favorited: favorited ? false : true
@@ -58,7 +48,7 @@ export default class ViewCards extends Component {
             alt="Card image cap"
           />
           <CardFooter className="cardButton">
-            <Label>Card Condition</Label>
+            <Label className="cardLabel">Card Condition:</Label>
             <Rating id="condition" initialRating={this.props.card.condition} onClick={(evt) => this.updateCondition(evt)}/>
             <div className="buttonGroup">
               <Button

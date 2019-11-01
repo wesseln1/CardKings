@@ -24,21 +24,6 @@ export default class UserCard extends Component {
     this.setState(stateToChange);
   };
 
-  //   newCardCondition() {
-  //       console.log("runnnnnnnnn")
-  //     return (
-  //       <>
-  //         <Label>Card Condition</Label>
-  //         <Input
-  //           className="conditonInput"
-  //           id="condition"
-  //           onChange={this.handleFieldChange}
-  //         ></Input>
-  //         <Button onClick={() => this.props.addCard(card)}>Add</Button>
-  //       </>
-  //     );
-  //   }
-
   toggle = () => {
     this.setState(prevState => ({
       toggle: !prevState.toggle
@@ -47,7 +32,6 @@ export default class UserCard extends Component {
 
   render() {
     if (this.props.card.playerName.startsWith(this.props.search)) {
-      console.log(this.props.card.playerName);
       return (
         <>
           <div>

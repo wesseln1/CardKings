@@ -74,7 +74,7 @@ export default class Home extends Component {
               </Card>
             </div>
             <div>
-              <CardTitle>Favorites</CardTitle>
+              <CardTitle className="homeTitles">Favorites</CardTitle>
               <CardDeck className="userCardHomeDeck">
                 <FavoriteCardList
                   key={this.state.currentUser}
@@ -93,7 +93,7 @@ export default class Home extends Component {
               </CardDeck>
             </div>
             <div>
-              <CardTitle>Collection</CardTitle>
+              <CardTitle className="homeTitles">Collection</CardTitle>
               <CardDeck className="userCardHomeDeck">
                 <CardList
                   updateCardLists={this.props.updateCardLists}

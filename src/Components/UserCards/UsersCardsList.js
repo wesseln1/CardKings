@@ -33,7 +33,6 @@ export default class UserCardList extends Component {
       timestamp: dateNow,
       wanted: false
     };
-    console.log("newusercard", newUserCard);
     APIManager.post("userCards", newUserCard).then(() => {
       this.setState({
         modal: false

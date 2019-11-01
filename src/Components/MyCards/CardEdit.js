@@ -77,7 +77,7 @@ export default class EditCard extends Component {
     APIManager.get("collectorLevels", userId).then(levels =>{
         this.setState({
           collectorLevel: levels
-        }, console.log("level", levels)
+        }
         )
       });
   }

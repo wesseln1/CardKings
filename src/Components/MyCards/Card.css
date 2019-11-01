@@ -21,6 +21,10 @@
   /* padding: 10px; */
 }
 
+.cardLabel{
+  color: #F2E1C2;
+}
+
 /* Scrollbar customization */
 /* width */
 ::-webkit-scrollbar {
