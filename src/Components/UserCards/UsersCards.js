@@ -55,7 +55,7 @@ export default class UserCard extends Component {
                 {...this.props}
               />
               <Button
-                className=""
+              color="success"
                 toggle={this.state.toggle}
                 onClick={() => this.props.addCard(this.props.card)}
               >

@@ -40,7 +40,6 @@ export default class CardDetails extends Component {
       return (
         <>
           <Button
-            color="primary"
             onClick={this.toggle}
           >
             Details
@@ -77,19 +76,8 @@ export default class CardDetails extends Component {
               </Card>
             </ModalBody>
             <ModalFooter>
-            {/* <EditCard
-                card={this.props.card}
-                key={this.props.card.id}
-                getFavorites={this.props.getFavorites}
-                favCards={this.props.favCards}
-                addCard={this.props.addCard}
-                deleteCard={this.props.deleteCard}
-                getData={this.props.getData}
-                currentUser={this.props.currentUser}
-                {...this.props}
-              /> */}
               <Button
-                color="warning"
+                color="success"
                 className="cardDetailButton"
                 onClick={() => this.props.addCard(this.props.card), this.toggle}
               >
@@ -106,8 +94,6 @@ export default class CardDetails extends Component {
       return (
         <>
           <Button
-            className="myCardButtons"
-            color="primary"
             onClick={this.toggle}
           >
             Details
@@ -145,6 +131,7 @@ export default class CardDetails extends Component {
             </ModalBody>
             <ModalFooter>
               <Button
+                color="success"
                 className="cardDetailButton"
                 onClick={() => this.props.addCard(this.props.card.id)}
               >

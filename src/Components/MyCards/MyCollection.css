@@ -1,0 +1,18 @@
+.myCollectionCardFlex {
+    justify-content: center;
+    margin: 5px;
+}
+
+.myCardDiv {
+  margin: 5px;
+  padding: 10px;
+  border: outset 10px #F2E1C2;
+}
+
+.flexMyCard {
+  margin: .2em;
+  min-width: 200px !important;
+  max-width: 210px !important;
+}
+/* 402E1E
+F2E1C2 */

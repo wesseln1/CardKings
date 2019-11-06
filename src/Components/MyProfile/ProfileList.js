@@ -34,7 +34,7 @@ export default class ProfileList extends Component {
   render() {
     return (
       <>
-        <div className="mainProflileDiv">
+        <div className="mainProflileDiv myMainProfileDiv">
           <MyProfileCard
             key={this.state.currentUser}
             user={this.state.user}

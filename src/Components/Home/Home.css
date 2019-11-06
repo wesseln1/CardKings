@@ -1,13 +1,22 @@
 .profilePic {
-    width: 30% !important;
+    width: 50% !important;
+    border: solid 5px #bf8b4b;
 }
 
 .profileCard {
     width: 20%;
+    background-color: #f2e1c2 !important;
+    /* border: solid 10px #402E1E !important; */
 }
 
 .profileDiv{
-    width: 25%;
+    width: 15%;
+    background-color: #f2e1c2 !important;
+}
+
+.addCardModalDiv {
+    /* border: solid 10px #402E1E !important; */
+    background-color: #f2e1c2 !important;
 }
 
 .homeTitles {
