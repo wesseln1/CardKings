@@ -5,7 +5,7 @@ import CardDetials from "./CardDetails";
 import Rating from "react-rating";
 import APIManager from "../../Modules/APIManager";
 
-export default class ViewCards extends Component {
+export default class MyCollectionCards extends Component {
   updateCondition = evt => {
     let newCondition = {
       condition: evt
@@ -31,7 +31,7 @@ export default class ViewCards extends Component {
   render() {
     return (
       <>
-        <Card className="flexHomeCard">
+        <Card className="flexHomeCard flexMyCard">
           <h6 className="cardPlayerName">{this.props.card.card.playerName}</h6>
           <CardImg
             className="cardImgDiv"

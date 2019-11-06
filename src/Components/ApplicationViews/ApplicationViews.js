@@ -4,10 +4,9 @@ import React, { Component } from "react";
 // import Login from "../Auth/Login";
 // import Register from "../Auth/Register";
 import Home from "../Home/Home";
-import ProfileList from "../MyProfile/ProfileList";
+import MyProfile from "../MyProfile/MyProfile";
 import App from "../../App";
-import CardList from "../MyCards/CardList";
-import APIManager from "../../Modules/APIManager";
+import MyCollectionList from "../MyCards/MyCollectionList"
 // import CardForm from "../MyCards/NewCardForm"
 
 export default class ApplicationViews extends Component {
@@ -43,35 +42,13 @@ export default class ApplicationViews extends Component {
             }
           }}
         />
-        {/* <Route
-          exact
-          path="/search"
-          render={props => {
-            console.log("searchForCards", this.props.user);
-            if (this.props.user) {
-              return (
-                <SearchForCard
-                  key={this.props.currentUser}
-                  getData={this.getData}
-                  cards={this.state.cards}
-                  currentUser={this.props.currentUser}
-                  setUser={this.props.setUser}
-                  isAuthenticated={this.props.isAuthenticated}
-                  {...props}
-                />
-              );
-            } else {
-              return <App />;
-            }
-          }}
-        /> */}
         <Route
           exact
           path="/collection/:userId(\d+)"
           render={props => {
             if (this.props.user) {
               return (
-                <CardList
+                <MyCollectionList
                 updateCardLists={this.props.updateCardLists}
                   getFavorites={this.props.getFavorites}
                   favCards={this.props.favCards}
@@ -94,7 +71,7 @@ export default class ApplicationViews extends Component {
           path="/profile/:userId(\d+)"
           render={props => {
             return (
-              <ProfileList
+              <MyProfile
                 getFavorites={this.props.getFavorites}
                 favCards={this.props.favCards}
                 key={this.props.currentUser}

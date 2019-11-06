@@ -12,15 +12,23 @@ body {
       animation: Gradient 10s ease infinite;
 }
 
-.profileCard {
-    width: 50% !important;
-    background-color: #BF8B4B !important;
+.myProfileCard {
+    background-color: #F2E1C2 !important;
+    border: outset 5px #402E1E !important;
+    width: 100px !important;
 }
 
-.profileDiv {
-    background-color: #BF8B4B;
+.myProfilePic {
+    padding: 10px;
 }
 
-.mainProfileDiv{
-    background-color: #BF8B4B !important;
+.myProfileDiv {
+    width: 15% !important;
+}
+
+.myMainProfileDiv{
+    /* width: 50% !important; */
+    margin: 10px;
+    display: flex;
+    justify-content: center
 }

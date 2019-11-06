@@ -8,7 +8,8 @@
       "DoB": "1997-04-29",
       "favTeam": "Detroit Redwings",
       "collectorLevel": "5",
-      "id": 1
+      "id": 1,
+      "profilePic": "/images/profile.jpg"
     },
     {
       "username": "newWitch",
@@ -126,7 +127,7 @@
       "id": 11
     },
     {
-      "playerName": "Cabby",
+      "playerName": "Miguel Cabrera",
       "playerPosition": "1B",
       "cardBrand": "Upper Deck",
       "cardYear": "2008",
@@ -150,7 +151,7 @@
       "id": 13
     },
     {
-      "playerName": "Darryl Razeberry",
+      "playerName": "Darryl Strawberry",
       "playerPosition": "RF",
       "cardBrand": "The Topps Company",
       "cardYear": "1988",
@@ -232,7 +233,7 @@
     {
       "userId": "1",
       "cardId": "3",
-      "condition": 5,
+      "condition": 3,
       "favorited": true,
       "timestamp": "10/29/2019, 05:28:24 PM",
       "wanted": false,

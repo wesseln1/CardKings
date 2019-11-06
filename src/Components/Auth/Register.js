@@ -12,7 +12,8 @@ export default class Login extends Component {
     password: "",
     userId: "",
     DoB: "",
-    favTeam: ""
+    favTeam: "",
+    profilePic: ""
   };
 
   setCredentials = () => {
@@ -26,6 +27,10 @@ export default class Login extends Component {
 
 newUser = e => {
   e.preventDefault();
+  let imgValue = this.state.frontPic.replace(
+    "C:\\fakepath\\",
+    "images/"
+    );
   let user = {
     username: this.state.username,
     firstName: this.state.firstName,
@@ -33,7 +38,8 @@ newUser = e => {
     password: this.state.password,
     DoB: this.state.DoB,
     favTeam: this.state.favTeam,
-    collectorLevel: 1
+    collectorLevel: 1,
+    profilePic: imgValue
   };
   APIManager.getUser(this.state.username).then(users => {
     let exsistingUser = users.shift();
@@ -125,6 +131,15 @@ render = () => {
             <input
               type="text"
               id="favTeam"
+              className="form-control"
+              onChange={this.handleFieldChange}
+            />
+            <label htmlFor="defaultFormLoginPasswordEx" >
+              Profile Picture
+            </label>
+            <input
+              type="file"
+              id="profilePic"
               className="form-control"
               onChange={this.handleFieldChange}
             />

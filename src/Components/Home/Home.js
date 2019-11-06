@@ -24,6 +24,7 @@ export default class Home extends Component {
 
   // Fetching collector level and setting state for the user, collectorlevel, and current users ID
   getCollectorLevel(user) {
+    console.log("user", user);
     APIManager.get("collectorLevels", user.collectorLevel)
       .then(level =>
         this.setState({
@@ -40,38 +41,40 @@ export default class Home extends Component {
     this.getUser();
   }
 
-// Rendering Home page and calling CardForm, MyFavoritesList, and CardList
+  // Rendering Home page and calling CardForm, MyFavoritesList, and CardList
   render() {
     return (
       <>
         <div className="backgroundDiv">
           <>
             <div className="profileDiv">
-              <Card className="profileCard">
-                <CardTitle>Welcome {this.state.user.firstName}!</CardTitle>
-                <CardImg
-                  className="profilePic"
-                  src={require("./profile.png")}
-                />
-                <CardTitle>Username: {this.state.user.username}</CardTitle>
-                <CardText>
-                  Collector Level: {this.state.collectorLevel.level}
-                </CardText>
-              </Card>
-              <Card className="addCardModalDiv">
-                <CardForm
-                  key={this.state.currentUser}
-                  reRender={this.props.reRender}
-                  updateCardLists={this.props.updateCardLists}
-                  setUser={this.props.setUser}
-                  updateUser={this.props.updateUser}
-                  getFavorites={this.props.getFavorites}
-                  // cards={this.state.cards}
-                  getData={this.props.getData}
-                  currentUser={this.state.currentUser}
-                  {...this.props}
-                />
-              </Card>
+              <Card className="profileCardDiv">
+                <Card className="profileCard">
+                  <CardTitle>Welcome {this.state.user.firstName}!</CardTitle>
+                  <CardImg
+                    className="profilePic"
+                    src={this.state.user.profilePic}
+                  />
+                  <CardTitle>Username: {this.state.user.username}</CardTitle>
+                  <CardText>
+                    Collector Level: {this.state.collectorLevel.level}
+                  </CardText>
+                </Card>
+                <Card className="addCardModalDiv">
+                  <CardForm
+                    key={this.state.currentUser}
+                    reRender={this.props.reRender}
+                    updateCardLists={this.props.updateCardLists}
+                    setUser={this.props.setUser}
+                    updateUser={this.props.updateUser}
+                    getFavorites={this.props.getFavorites}
+                    // cards={this.state.cards}
+                    getData={this.props.getData}
+                    currentUser={this.state.currentUser}
+                    {...this.props}
+                  />
+                </Card>
+              </  Card>
             </div>
             <div>
               <CardTitle className="homeTitles">Favorites</CardTitle>
