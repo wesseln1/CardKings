@@ -3,7 +3,6 @@ import { Card, CardTitle, CardText, CardImg, CardDeck } from "reactstrap";
 import APIManager from "../../Modules/APIManager";
 import "./Home.css";
 import "../MyCards/Card.css";
-import "../MyCards/Card.css";
 import CardList from "../MyCards/CardList";
 import CardForm from "../MyCards/NewCardForm";
 import FavoriteCardList from "../MyCards/myFavoritesList";
