@@ -1,11 +1,20 @@
 import React, { Component } from "react";
-import { Card, CardTitle, CardText, CardImg, CardDeck } from "reactstrap";
+import {
+  Card,
+  CardTitle,
+  CardText,
+  CardImg,
+  CardDeck,
+  CardHeader,
+  CardSubtitle
+} from "reactstrap";
 import APIManager from "../../Modules/APIManager";
 import "./Home.css";
 import "../MyCards/Card.css";
 import CardList from "../MyCards/CardList";
 import CardForm from "../MyCards/NewCardForm";
 import FavoriteCardList from "../MyCards/myFavoritesList";
+
 
 export default class Home extends Component {
   state = {
@@ -45,6 +54,10 @@ export default class Home extends Component {
     return (
       <>
         <div className="backgroundDiv">
+          <div className="homeHeader">
+            <header className="pageHeader">Card Kings</header>
+            <CardSubtitle className="subtitle">Become the Card King!</CardSubtitle>
+          </div>
           <>
             <div className="profileDiv">
               <Card className="profileCardDiv">
@@ -73,7 +86,7 @@ export default class Home extends Component {
                     {...this.props}
                   />
                 </Card>
-              </  Card>
+              </Card>
             </div>
             <div>
               <CardTitle className="homeTitles">Favorites</CardTitle>

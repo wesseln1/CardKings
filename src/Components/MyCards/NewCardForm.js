@@ -163,7 +163,7 @@ export default class CardForm extends Component {
           </ModalBody>
           <ModalFooter>
             <Button className="colorBtn" type="submit" onClick={() => this.addCard()}>
-              Do Something
+              Add Card
             </Button>
             <Button color="secondary" onClick={this.toggle}>
               Cancel

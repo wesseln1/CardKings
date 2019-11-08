@@ -77,8 +77,8 @@ export default class UserCardList extends Component {
           toggle={this.toggle}
           className="class!"
         >
-          <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
-          <ModalBody>
+          <ModalHeader className="modalHeader" toggle={this.toggle}>Results</ModalHeader>
+          <ModalBody className="modalBody">
             {this.state.cards.map(card => (
               <UserCard
                 addCard={this.addCard}
@@ -92,7 +92,7 @@ export default class UserCardList extends Component {
               />
             ))}
           </ModalBody>
-          <ModalFooter>
+          <ModalFooter className="modalFooter">
             <Button color="secondary" onClick={this.toggle}>
               Cancel
             </Button>

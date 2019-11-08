@@ -19,7 +19,8 @@
       "DoB": "2019-10-24",
       "favTeam": "det",
       "collectorLevel": "3",
-      "id": 2
+      "id": 2,
+      "profilePic": "/images/pekks.jpg"
     },
     {
       "username": "nwessel429",
@@ -29,7 +30,8 @@
       "DoB": "1994-10-12",
       "favTeam": "New Orleans Saints",
       "collectorLevel": "1",
-      "id": 3
+      "id": 3,
+      "profilePic": "/images/youngin.jpg"
     },
     {
       "username": "BobbyBob",
@@ -39,7 +41,8 @@
       "DoB": "2019-06-04",
       "favTeam": "Nashville Predators",
       "collectorLevel": "1",
-      "id": 4
+      "id": 4,
+      "profilePic": "/images/wow.jpg"
     },
     {
       "username": "witchy",
@@ -49,7 +52,8 @@
       "DoB": "2019-10-17",
       "favTeam": "Detroit Redwings",
       "collectorLevel": "1",
-      "id": 5
+      "id": 5,
+      "profilePic": "/images/nick.jpg"
     },
     {
       "username": "BasicWitch96",
@@ -59,7 +63,19 @@
       "DoB": "2019-10-16",
       "favTeam": "sgf",
       "collectorLevel": "1",
-      "id": 6
+      "id": 6,
+      "profilePic": "/images/jess.jpg"
+    },
+    {
+      "username": "NickyNick97",
+      "firstName": "Nicholas",
+      "lastName": "Wessel",
+      "password": "1234",
+      "DoB": "2019-11-07",
+      "favTeam": "Detroit Redwings",
+      "collectorLevel": 1,
+      "profilePic": "/images/youngin.jpg",
+      "id": 7
     }
   ],
   "cards": [
@@ -209,6 +225,54 @@
       "backImage": "/",
       "userId": "1",
       "id": 18
+    },
+    {
+      "playerName": "Victor Martinez",
+      "playerPosition": "C",
+      "cardBrand": "Topps",
+      "cardYear": "2008",
+      "cardTeam": "Cleveland Indians",
+      "sport": "Baseball",
+      "frontImage": "/images/victorFront.jpg",
+      "backImage": "/images/victorBack.jpg",
+      "userId": "1",
+      "id": 19
+    },
+    {
+      "playerName": "Carlos Guilen",
+      "playerPosition": "SS",
+      "cardBrand": "Topps",
+      "cardYear": "2008",
+      "cardTeam": "Detroit Tigers",
+      "sport": "Baseball",
+      "frontImage": "/images/guilenFront.jpg",
+      "backImage": "/images/guilenBack.jpg",
+      "userId": "7",
+      "id": 20
+    },
+    {
+      "playerName": "Brandon Inge",
+      "playerPosition": "3B",
+      "cardBrand": "Topps",
+      "cardYear": "2007",
+      "cardTeam": "Detroit Tigers",
+      "sport": "Baseball",
+      "frontImage": "/images/ingeFront.jpg",
+      "backImage": "/images/ingeBack.jpg",
+      "userId": "7",
+      "id": 21
+    },
+    {
+      "playerName": "Miguel Cabrera",
+      "playerPosition": "1B",
+      "cardBrand": "Topps",
+      "cardYear": "2009",
+      "cardTeam": "Detroit Tigers",
+      "sport": "Baseball",
+      "frontImage": "/images/migCabFront.jpg",
+      "backImage": "/images/migCabBack.jpg",
+      "userId": "7",
+      "id": 22
     }
   ],
   "userCards": [
@@ -292,6 +356,78 @@
       "wanted": false,
       "id": 13,
       "condition": 4
+    },
+    {
+      "userId": "1",
+      "cardId": "19",
+      "condition": 3,
+      "favorited": false,
+      "timestamp": "11/07/2019, 09:46:48 PM",
+      "wanted": false,
+      "id": 14
+    },
+    {
+      "userId": "7",
+      "cardId": "20",
+      "condition": 4,
+      "favorited": false,
+      "timestamp": "11/07/2019, 11:25:08 PM",
+      "wanted": false,
+      "id": 15
+    },
+    {
+      "userId": "7",
+      "cardId": "21",
+      "condition": 1,
+      "favorited": true,
+      "timestamp": "11/07/2019, 11:29:22 PM",
+      "wanted": false,
+      "id": 16
+    },
+    {
+      "userId": "7",
+      "cardId": "22",
+      "condition": 4,
+      "favorited": true,
+      "timestamp": "11/07/2019, 11:30:42 PM",
+      "wanted": false,
+      "id": 17
+    },
+    {
+      "userId": "7",
+      "cardId": "2",
+      "favorited": false,
+      "timestamp": "11/07/2019, 11:31:19 PM",
+      "wanted": false,
+      "id": 18,
+      "condition": 4
+    },
+    {
+      "userId": "1",
+      "cardId": "22",
+      "favorited": false,
+      "timestamp": "11/07/2019, 11:49:58 PM",
+      "wanted": false,
+      "id": 19,
+      "condition": 4
+    },
+    {
+      "userId": "1",
+      "cardId": "21",
+      "favorited": false,
+      "timestamp": "11/07/2019, 11:50:06 PM",
+      "wanted": false,
+      "id": 20,
+      "condition": 1
+    },
+    {
+      "userId": "1",
+      "cardId": "20",
+      "favorited": false,
+      "timestamp": "11/07/2019, 11:50:13 PM",
+      "wanted": false,
+      "id": 21,
+      "condition": 3
     }
   ],
   "collectorLevels": [

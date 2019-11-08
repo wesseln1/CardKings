@@ -1,0 +1,19 @@
+.modalBody {
+    background-color: #BF8B4B !important;
+}
+.modalHeader {
+    background-color: #402E1E !important;
+    color: #F2E1C2;
+}
+.modalFooter {
+    background-color: #402E1E !important;
+    color: #F2E1C2;
+}
+
+.modalPlayerName {
+    font-size: 1.5em;
+}
+
+.flexHomeCard {
+    margin: .5em;
+}

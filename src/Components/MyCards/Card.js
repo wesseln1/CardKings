@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import EditCard from "./CardEdit";
-import { Card, Button, CardImg, Label, CardFooter } from "reactstrap";
+import { Card, Button, CardImg, Label, CardFooter, CardTitle } from "reactstrap";
 import CardDetials from "./CardDetails";
 import Rating from "react-rating";
 import APIManager from "../../Modules/APIManager";
@@ -31,8 +31,8 @@ export default class ViewCards extends Component {
   render() {
     return (
       <>
-        <Card className="flexHomeCard">
-          <h6 className="cardPlayerName">{this.props.card.card.playerName}</h6>
+        <Card className="flexHomeCard homeCards">
+          <CardTitle className="cardPlayerName">{this.props.card.card.playerName}</CardTitle>
           <CardImg
             className="cardImgDiv"
             top
