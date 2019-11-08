@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import { Button } from "reactstrap"
 import APIManager from "../../Modules/APIManager";
 
 export default class Login extends Component {
@@ -27,9 +28,9 @@ export default class Login extends Component {
 
 newUser = e => {
   e.preventDefault();
-  let imgValue = this.state.frontPic.replace(
+  let imgValue = this.state.profilePic.replace(
     "C:\\fakepath\\",
-    "images/"
+    "/images/"
     );
   let user = {
     username: this.state.username,
@@ -66,7 +67,7 @@ render = () => {
     <div  className="loginMainDiv">
     <MDBContainer className="loginContainer">
       {/* <MDBRow> */}
-        <MDBCol md="6">
+        <MDBCol className="loginCol" md="6">
           <form>
             <p className="h4 text-center mb-4">Make an account!</p>
             <label htmlFor="defaultFormLoginEmailEx" >
@@ -145,9 +146,9 @@ render = () => {
             />
             <div className="text-center mt-4">
               <Link to="/">
-                <MDBBtn  type="button" onClick={this.newUser}>
+                <Button  type="button" onClick={this.newUser}>
                   Login
-                </MDBBtn>
+                </Button>
               </Link>
             </div>
           </form>

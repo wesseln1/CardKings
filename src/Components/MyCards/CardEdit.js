@@ -87,7 +87,8 @@ export default class EditCard extends Component {
       this.setState({
         authorUsername: user.username,
         authorCollectorLevelId: user.collectorLevelId,
-        authorFavTeam: user.favTeam
+        authorFavTeam: user.favTeam,
+        authorProfilePic: user.profilePic
       },
       this.getCollectorLevel(user.collectorLevel)
       )
@@ -223,7 +224,7 @@ export default class EditCard extends Component {
             <ModalBody>
               <Card className="flexHomeCardDetails">
                 <CardBody>
-                  <CardImg src={require("../Home/profile.png")} />
+                  <CardImg src={this.state.authorProfilePic} />
                   <CardTitle>Author: {this.state.authorUsername}</CardTitle>
                   <CardText>Favorite Team: {this.state.authorFavTeam}</CardText>
                   <CardText>Collector Level: {this.state.collectorLevel.level}</CardText>

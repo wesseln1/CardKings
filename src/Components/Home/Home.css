@@ -1,12 +1,40 @@
 .profilePic {
-    width: 50% !important;
+    width: 70% !important;
     border: solid 5px #bf8b4b;
+    align-self: center !important;
 }
 
 .profileCard {
     width: 20%;
     background-color: #f2e1c2 !important;
     /* border: solid 10px #402E1E !important; */
+}
+
+.homeCards {
+    max-width: 0%;
+}
+
+.subtitle {
+font-size: 1.5em;
+}
+
+.pageHeader {
+    font-size: 5em;
+}
+
+.headerLogo {
+    max-width: 50%;
+}
+
+header {
+    font-family: 'Cinzel', serif;
+}
+
+.homeHeader {
+    text-align-last: center;
+    width: 30%;
+    inline-size: -webkit-fill-available;
+    font-family: "Cinzel", serif;
 }
 
 .profileCardDiv {
@@ -21,6 +49,7 @@
     display: flex;
     justify-content: center;
     background-color: transparent !important;
+    font-family: "Cinzel", serif;
 }
 
 .addCardModalDiv {

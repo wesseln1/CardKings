@@ -5,3 +5,15 @@
 .btn-secondary {
     background-color: #BF8B4B !important;
 }
+
+.modalBody {
+    background-color: #BF8B4B !important;
+}
+.modalHeader {
+    background-color: #402E1E !important;
+    color: #F2E1C2;
+}
+.modalFooter {
+    background-color: #402E1E !important;
+    color: #F2E1C2;
+}

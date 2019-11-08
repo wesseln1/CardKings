@@ -1,6 +1,7 @@
 .myCollectionCardFlex {
     justify-content: center;
-    margin: 5px;
+    /* margin: 5px; */
+    justify-content: space-evenly;
 }
 
 .myCardDiv {
@@ -10,9 +11,6 @@
 }
 
 .flexMyCard {
-  margin: .2em;
   min-width: 200px !important;
-  max-width: 210px !important;
+  max-width: 230px !important;
 }
-/* 402E1E
-F2E1C2 */

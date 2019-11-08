@@ -15,7 +15,6 @@
 
 .splashHeaderCard {
   align-items: center !important;
-  border: unset #f20505 5px;
 }
 
 .cardHeader {
@@ -23,11 +22,20 @@
   height: 20% !important;
   /* color: black; */
   font-family: "Cinzel", serif;
-  color: #f28705;
 }
 
 .infoDiv {
   border: 0px !important;
+}
+
+.loginContainer {
+  margin-top: 2em;
+}
+
+.loginCol {
+  border: outset .6em #402e1e;
+  border-radius: 1em;
+  background-color: #f2e1c2;
 }
 
 .splashCardHeader {
@@ -37,11 +45,11 @@
 }
 
 /* .card-title { */
-  /* color: #f28705 !important; */
+/* color: #f28705 !important; */
 /* } */
 
 /* .card-text { */
-  /* color: #f28705 !important; */
+/* color: #f28705 !important; */
 /* } */
 
 .splashTitleCard {
@@ -49,11 +57,10 @@
   background-color: transparent !important;
   /* border: black outset 5px; */
   font-size: xx-large;
-  color: #f28705;
   font-family: "Cinzel", serif;
   align-self: flex-start;
   align-items: center;
-  border: solid #402E1E 15px !important;
+  border: solid #402e1e 15px !important;
   border-radius: 10% !important;
 }
 
@@ -68,27 +75,24 @@
 }
 
 body {
-    background: linear-gradient(
-        to right,
-        #bf8b4b,
-        #f2e1c2,
-        #d9bd8b,
-        #d9b166
-      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-      background-size: 400% 400% !important;
-      -webkit-animation: Gradient 10s ease infinite;
-      -moz-animation: Gradient 10s ease infinite;
-      animation: Gradient 10s ease infinite;
+  background: linear-gradient(
+    to right,
+    #bf8b4b,
+    #f2e1c2,
+    #d9bd8b,
+    #d9b166
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: 400% 400% !important;
+  -webkit-animation: Gradient 10s ease infinite;
+  -moz-animation: Gradient 10s ease infinite;
+  animation: Gradient 10s ease infinite;
 }
 
-.loginContainer{
-    align-items: center !important;
-    text-align: -webkit-center;
+.loginContainer {
+  align-items: center !important;
+  text-align: -webkit-center;
 }
 
-.loginButton{
-    background-color: #402E1E !important;
-}
-
-.loginCol {
+.loginButton {
+  background-color: #402e1e !important;
 }

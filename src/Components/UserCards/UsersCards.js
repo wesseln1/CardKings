@@ -5,7 +5,7 @@ import {
   CardText,
   CardBody,
   CardTitle,
-  CardSubtitle,
+  CardFooter,
   Button,
   Input,
   Label
@@ -35,32 +35,34 @@ export default class UserCard extends Component {
       return (
         <>
           <div>
-            <Card>
-              <CardTitle>{this.props.card.playerName}</CardTitle>
+            <Card className="flexHomeCard">
+              <CardTitle className="cardPlayerName modalPlayerName">{this.props.card.playerName}</CardTitle>
               <CardImg
                 // top
                 // width="100%"
                 src={this.props.card.frontImage}
                 alt="Card image cap"
               />
-              <CardDetails
-                card={this.props.card}
-                key={this.props.card.id}
-                getFavorites={this.props.getFavorites}
-                favCards={this.props.favCards}
-                addCard={this.props.addCard}
-                deleteCard={this.props.deleteCard}
-                getData={this.props.getData}
-                currentUser={this.props.currentUser}
-                {...this.props}
-              />
-              <Button
-              color="success"
-                toggle={this.state.toggle}
-                onClick={() => this.props.addCard(this.props.card)}
-              >
-                Add
-              </Button>
+              <CardFooter className="cardButton">
+                <CardDetails
+                  card={this.props.card}
+                  key={this.props.card.id}
+                  getFavorites={this.props.getFavorites}
+                  favCards={this.props.favCards}
+                  addCard={this.props.addCard}
+                  deleteCard={this.props.deleteCard}
+                  getData={this.props.getData}
+                  currentUser={this.props.currentUser}
+                  {...this.props}
+                />
+                <Button
+                  color="success"
+                  toggle={this.state.toggle}
+                  onClick={() => this.props.addCard(this.props.card)}
+                >
+                  Add
+                </Button>
+              </CardFooter>
             </Card>
           </div>
         </>
