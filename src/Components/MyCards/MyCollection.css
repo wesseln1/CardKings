@@ -14,3 +14,12 @@
   min-width: 200px !important;
   max-width: 230px !important;
 }
+
+.searchCollection {
+  width: 30% !important;
+}
+
+.searchBarDiv {
+  display: flex;
+  justify-content: center;
+}

@@ -11,8 +11,8 @@ export default class MyCollectionCards extends Component {
       condition: evt
     };
     APIManager.patch("userCards", this.props.card.id, newCondition).then(() => {
-      this.props.getData()
-      this.props.getFavorites()
+      this.props.getData();
+      this.props.getFavorites();
     });
   };
 
@@ -29,64 +29,70 @@ export default class MyCollectionCards extends Component {
   }
 
   render() {
-    return (
-      <>
-        <Card className="flexHomeCard flexMyCard">
-          <h6 className="cardPlayerName">{this.props.card.card.playerName}</h6>
-          <CardImg
-            className="cardImgDiv"
-            top
-            width="100%"
-            src={this.props.card.card.frontImage}
-            alt="Card image cap"
-          />
-          <CardFooter className="cardButton">
-            <Label className="cardLabel">Card Condition:</Label>
-            <Rating
-              id="condition"
-              initialRating={this.props.card.condition}
-              onClick={evt => this.updateCondition(evt)}
+    if (this.props.card.card.playerName.startsWith(this.props.search)) {
+      return (
+        <>
+          <Card className="flexHomeCard flexMyCard">
+            <h6 className="cardPlayerName">
+              {this.props.card.card.playerName}
+            </h6>
+            <CardImg
+              className="cardImgDiv"
+              top
+              width="100%"
+              src={this.props.card.card.frontImage}
+              alt="Card image cap"
             />
-            <div className="buttonGroup">
-              <Button
-                className="myCardButtons colorBtn"
-                onClick={() => this.addToFavorites()}
-              >
-                Favorite
-              </Button>
-              <Button
-                color="danger"
-                className="myCardButtons"
-                onClick={() => this.props.deleteCard(this.props.card.id)}
-              >
-                Delete
-              </Button>
-            </div>
-            <div className="buttonGroup">
-              <CardDetials
-                key={`${this.props.currentUser}-user`}
-                addToFavorites={this.addToFavorites}
-                addCard={this.props.addCard}
-                deleteCard={this.props.deleteCard}
-                getData={this.props.getData}
-                currentUser={this.props.currentUser}
-                {...this.props}
+            <CardFooter className="cardButton">
+              <Label className="cardLabel">Card Condition:</Label>
+              <Rating
+                id="condition"
+                initialRating={this.props.card.condition}
+                onClick={evt => this.updateCondition(evt)}
               />
-              <EditCard
-                mycard={this.props.card}
-                key={this.props.card.id}
-                getFavorites={this.props.getFavorites}
-                favCards={this.props.favCards}
-                addCard={this.props.addCard}
-                deleteCard={this.props.deleteCard}
-                getData={this.props.getData}
-                currentUser={this.props.currentUser}
-                {...this.props}
-              />
-            </div>
-          </CardFooter>
-        </Card>
-      </>
-    );
+              <div className="buttonGroup">
+                <Button
+                  className="myCardButtons colorBtn"
+                  onClick={() => this.addToFavorites()}
+                >
+                  Favorite
+                </Button>
+                <Button
+                  color="danger"
+                  className="myCardButtons"
+                  onClick={() => this.props.deleteCard(this.props.card.id)}
+                >
+                  Delete
+                </Button>
+              </div>
+              <div className="buttonGroup">
+                <CardDetials
+                  key={`${this.props.currentUser}-user`}
+                  addToFavorites={this.addToFavorites}
+                  addCard={this.props.addCard}
+                  deleteCard={this.props.deleteCard}
+                  getData={this.props.getData}
+                  currentUser={this.props.currentUser}
+                  {...this.props}
+                />
+                <EditCard
+                  mycard={this.props.card}
+                  key={this.props.card.id}
+                  getFavorites={this.props.getFavorites}
+                  favCards={this.props.favCards}
+                  addCard={this.props.addCard}
+                  deleteCard={this.props.deleteCard}
+                  getData={this.props.getData}
+                  currentUser={this.props.currentUser}
+                  {...this.props}
+                />
+              </div>
+            </CardFooter>
+          </Card>
+        </>
+      );
+    } else {
+      return null
+    }
   }
 }
