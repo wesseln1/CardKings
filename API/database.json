@@ -414,7 +414,7 @@
     {
       "userId": "1",
       "cardId": "21",
-      "favorited": false,
+      "favorited": true,
       "timestamp": "11/07/2019, 11:50:06 PM",
       "wanted": false,
       "id": 20,
@@ -428,6 +428,24 @@
       "wanted": false,
       "id": 21,
       "condition": 3
+    },
+    {
+      "userId": "4",
+      "cardId": "2",
+      "favorited": true,
+      "timestamp": "11/07/2019, 11:55:46 PM",
+      "wanted": false,
+      "id": 22,
+      "condition": 4
+    },
+    {
+      "userId": "4",
+      "cardId": "5",
+      "favorited": false,
+      "timestamp": "11/07/2019, 11:57:57 PM",
+      "wanted": false,
+      "id": 23,
+      "condition": 2
     }
   ],
   "collectorLevels": [
