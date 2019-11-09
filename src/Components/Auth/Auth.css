@@ -45,11 +45,11 @@
 }
 
 /* .card-title { */
-/* color: #f28705 !important; */
-/* } */
-
-/* .card-text { */
-/* color: #f28705 !important; */
+  /* color: #f28705 !important; */
+  /* } */
+  
+  /* .card-text { */
+    /* color: #f28705 !important; */
 /* } */
 
 .splashTitleCard {
@@ -66,6 +66,10 @@
 
 .splashCardDiv {
   align-self: center;
+}
+
+.cardP {
+  color: #402e1e !important;
 }
 
 .loginMainDiv {

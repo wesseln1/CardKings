@@ -56,7 +56,7 @@ export default class Home extends Component {
         <div className="backgroundDiv">
           <div className="homeHeader">
             <header className="pageHeader">Card Kings</header>
-            <CardSubtitle className="subtitle">Become the Card King!</CardSubtitle>
+            <CardSubtitle className="subtitle">Be the King of your cards!</CardSubtitle>
           </div>
           <>
             <div className="profileDiv">

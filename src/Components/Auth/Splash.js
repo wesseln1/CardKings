@@ -20,8 +20,7 @@ export default class Splash extends Component {
           <div className="splashDiv">
             {/* <div className="splashCardDiv infoDiv"> */}
               <Card className="splashTitleCard infoDiv" body inverse>
-                <CardTitle>Card Kings</CardTitle>
-                <CardText>
+                <CardText className="cardP">
                   Welcome to Card Kings! A trading card organizer!
                 </CardText>
               {/* </Card> */}
