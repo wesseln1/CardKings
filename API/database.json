@@ -273,6 +273,126 @@
       "backImage": "/images/migCabBack.jpg",
       "userId": "7",
       "id": 22
+    },
+    {
+      "playerName": "Manny Ramirez",
+      "playerPosition": "OF",
+      "cardBrand": "Topps",
+      "cardYear": "2008",
+      "cardTeam": "Boston Redsox",
+      "sport": "Baseball",
+      "frontImage": "/images/mannyRamirez.jpg",
+      "backImage": "/images/migCabBack.jpg",
+      "userId": "1",
+      "id": 23
+    },
+    {
+      "playerName": "Manny Ramirez",
+      "playerPosition": "OF",
+      "cardBrand": "Topps",
+      "cardYear": "2008",
+      "cardTeam": "Boston Redsox",
+      "sport": "Baseball",
+      "frontImage": "/images/ramirezFront.jpg",
+      "backImage": "/images/ramirezBack.jpg",
+      "userId": "1",
+      "id": 24
+    },
+    {
+      "playerName": "Curt Schilling",
+      "playerPosition": "SP",
+      "cardBrand": "Topps",
+      "cardYear": "2008",
+      "cardTeam": "Boston Redsox",
+      "sport": "Baseball",
+      "frontImage": "/images/schillingFront.jpg",
+      "backImage": "/images/schillingBack.jpg",
+      "userId": "1",
+      "id": 25
+    },
+    {
+      "playerName": "Gary Sheffield",
+      "playerPosition": "OF/DH",
+      "cardBrand": "Topps",
+      "cardYear": "2008",
+      "cardTeam": "Detroit Tigers",
+      "sport": "Baseball",
+      "frontImage": "/images/sheffFront.jpg",
+      "backImage": "/images/sheffBack.jpg",
+      "userId": "1",
+      "id": 26
+    },
+    {
+      "playerName": "Felix Hernandez",
+      "playerPosition": "SP",
+      "cardBrand": "Topps",
+      "cardYear": "2008",
+      "cardTeam": "Tampa Bay Rays",
+      "sport": "Baseball",
+      "frontImage": "/images/felixFront.jpg",
+      "backImage": "/images/felixBack.jpg",
+      "userId": "1",
+      "id": 27
+    },
+    {
+      "playerName": "Joel Zumaya",
+      "playerPosition": "CL",
+      "cardBrand": "Topps",
+      "cardYear": "2008",
+      "cardTeam": "Detroit Tigers",
+      "sport": "Baseball",
+      "frontImage": "/images/zumayaFront.jpg",
+      "backImage": "/",
+      "userId": "1",
+      "id": 28
+    },
+    {
+      "playerName": "Daisuke Matsuzaka",
+      "playerPosition": "SP",
+      "cardBrand": "Topps",
+      "cardYear": "2008",
+      "cardTeam": "Boston Redsox",
+      "sport": "Baseball",
+      "frontImage": "/images/matsuzakaFront.jpg",
+      "backImage": "/images/matsuzakaBack.jpg",
+      "userId": "1",
+      "id": 29
+    },
+    {
+      "playerName": "David Ortiz",
+      "playerPosition": "1B/DH",
+      "cardBrand": "Topps",
+      "cardYear": "2008",
+      "cardTeam": "Boston Redsox",
+      "sport": "Baseball",
+      "frontImage": "/images/ortizFront.jpg",
+      "backImage": "/images/ortizBack.jpg",
+      "userId": "1",
+      "id": 30
+    },
+    {
+      "playerName": "Kevin Youkilis",
+      "playerPosition": "1B",
+      "cardBrand": "Topps",
+      "cardYear": "2008",
+      "cardTeam": "Boston Redsox",
+      "sport": "Baseball",
+      "frontImage": "/images/youkolisFront.jpg",
+      "backImage": "/images/youkolisBack.jpg",
+      "userId": "1",
+      "id": 31
+    },
+    {
+      "playerName": "Vladimair Guerrero",
+      "playerPosition": "OF",
+      "cardBrand": "Upper Deck",
+      "cardYear": "2008",
+      "cardTeam": "Los Angeles Angles",
+      "sport": "Baseball",
+      "frontImage": "/images/IMG_20191023_143022.jpg",
+      "backImage": "/images/IMG_20191023_143029.jpg",
+      "userId": "1",
+      "id": 32
     }
   ],
   "userCards": [
@@ -298,7 +418,7 @@
       "userId": "1",
       "cardId": "3",
       "condition": 3,
-      "favorited": true,
+      "favorited": false,
       "timestamp": "10/29/2019, 05:28:24 PM",
       "wanted": false,
       "id": 5
@@ -315,7 +435,7 @@
     {
       "userId": "1",
       "cardId": "14",
-      "favorited": true,
+      "favorited": false,
       "timestamp": "10/30/2019, 10:07:06 AM",
       "wanted": false,
       "id": 9,
@@ -351,7 +471,7 @@
     {
       "userId": "1",
       "cardId": "13",
-      "favorited": true,
+      "favorited": false,
       "timestamp": "10/31/2019, 07:34:04 PM",
       "wanted": false,
       "id": 13,
@@ -446,6 +566,78 @@
       "wanted": false,
       "id": 23,
       "condition": 2
+    },
+    {
+      "userId": "1",
+      "cardId": "25",
+      "condition": 4,
+      "favorited": false,
+      "timestamp": "11/10/2019, 09:53:30 PM",
+      "wanted": false,
+      "id": 24
+    },
+    {
+      "userId": "1",
+      "cardId": "26",
+      "condition": 2,
+      "favorited": true,
+      "timestamp": "11/10/2019, 09:56:51 PM",
+      "wanted": false,
+      "id": 25
+    },
+    {
+      "userId": "1",
+      "cardId": "27",
+      "condition": 3,
+      "favorited": true,
+      "timestamp": "11/10/2019, 10:01:03 PM",
+      "wanted": false,
+      "id": 26
+    },
+    {
+      "userId": "1",
+      "cardId": "28",
+      "condition": 4,
+      "favorited": true,
+      "timestamp": "11/10/2019, 10:08:06 PM",
+      "wanted": false,
+      "id": 27
+    },
+    {
+      "userId": "1",
+      "cardId": "29",
+      "condition": 3,
+      "favorited": false,
+      "timestamp": "11/10/2019, 10:09:41 PM",
+      "wanted": false,
+      "id": 28
+    },
+    {
+      "userId": "1",
+      "cardId": "30",
+      "condition": 2,
+      "favorited": false,
+      "timestamp": "11/10/2019, 10:11:37 PM",
+      "wanted": false,
+      "id": 29
+    },
+    {
+      "userId": "1",
+      "cardId": "31",
+      "condition": 3,
+      "favorited": false,
+      "timestamp": "11/10/2019, 10:15:37 PM",
+      "wanted": false,
+      "id": 30
+    },
+    {
+      "userId": "1",
+      "cardId": "32",
+      "condition": 1,
+      "favorited": false,
+      "timestamp": "11/10/2019, 10:19:48 PM",
+      "wanted": false,
+      "id": 31
     }
   ],
   "collectorLevels": [

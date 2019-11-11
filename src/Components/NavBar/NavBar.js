@@ -48,7 +48,7 @@ export default class NavBar extends Component {
             {...this.props}
           />
           <Box mx="auto" className="NavHover" />
-          <Link className="logoLink" to="/"><CardImg className="navLogo" src={require("../Auth/carklogo.png")}/></Link>
+          <Link className="logoLink" to="/"><CardImg className="navLogo" src={require("../Home/cardKingLogo.png")}/></Link>
           <Box mx="auto" className="NavHover" />
           <Link className="navLinks" to={`/profile/${parseInt(this.props.currentUser)}`}>
             My Profile

@@ -13,7 +13,7 @@ export default class Splash extends Component {
         <>
             <div className="splashCardHeader">
               {/* <Card className="splashHeaderCard"> */}
-                <CardImg className="cardHeader" src={require("./carklogo.png")} />
+                <CardImg className="cardHeader" src={require("../Home/cardKingLogo.png")} />
                 {/* <CardTitle>Card Kings</CardTitle> */}
               {/* </Card> */}
             </div>

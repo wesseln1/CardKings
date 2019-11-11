@@ -139,7 +139,7 @@ export default class CardForm extends Component {
                   id="cardBrand"
                   placeholder="Card Brand"
                 ></Input>
-                <Label>Sport:</Label>
+                <Label>Card Type:</Label>
                 <Input
                   onChange={this.handleFieldChange}
                   type="text"
